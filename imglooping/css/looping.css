@@ -1,0 +1,73 @@
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: top;
+}
+.wrap {
+    width: 600px;
+    height: 400px;
+    border: 1px solid#000;
+    margin-left: 30px;
+    margin-top: 100px;
+    padding-top: 30px;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#list1 {
+    width: 60px;
+    padding-left: 5px;
+    float: left;
+}
+#list1 li {
+    width: 60px;
+    height: 40px;
+    border: 1px solid#000;
+    margin-bottom: 3px;
+    font:16px/40px "微软雅黑";
+    color: #000;
+    text-align: center;
+}
+#imgbox {
+    width: 400px;
+    height: 350px;
+    border: 1px solid#000;
+    float: left;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+#img {
+    width: 400px;
+    height: 350px;
+}
+#list2 {
+    width: 60px;
+    padding-left: 5px;
+    float: left;
+}
+#list2 li {
+    width: 60px;
+    height: 40px;
+    border: 1px solid#000;
+    margin-bottom: 3px;
+    font:16px/40px "微软雅黑";
+    color: #000;
+    text-align: center;
+}
+#list1 .active {
+    background: #000;
+    color: #fff;
+}
+#list2 .active {
+    background: #000;
+    color: #fff;
+}

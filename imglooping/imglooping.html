@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片自动轮播</title>
+    <link rel="stylesheet" type="text/css" href="css/looping.css"/>
+</head>
+<body>
+    <section class="wrap clearfix">
+        <ul id="list1">
+            <li>连衣裙</li>
+            <li>雪纺</li>
+            <li>T恤</li>
+            <li>铅笔裤</li>
+            <li>婚纱</li>
+            <li>短裙</li>
+            <li>短裤</li>
+            <li>阔腿裙</li>
+        </ul>
+        <div id="imgbox">
+            <img id="img" src="img/dongman5.jpg"/>
+        </div>
+        <ul id="list2">
+            <li>包包</li>
+            <li>凉鞋</li>
+            <li>单鞋</li>
+            <li>太阳镜</li>
+            <li>丝袜</li>
+            <li>手表</li>
+            <li>项链</li>
+            <li>吊坠</li>
+        </ul>
+    </section>
+    <script>
+        var lis = document.getElementsByTagName("li");
+        var imgArr = [
+            "img/dongman5.jpg",
+            "img/dongman8.jpg",
+            "img/fengjing1.jpg",
+            "img/fengjing4.jpg",
+            "img/fengjing6.jpg",
+            "img/gougou2.jpg",
+            "img/gougou4.jpg",
+            "img/gudianmeinv2.jpg",
+            "img/manhua2.jpg",
+            "img/manhua4.jpg",
+            "img/manhua5.jpg",
+            "img/manhua7.jpg",
+            "img/manhua8.jpg",
+            "img/renwu1.jpg",
+            "img/youxi2.jpg",
+            "img/youxi7.jpg"
+        ];
+        var img = document.getElementById("img");
+        var num = 0;
+        var timer;
+        tab();//只要li的样式和图片src改变，就调用tab函数
+        function tab(){//封装tab函数，改变li的状态和图片src
+            for( var i=0; i< lis.length;i++ ){
+                lis[i].className = "";
+            }
+            lis[num].className = "active";
+            img.src = imgArr[num];
+        }
+        function autoPlay(){
+            clearInterval(timer);
+            setInterval(function(){
+                if( num < 8 ){//左边
+                    num ++;
+                    if( num ==8 ){
+                        num =15;
+                    }
+                }else {
+                    num --;
+                    if( num ==7 ){
+                        num =0;
+                    }
+                }
+                tab();
+            },1000)
+        }
+        autoPlay();
+        imgbox.onmouseover = function(){
+            clearInterval(timer);
+        }
+        imgbox.onmouseout = autoPlay;
+        for( var i = 0; i < lis.length;i++ ){
+            lis[i].index = i;
+            lis[i].onmouseover = function(){
+                num = this.index;
+                tab();
+            }
+        }
+    </script>
+</body>
+</html>
