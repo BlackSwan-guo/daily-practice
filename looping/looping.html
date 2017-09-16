@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片轮播</title>
+    <link rel="stylesheet" type="text/css" href="css/looping.css"/>
+</head>
+<body>
+    <div id="box">
+        <ul id="list">
+            <li><img id="img" src="img/manhua2.jpg"/></li>
+            <img id="prev" src="img/prev.png"/><img id="next" src="img/next.png"/>
+        </ul>
+        <div id="cir">
+                    <span>
+                        <img src = "img/manhua2.jpg"/>
+                    </span>
+            <span>
+                        <img src = "img/manhua2.jpg"/>
+                    </span>
+            <span>
+                        <img src = "img/manhua2.jpg"/>
+                    </span>
+            <span>
+                        <img src = "img/manhua2.jpg"/>
+                    </span>
+            <span>
+                        <img src = "img/manhua2.jpg"/>
+                    </span>
+        </div>
+    </div>
+    <script>
+        var box = document.getElementById("box");
+        var list = document.getElementById("list");
+        var img = document.getElementById("img");
+        var prev = document.getElementById("prev");
+        var next = document.getElementById("next");
+        var spans = cir.getElementsByTagName("span");
+        var imgs = cir.getElementsByTagName("img");
+        var imgArr = [
+            "img/manhua2.jpg",
+            "img/gougou4.jpg",
+            "img/fengjing2.jpg",
+            "img/maomi2.jpg",
+            "img/renwu1.jpg"
+        ];
+        var num = 0;
+        timer = null;
+        tab();
+        function tab(){//封装函数，改变span的样式和图片的地址
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].className = "";
+            }
+            spans[num].className = "active";
+            img.src = imgArr[num];
+        }
+        timer = setInterval(function(){//设置定时器
+            num ++ ;//num递增
+            num %= spans.length;//num在span的长度范围内循环播放
+            tab();
+        },500)
+        function zidong(){//设置自动播放函数
+            clearInterval( timer );//在定时器开始之前先清除定时器
+            timer = setInterval(function(){//套用定时器函数
+                num ++ ;
+                num %= spans.length;
+                tab();
+            },1000)//自动播放速度要比定时器设置的速度慢
+        }
+        zidong();
+        list.onmouseover = function(){//停止轮播
+            clearInterval( timer );
+        }
+        list.onmouseout = zidong;//自动播放
+        prev.onclick = function(){
+            num -- ;
+            if(num<0) num = spans.length-1;//上一张循环播放
+            tab();
+        }
+        next.onclick = function(){
+            num ++ ;
+            num %= spans.length;//下一张循环播放
+            tab();
+        }
+
+        for (var i = 0; i < spans.length; i++) {
+            spans[i].index = i;
+            spans[i].onmouseover = function(){//鼠标移入，对应小图片显示
+                this.getElementsByTagName("img")[0].style.display = "block";
+                this.getElementsByTagName("img")[0].src = imgArr[ this.index ];
+            }
+            spans[i].onmouseout = function(){//鼠标移出，对应小图片消失
+                this.getElementsByTagName("img")[0].style.display = "none";
+            }
+            spans[i].onclick = function(){
+                num = this.index;
+                tab();
+            }
+        }
+    </script>
+</body>
+</html>
