@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>时间</title>
-</head>
-<body>
-    <div id="box"></div>
-    <script>
-        function addZero(n){//如果时间数字小于10，个位数自动补0
-            if( n<10 ){
-                return "0"+n;
-            }else{
-                return ""+n;
+    <head>
+        <meta charset="UTF-8">
+        <title>时间</title>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            function addZero(n){//如果时间数字小于10，个位数自动补0
+                if( n<10 ){
+                    return "0"+n;
+                }else{
+                    return ""+n;
+                }
             }
-        }
-
-        setInterval(function(){
-            var t = new Date();//获取最新时间
-            var hour = addZero( t.getHours() );//获取当前小时
-            var min = addZero( t.getMinutes() );//获取当前分钟
-            var sec = addZero( t.getSeconds() );//获取当前秒
-            var str = hour + ":" + min + ":" + sec;
-            box.innerHTML = str;
-        },1000)
-    </script>
+            setInterval(function(){
+                var t = new Date();//获取最新时间
+                var hour = addZero( t.getHours() );//获取当前小时
+                var min = addZero( t.getMinutes() );//获取当前分钟
+                var sec = addZero( t.getSeconds() );//获取当前秒
+                var str = hour + ":" + min + ":" + sec;
+                box.innerHTML = str;
+            },1000)
+        </script>
     </body>
 </html>
