@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>文字搬运</title>
+        <link rel="stylesheet" type="text/css" href="css/text.css"/>
+    </head>
+    <body>
+        <textarea id="text">每一天都有一些事情将会发生,每段路都有即将要来的路程,每颗心都有值得期待的成份,每个人都有爱上另一个人的可能.想到达明天现在就要启程,只有你能带我走向未来的旅程,想到达明天现在就要启程,你能让我看见黑夜过去,天开始明亮的过程.</textarea>
+        <button id="btn">点击</button>
+        <div id="zishu">0/0</div>
+        <nav id="nav">
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+            <a></a>
+        </nav>
+        <div id="box"></div>
+        <script>
+            var text = document.getElementById("text");
+            var btn = document.getElementById("btn");
+            var box = document.getElementById("box");
+            var zishu = document.getElementById("zishu");
+            var nav = document.getElementById("nav");
+            var as = nav.getElementsByTagName("a");
+            var timer;
+            btn.onclick = function(){//点击按钮
+                if ( text.value == "" ){//如果文字区没有内容，先提示输入内容
+                    alert("请输入内容")
+                    return;
+                }
+                var num = text.value.length;
+                this.disabled = true;//文字搬运之前，button可以点击
+                box.innerHTML = "";//刚开始，box里面没有内容
+                timer = setInterval(function(){
+                    if(text.value.length == 0){//如果文本区的长度为0,说明文字运输完
+                        clearInterval(timer);//清除定时器
+                        as[box.innerHTML.length%5].style.backgroundColor = "#ccc";//文字搬运过程中，a跟随着变色
+                        btn.disabled = false;//文字搬运过程中，button不可以点击
+                        return;
+                    }
+                    as[box.innerHTML.length%5].style.backgroundColor = "#ccc";//文字搬运完成时，a的颜色恢复正常
+                    box.innerHTML += text.value.charAt(0);//box里的文字是从文本区一个一个累加起来
+                    text.value = text.value.slice(1);//文本区的内容=原文本区裁切以后剩下的内容
+                    as[box.innerHTML.length%5].style.backgroundColor = "red";//搬运过程中，a的颜色为红色
+                    zishu.innerHTML = box.innerHTML.length+"/"+num;//读取搬运字数(box的长度/文本区的长度)
+                },200)
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+#text {
+    width: 300px;
+    height: 300px;
+}
+#box {
+    width: 300px;
+    height: 300px;
+    border: 1px solid#000;
+}
+#nav {
+    height: 30px;
+}
+#nav a{
+    width: 30px;
+    height: 30px;
+    background: #ccc;
+    display: inline-block;
+}
