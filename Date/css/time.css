@@ -1,0 +1,27 @@
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+    border: none;
+}
+#wrap {
+    margin-top: 200px;
+    height: 140px;
+    overflow: hidden;
+}
+#list img {
+    width: 100px;
+    height: 140px;
+}
+#list {
+    height: 140px;
+}
+#list li {
+    width: 100px;
+    float: left;
+}
