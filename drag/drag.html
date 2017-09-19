@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>拖拽</title>
+        <style>
+            #box {
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+                top: 0;
+                left: 0;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            var box = document.getElementById("box");
+            tuozhuai(box);
+            function tuozhuai(obj){
+                document.onmousedown = function(ev){
+                    var disX = ev.clientX - obj.offsetLeft;
+                    var disY = ev.clientY - obj.offsetTop;
+                    var maxL = document.documentElement.clientWidth - obj.offsetWidth;
+                    var maxT = document.documentElement.clientHeight - obj.offsetHeight;
+                    document.onmousemove = function(ev){
+                        var l = ev.clientX - disX;
+                        var t = ev.clientY - disY;
+                        if( l<0 ){
+                            l = 0;
+                        }
+                        if( l>maxL ){
+                            l = maxL;
+                        }
+                        if( t<0 ){
+                            t = 0;
+                        }
+                        if( t > maxT ){
+                            t = maxT;
+                        }
+                        obj.style.left = l +'px';
+                        obj.style.top = t +'px';
+                    }
+                    document.onmouseup = function(){
+                        document.onmousemove = null;
+                    }
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>
