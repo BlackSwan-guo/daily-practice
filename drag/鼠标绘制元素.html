@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>鼠标绘制元素</title>
+        <style>
+            div {
+                cursor: hand;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            document.onmousedown = function(ev){
+                var ev = ev ||event;
+                var startX = ev.clientX;//记录鼠标按下时的位置
+                var startY = ev.clientY;
+                document.onmousemove = function(ev){
+                    var widX = Math.abs(ev.clientX - startX);
+                    var heiY = Math.abs(ev.clientY - startY);
+                    if( document.getElementById("creatDiv")!=null ){//如果creatDiv存在
+                        document.body.removeChild(document.getElementById("creatDiv"));//移除creatDiv
+                    }
+                    var div = document.createElement("div");
+                    div.setAttribute("id","creatDiv");
+                    div.style.left = Math.min(startX,ev.clientX)+'px';//div的left值为初始X位置或鼠标移动到的位置的较小值
+                    div.style.top = Math.min(startY,ev.clientY)+'px';//div的top值为初始Y位置或鼠标移动到的位置的较小值
+                    div.style.border = '1px dashed red';//为绘制的元素添加样式
+                    div.style.position = 'absolute';
+                    div.style.width = widX +'px';
+                    div.style.height = heiY +'px';
+                    document.body.appendChild(div);
+                }
+                document.onmouseup = function(ev){
+                    document.onmousemove = document.onmouseup = null;
+                }
+            }
+        </script>
+    </body>
+</html>
