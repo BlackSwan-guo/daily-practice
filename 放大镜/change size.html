@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>放大图片</title>
+        <style>
+            body{
+                margin: 50px;
+            }
+            #outer{
+                width: 400px;
+                height: 400px;
+                border: 1px solid #000;
+                background: url(img/gougou2.jpg) no-repeat;
+                background-size: 400px 400px;
+                position: relative;
+                display: inline-block;
+                vertical-align: top;
+            }
+            #mask{
+                width: 200px;
+                height: 200px;
+                background: rgba(135,135,135,0.8);
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0;
+            }
+            #right{
+                width: 400px;
+                height: 400px;
+                background: url(img/gougou2.jpg) no-repeat;
+                background-size: 800px 800px;
+                display: inline-block;
+                vertical-align: top;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            <div id="mask"></div>
+        </div>
+        <div id="right"></div>
+        <script>
+            var outer = document.getElementById("outer");
+            var mask = document.getElementById("mask");
+            var right = document.getElementById("right");
+            var oL = outer.offsetLeft;
+            var oT = outer.offsetTop;
+
+            var oW = outer.clientWidth;
+            var oH = outer.clientHeight;
+            var mW = mask.offsetWidth;
+            var mH = mask.offsetHeight;
+
+            var maxL = oW - mW;
+            var maxT = oH - mH;
+            outer.onmouseover = function(){
+                mask.style.opacity = "0.6";
+                right.style.display = "inline-block";
+            }
+            outer.onmouseout = function(){
+                mask.style.opacity = "0";
+                right.style.display = "none";
+            }
+            outer.onmousemove = function(ev){
+                var l = ev.clientX - oL - mW/2;
+                var t = ev.clientY - oT - mH/2;
+                if( l < 0 ){
+                    l = 0;
+                }
+                if( l > maxL ){
+                    l = maxL;
+                }
+                if( t < 0 ){
+                    t = 0;
+                }
+                if( t > maxT ){
+                    t = maxT;
+                }
+                mask.style.left = l + "px";
+                mask.style.top = t + "px";
+                right.style.backgroundPosition = -2*l+"px "+ -2*t +"px";
+            }
+        </script>
+    </body>
+</html>
