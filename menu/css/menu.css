@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+}
+li {
+    list-style: none;
+}
+#list ul {
+    display: none;
+}
+h2 {
+    cursor: default;
+}
