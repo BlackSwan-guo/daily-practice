@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>搜索书名</title>
+        <link rel="stylesheet" type="text/css" href="css/search.css"/>
+    </head>
+    <body>
+        <div id="box">
+            <input type="text" id="s"/>
+            <ul id="list">
+                <li class="item"><a href="javascript:;">《遇见未知的自己》</a></li>
+                <li class="item"><a href="javascript:;">《小王子》</a></li>
+                <li class="item"><a href="javascript:;">《苦才是人生》</a></li>
+                <li class="item"><a href="javascript:;">《做才是得到》</a></li>
+                <li class="item"><a href="javascript:;">《天才在左疯子在右》</a></li>
+                <li class="item"><a href="javascript:;">《一只特立独行的猪》</a></li>
+                <li class="item"><a href="javascript:;">《万物简史》</a></li>
+                <li class="item"><a href="javascript:;">《傲慢与偏见》</a></li>
+                <li class="item"><a href="javascript:;">《草房子》</a></li>
+                <li class="item"><a href="javascript:;">《想太多的猪》</a></li>
+                <li class="item"><a href="javascript:;">《荒野求生》</a></li>
+            </ul>
+        </div>
+
+        <script>
+            var list = document.getElementById("list");
+            var lis = list.getElementsByTagName("li");
+            var as = list.getElementsByTagName("a");
+            var s = document.getElementById("s");
+            //阻止a冒泡到li
+            for (var i = 0; i < as.length; i++) {
+                as[i].onfocus = function(){
+                    this.blur();
+                }
+            }
+            //存储选中的li索引
+            var selArr = [];
+            var hoverNum = -1;
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].index = i;
+                lis[i].onmouseover = function(){
+                    hoverNum = this.index;
+                    clear();
+                    sel();
+                    hover();
+                    getStr();
+                }
+                lis[i].onclick = function(ev){
+                    if( ev.ctrlKey ){//按下ctrl
+                        var n = inArray( selArr,hoverNum )
+                        if( n != -1 ){//在里面，删掉这个
+                            selArr.splice( n,1 );
+                        }else{
+                            selArr.push( hoverNum );
+                        }
+                    }else{//不按ctrl
+                        if( inArray( selArr,hoverNum ) != -1 ){
+                            selArr = [];
+                        }else{
+                            selArr = [hoverNum];
+                        }
+                    }
+                    clear();
+                    sel();
+                    hover();
+                    getStr();
+                }
+            }
+            document.onkeydown = function(ev){
+                switch ( ev.keyCode ){
+                    case 38://上
+                        hoverNum -- ;
+                        if( hoverNum<0 ) hoverNum = lis.length-1;
+                        clear();
+                        sel();
+                        hover();
+                        getStr();
+                        break;
+                    case 40://下
+                        hoverNum ++ ;
+                        hoverNum %= lis.length;
+                        clear();
+                        sel();
+                        hover();
+                        getStr();
+                        break;
+                    case 13://回车
+                        if( ev.ctrlKey ){//按了ctrl
+                            var n = inArray( selArr,hoverNum );
+                            if( n != -1  ){
+                                selArr.splice( n,1 );
+                            }else{
+                                selArr.push( hoverNum );
+                            }
+
+                        }else{//没有按ctrl
+                            if( inArray( selArr,hoverNum ) != -1 ){
+                                selArr = [];
+                            }else{
+                                selArr = [ hoverNum ];
+                            }
+                        }
+
+                        clear();
+                        sel();
+                        hover();
+                        getStr();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            //	检测v在不在arr中，在则返回v的位置，不在则返回-1
+            function inArray( arr,v ){
+                for (var i = 0; i < arr.length; i++) {
+                    if( arr[i] == v ){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+            //	清除所有li的class
+            function clear(){
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = "";
+                }
+            }
+            //	根据全局的hoverNum值确定哪个是移入的，加上class
+            function hover(){
+                lis[hoverNum].className = "hover";
+            }
+            //	根据selArr数组，使数组中对应的li加上选中的class
+            function sel(){
+                console.log( selArr );
+                for (var i = 0; i < selArr.length; i++) {
+                    lis[ selArr[i] ].className = "select";
+                }
+
+            }
+            function getStr(){
+                selArr.sort( function(a,b){
+                    return a-b
+                } )
+                var str = "";
+                for (var i = 0; i < selArr.length; i++) {
+                    str += as[selArr[i]].innerHTML;
+                }
+                s.value = str;
+            }
+        </script>
+    </body>
+</html>
