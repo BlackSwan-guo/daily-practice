@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>时间</title>
+        <link rel="stylesheet"  type="text/css" href="css/datetime.css" />
+    </head>
+    <body>
+    <div id ="wrap">
+        <ul id="list">
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+            <li>
+                <img src="img/0.jpg"/>
+                <img src="img/0.jpg"/>
+            </li>
+        </ul>
+    </div>
+        <script src="js/tween.js"></script>
+        <script>
+            var lis = document.getElementsByTagName("li");
+            var imgs = document.getElementsByTagName("img");
+            var old = getTimeString();//获取时间为老时间
+            for ( var i = 0; i < old.length; i++ ){
+                imgs[i*2].src = "img/"+ old.charAt(i)+".jpg";
+            }
+            setInterval(function(){
+                var newTime = getTimeString();//新时间=获取的时间
+                var butong = zhaobutong(old,newTime);
+                old = newTime;//新时间即将变成老时间，以方便下次对比
+                for ( var i = 0; i < butong.length; i++ ){
+                    tab(butong[i][0],butong[i][1]);
+                }
+            },1000)
+            function tab(a,b){
+                //在移动之前,把处于下面的图片变成b
+                var imgs = lis[a].getElementsByTagName("img");
+                imgs[1].src = "img/"+ b +".jpg";
+                //指定的li向上移动
+                move (lis[a],{"marginTop":-140},500,function(){
+                    //当运动结束的时候，扯回来
+                    lis[a].style.marginTop="0px";
+                    //把上面的图片改成顶上去的这个
+                    imgs[0].src = "img/"+ b +".jpg";
+                });
+            }
+            //获取系统当前时间
+            function getTimeString () {
+                var t = new Date();
+                var h = t.getHours();
+                var m = t.getMinutes();
+                var s = t.getSeconds();
+                return addZero(h) +"c"+ addZero(m)+"c" +addZero(s);
+            }
+            //当    时，分，秒小于两位数时，在前面加0
+            function addZero(n){
+                return n < 10 ? "0"+n :""+n;
+            }
+            //找两个位置的不同
+            function zhaobutong(a,b){
+                var butong = [];
+                for ( var i = 0 ; i < a.length; i++ ){
+                    if(a.charAt(i)!=b.charAt(i)){//如果a的第	i个和b的第i不同
+                        butong.push([i,b.charAt(i)]);//则push i 和b的第i个字符
+                    }
+                }
+                return butong;
+            }
+            function move(obj, j, duration, fn,ease) {
+                var ease = ease || "linear"
+                var oldTime = new Date().getTime();
+                var d = duration;
+                var s = {};
+                for(var attr in j) {
+                    s[attr] = {};
+                    s[attr].b = parseFloat(getComputedStyle(obj)[attr]);
+                    s[attr].c = j[attr] - s[attr].b;
+                }
+                obj.timer = setInterval(function() {
+                    var t = new Date().getTime() - oldTime;
+                    if(t >= d) {
+                        t = d
+                    }
+                    for(var attr in s) {
+                        var c = s[attr].c;
+                        var b = s[attr].b;
+                        var v = Tween[ease](t, b, c, d);
+                        if(attr == "opacity") {
+                            obj.style[attr] = v;
+                        } else {
+                            obj.style[attr] = v + "px";
+                        }
+                    }
+                    if(t == d) {
+                        clearInterval(obj.timer);
+                        fn && fn();
+                    }
+                }, 16)
+
+            }
+        </script>
+    </body>
+</html>
