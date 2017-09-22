@@ -1,0 +1,47 @@
+#wrap{
+    width: 400px;
+    height: 400px;
+    border: 1px solid #000;
+    position: relative;
+    border-radius: 50%;
+}
+.dot{
+    width: 2px;
+    height:10px;
+    background-color: #000;
+    position: absolute;
+    left: 50%;
+    margin-left: -1px;
+    top: 0;
+    transform-origin: 1px 200px;
+}
+#hour{
+    width: 6px;
+    height: 140px;
+    background-color: #f00;
+    position: absolute;
+    margin-left: -3px;
+    left: 50%;
+    top: 90px;
+    transform-origin: 3px 110px;
+}
+#min{
+    width: 4px;
+    height: 180px;
+    background-color: #000;
+    position: absolute;
+    margin-left: -2px;
+    left: 50%;
+    top: 60px;
+    transform-origin: 2px 140px;
+}
+#sec{
+    width: 2px;
+    height: 220px;
+    background-color: #000;
+    position: absolute;
+    margin-left: -1px;
+    left: 50%;
+    top: 40px;
+    transform-origin: 1px 160px;
+}
