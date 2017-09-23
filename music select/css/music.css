@@ -1,0 +1,86 @@
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+input {
+    outline: none;
+    padding: 0;
+}
+.wrap {
+    width: 564px;
+    height: 400px;
+    padding-top: 50px;
+    background: url(../img/bg.png) no-repeat;
+}
+.box {
+    width: 450px;
+    height: 300px;
+    margin-left: 50px;
+    background: url(../img/logo.png) no-repeat 80px 60px;
+}
+#list {
+    width: 450px;
+    height: 300px;
+}
+#list li {
+    height: 50px;
+    font:16px/50px "宋体";
+    color: #000;
+}
+#list div {
+    width: 20px;
+    height: 20px;
+    border: 1px solid#000;
+    float: left;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right:20px;
+    text-align: center;
+    font: bold 20px/20px arial;
+    color: #000;
+}
+.sn {
+    float: left;
+    margin-right: 100px;
+}
+.singer {
+    float: right;
+    margin-right: 30px;
+}
+#all {
+    height: 50px;
+    font:16px/50px "宋体";
+    color: #000;
+    background: #de4a63;
+}
+#all div {
+    width: 20px;
+    height: 20px;
+    border: 1px solid#000;
+    float: left;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right:20px;
+    text-align: center;
+    font: bold 20px/20px arial;
+    color: #000;
+}
+#checkAll{
+    width: 20px;
+    height: 20px;
+    border: 1px solid#000;
+    float: left;
+    margin-top: 12px;
+    margin-left: 5px;
+    margin-right:20px;
+    text-align: center;
+    font: 16px/20px arial;
+    color: #000;
+}
+.active {
+    background-color: #e4667d;
+}
