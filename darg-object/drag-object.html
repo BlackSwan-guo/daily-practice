@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>拖拽面向对象</title>
+        <style>
+            #box{
+                width:100px;
+                height:100px;
+                background-color:red;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            #box2{
+                width:100px;
+                height:100px;
+                background-color:green;
+                position: absolute;
+                left: 200px;
+                top: 150px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <div id="box2"></div>
+        <script>
+            function Drag(el){
+                this.el = el;
+                this.disx = 0;
+                this.disy = 0;
+            }
+            Drag.prototype.init = function(){
+                var that = this;
+                this.el.onmousedown = function(ev){
+                    that.downFn(ev);
+                    document.onmousemove = function(ev){
+                        that.moveFn(ev);
+                    }
+                    document.onmouseup = function(){
+                        that.upFn();
+                    }
+                }
+            }
+            Drag.prototype.downFn = function(ev){
+                this.disx = ev.clientX - this.el.offsetLeft;
+                this.disy = ev.clientY - this.el.offsetTop;
+            }
+            Drag.prototype.moveFn = function(ev){
+                this.el.style.left = ev.clientX - this.disx + "px";
+                this.el.style.top = ev.clientY - this.disy + "px";
+            }
+            Drag.prototype.upFn = function(){
+                document.onmousemove = document.onmouseup = null;
+            }
+            var box = document.getElementById("box");
+            var box2 = document.getElementById("box2");
+            var d1 = new Drag( box );
+            d1.init();
+
+            function DragLimit(el){
+                Drag.call(this,el);
+                this.maxL = window.innerWidth - this.el.offsetWidth;
+                this.maxT = window.innerHeight - this.el.offsetHeight;
+            }
+            DragLimit.prototype = new Drag();
+            DragLimit.prototype.moveFn = function(ev){
+                var l = ev.clientX - this.disx;
+                var t = ev.clientY - this.disy;
+                if( l<0 )l=0;
+                if( t<0 )t=0;
+                if( l>this.maxL )l=this.maxL;
+                if( t>this.maxT )t=this.maxT;
+                this.el.style.left = l + "px";
+                this.el.style.top = t + "px";
+            }
+
+            var d2 = new DragLimit( box2 );
+            d2.init();
+        </script>
+    </body>
+</html>
