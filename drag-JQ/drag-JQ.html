@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>拖拽JQuery</title>
+        <style>
+            #box{
+                width:100px;
+                height:100px;
+                background-color:red;
+                position: absolute;
+                left: 100px;
+                top: 120px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script src="jquery.js"></script>
+        <script>
+            $("#box").mousedown(function(ev){
+                var disx = ev.pageX - $(this).offset().left,
+                    disy = ev.pageY - $(this).offset().top;
+                $(document).on("mousemove.drag",function(ev){
+                    $("#box").css({"left":ev.pageX - disx,"top":ev.pageY - disy})
+                })
+                $(document).on("mouseup.drag",function(){
+                    $(document).off(".drag");
+                })
+                return false;
+            })
+            $(document).on("mousemove",function(){
+                console.log( "mousemove" );
+            })
+        </script>
+
+    </body>
+</html>
