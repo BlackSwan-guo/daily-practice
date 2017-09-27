@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>商品价格</title>
+        <style>
+            li {
+                list-style: none;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="list">
+            <li>
+                <input type="button" value="-" />
+                <span>0</span>
+                <input type="button" value="+" />
+                单价：<span>12.5</span>元&nbsp;小计：<span>0</span>元
+            </li>
+            <li>
+                <input type="button" value="-" />
+                <span>0</span>
+                <input type="button" value="+" />
+                单价：<span>10.5</span>元&nbsp;小计：<span>0</span>元
+            </li>
+            <li>
+                <input type="button" value="-" />
+                <span>0</span>
+                <input type="button" value="+" />
+                单价：<span>8.5</span>元&nbsp;小计：<span>0</span>元
+            </li>
+            <li>
+                <input type="button" value="-" />
+                <span>0</span>
+                <input type="button" value="+" />
+                单价：<span>8</span>元&nbsp;小计：<span>0</span>元
+            </li>
+            <li>
+                <input type="button" value="-" />
+                <span>0</span>
+                <input type="button" value="+" />
+                单价：<span>14.5</span>元&nbsp;小计：<span>0</span>元
+            </li>
+        </ul>
+        <p>
+            一共<span id="count">0</span>件，一共<span id="sum">0</span>元,<br />其中最贵的商品单价是<span id="maxPri">0</span>元
+        </p>
+        <script>
+            var list = document.getElementById("list");
+            var lis = list.getElementsByTagName("li");
+            var spans = list.getElementsByTagName("span");
+            var count = document.getElementById("count");
+            var sum = document.getElementById("sum");
+            var maxPri = document.getElementById("maxPri");
+            //计算总件数，计算总价,最贵的商品单价
+            function calc(){
+                var countNum = 0;
+                var sumNum = 0;
+                var max = 0;
+                for (var i = 0; i < spans.length; i++) {
+                    if(i%3 == 0){//当前遍历的是件数span
+                        countNum += Number(spans[i].innerHTML);
+                        if( spans[i].innerHTML != 0 ){//如果件数span里的内容不是0
+                            if( Number(spans[i+1].innerHTML)>max ){//件数span后面 的 单价span 的值比max大
+                                max = Number(spans[i+1].innerHTML);
+                            }
+                        }
+                    }
+                    if(i%3 == 2){
+                        sumNum += Number(spans[i].innerHTML)
+                    }
+                }
+                count.innerHTML = countNum;
+                sum.innerHTML = sumNum;
+                maxPri.innerHTML = max;
+            }
+
+            for (var i = 0; i < lis.length; i++) {
+                tab( lis[i] );
+            }
+            function tab(obj){
+                var jianshu = obj.getElementsByTagName("span")[0];
+                var danjia = obj.getElementsByTagName("span")[1];
+                var xiaoji = obj.getElementsByTagName("span")[2];
+                var minus = obj.getElementsByTagName("input")[0];
+                var plus = obj.getElementsByTagName("input")[1];
+                var n = 0;
+                minus.onclick = function(){
+                    n--;
+                    if(n<0) n = 0;
+                    xiaoji.innerHTML = n * danjia.innerHTML;
+                    jianshu.innerHTML = n;
+                    calc();
+                }
+                plus.onclick = function(){
+                    n++;
+                    xiaoji.innerHTML = n * danjia.innerHTML;
+                    jianshu.innerHTML = n;
+                    calc();
+                }
+            }
+        </script>
+    </body>
+</html>
