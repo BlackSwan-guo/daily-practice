@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<button>设置cookie信息</button>
+<button>获取cookie信息</button>
+<button>删除cookie信息</button>
+
+<script>
+    /*
+    * document.cookie
+    *   通过document下的一个cookie属性，我们可以去操作当前域下的cookie，包括设置和获取，删除
+    *
+    *   通过document.cookie方式获取的话，会把所有的cookie通过一个 分号+空格 进行拼接
+    * */
+    var buttons = document.querySelectorAll('button');
+
+    buttons[0].onclick = function() {
+        document.cookie = 'a=1';
+    };
+
+    buttons[1].onclick = function() {
+        console.log(document.cookie);
+        console.log( getCookie('username') );
+    };
+
+    buttons[2].onclick = function() {
+        document.cookie = 'a=1;max-age=-1';
+    };
+
+    function getCookie(key) {
+        var arr1 = document.cookie.split('; ');
+        for (var i=0; i<arr1.length; i++) {
+            var arr2 = arr1[i].split('=');
+            if (arr2[0] == key) {
+                return arr2[1];
+            }
+        }
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!--
+enctype: 用来设置当前表单提交的数据的格式：
+    application/x-www-form-urlencoded：把提交的数据转成urlencoded格式
+    multipart/form-data：把提交的数据转成二进制格式
+    text/plain：把提交的数据转成纯文本格式
+-->
+<form action="/login" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="form-group">
+        <label for="username">用户名：</label>
+        <input type="text" class="form-control" name="username" id="username" placeholder="请输入用户名">
+    </div>
+    <div class="form-group">
+        <label for="password">密码：</label>
+        <input type="password" class="form-control" name="password" id="password" placeholder="请输入密码">
+    </div>
+    <button type="submit" class="btn btn-primary">登录</button>
+</form>
+{% endblock %}
