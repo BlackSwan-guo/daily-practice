@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>首页</h1>
+    <!--<form action="/verifyUsername?type=email" method="post">-->
+    <form action="/verifyUsername" method="post">
+        <p>
+            用户名：<input type="text" id="username" name="username" />
+            <input type="button" id="verifyButton" value="验证用户名" />
+            <div id="msg"></div>
+        </p>
+        <p>
+            <input type="submit" value="提交">
+        </p>
+    </form>
+    <hr />
+    <button id="getXMLBtn">获取xml数据</button>
+    <button id="getJSONBtn">获取xml数据</button>
+    <hr />
+    <button id="useQueryStringBtn">get</button>
+    <button id="useBodyBtn">post</button>
+    <hr />
+    <button id="fetchGetDataBtn">get</button>
+    <button id="fetchPostDataBtn">post</button>
+    <hr />
+    <button id="getFunBtn">封装get</button>
+    <button id="postFunBtn">封装post</button>
+    <script>
+        var verifyButton = document.querySelector('#verifyButton');
+        var username = document.querySelector('#username');
+        var msg = document.querySelector('#msg');
+        var getXMLBtn = document.querySelector('#getXMLBtn');
+        var getJSONBtn = document.querySelector('#getJSONBtn');
+        var useQueryStringBtn = document.querySelector('#useQueryStringBtn');
+        var useBodyBtn = document.querySelector('#useBodyBtn');
+        var fetchGetDataBtn = document.querySelector('#fetchGetDataBtn');
+        var fetchPostDataBtn = document.querySelector('#fetchPostDataBtn');
+        var getFunBtn = document.querySelector('#getFunBtn');
+        var postFunBtn = document.querySelector('#postFunBtn');
+        verifyButton.onclick = function() {
+            // 使用ajax的方式
+            /*
+            * 1. 创建一个ajax对象：XMLHttpRequest，这个对象的作用就是发送http请求，这个对象有兼容问题，ie8+才支持，低版本ie使用的是另外一个对象：ActiveXObject('Mircosoft.XMLHTTP')
+            * */
+            //var xhr = new XMLHttpRequest();
+            var xhr = null;
+            if (window.XMLHttpRequest) {//ie8以上版本
+                xhr = new XMLHttpRequest()
+            } else {
+                xhr = ActiveXObject('Mircosoft.XMLHTTP');//低版本
+            }
+            /*
+            * 配置请求参数，初始化请求
+            *   1. 参数：请求方式，get/post/put/delete/options/head
+            *   2. 参数：请求地址，如果数据是需要通过queryString传输的话，那么拼接在url的？后面
+            *   3. 参数：是否异步，默认true
+            * */
+            xhr.open('get', '/verifyUsername?username=' + username.value, true);//true代表异步
+//            xhr.open('get', '/verifyUsername?username=' + username.value, false);//false代表同步
+            /*
+            * 事件
+            *   当请求完成的时候触发的事件
+            *   在ajax对象下有很多属性：
+            *       responseText：返回的内容，这个是经过ajax对象内部处理过的，转成了字符串，我们通过responseText属性拿到的数据永远都是字符串类型的
+            * */
+            xhr.onload = function() {
+                if (xhr.status == 200) {//http状态码为200，表示服务器已成功处理了请求并提供了请求的网页，访问正常
+                    msg.innerHTML = xhr.responseText;//页面验证提示信息，与服务器端传入相应的验证信息一致
+                }
+            }
+            /*
+            * 发送请求
+            * */
+            xhr.send();
+        }
+        //获取xml数据
+        getXMLBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/getXML', true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+                //当xhr发现返回的类型为xml的时候，会解析两个不同结果，text，xml
+                console.dir(this.responseXML);  //类似document对象
+                var xmldoc = this.responseXML;
+                var toElements = xmldoc.getElementsByTagName('to');
+                for (var i=0; i<toElements.length; i++) {
+                    console.log(toElements[i].innerHTML);
+                }
+            }
+            xhr.send();
+        }
+        //获取xml数据
+        getJSONBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/getJSON', true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+                console.log(JSON.parse(this.responseText));
+            }
+            xhr.send();
+        }
+
+        useQueryStringBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/getData?username=' + encodeURI('用户'), true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+            }
+            xhr.send();
+        }
+        useBodyBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/postData', true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+            }
+            /*
+            * 使用post方式请求并发送数据的时候（通过正文发送），注意：需要同时设置提交数据的类型
+            *
+            * 通过send方法的第一个参数，把数据填充到http的正文中
+            * */
+            xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+            xhr.send('username=用户');
+        }
+        fetchGetDataBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('get', '/getData2?' + Math.random(), true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+            }
+            xhr.send();
+        }
+        fetchPostDataBtn.onclick = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('post', '/postData2', true);
+            xhr.onload = function() {
+                console.log(this.responseText);
+            }
+            xhr.send();
+        }
+        getFunBtn.onclick = async function() {
+            var data = await ajax({
+                method: 'get',
+                url: '/getData',
+                data: 'username=user'
+            });
+            console.log(data);
+        }
+        function ajax(options) {
+            return new Promise(function(resolve, reject) {
+                var opt = {};
+                opt.method = options.method || 'get';
+                opt.url = options.url || '';
+                opt.data = options.data || '';
+                var xhr = new XMLHttpRequest();
+                if (opt.method == 'get') {
+                    opt.url += '?' + opt.data;
+                }
+                xhr.open(opt.method, opt.url, true);
+                xhr.onload = function() {
+                    resolve(this.responseText);
+                }
+                if (opt.method == 'post') {
+                    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+                    xhr.send(opt.data);
+                } else {
+                    xhr.send();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
