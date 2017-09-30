@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        var obj = {
+            x: 100,
+            y: 200
+        }
+
+        /*
+        * forin遍历的是对象的可枚举的key
+        * */
+//        for (var attr in obj) {
+//            console.log(attr);
+//        }
+
+        /*
+        * forof遍历的具备可迭代特性的对象的（key、value），
+        * */
+//        for (var value of obj) {
+//            console.log(value);
+//        }
+
+//        var arr = [1,2,3];
+//        for (var val of arr) {
+//            console.log(val);
+//        }
+//
+//        console.dir(obj);
+//        console.dir(arr);
+
+        /*
+        * 如果我们希望obj可迭代，那么就需要实现obj的可迭代协议和迭代器协议
+        *
+        * 可迭代协议
+        * */
+
+        obj[Symbol.iterator] = function() {
+            var n = 1;
+            return {
+                next() {
+                    n++;
+                    if (n == 5) {
+                        return {
+                            done: true
+                        }
+                    } else {
+                        return {
+                            done: false,
+                            value: n
+                        }
+                    }
+                }
+            }
+        };
+
+        /*
+        * 1. result = obj[Symbol.iterator]()
+        * 2. result必须是一个对象，并且该对象下必须有一个next方法
+        * 3. result2 = result.next()
+        * 4. result2具备两个属性
+        *   1. value：给of之前的变量使用
+        *   2. done：布尔值，表示该次循环是否结束
+        * 5. 如果result2中的done是false，表示继续循环，继续调用result.next()
+        * */
+        for (var val of obj) {
+            console.log(val);
+        }
+
+    </script>
+</body>
+</html>

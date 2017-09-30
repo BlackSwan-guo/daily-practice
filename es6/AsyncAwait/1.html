@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * Async...Await
+        *   es7
+        * */
+
+        var url = [
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg',
+            'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722497&di=2c4747f4e517dd1b364c90db05061a4a&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201403%2F09%2F20140309195828_BTTnA.jpeg'
+        ]
+
+        document.onclick = async function () {
+//            loadImg(url[0]).then(function(v) {
+//                console.log(v);
+//                return loadImg(url[1])
+//            }).then(function (v) {
+//                console.log(v);
+//            });
+
+            // await 等待 loadImg的resolved状态
+            var w1 = await loadImg(url[0]);
+            console.log(w1);
+            var w2 = await loadImg(url[1]);
+            console.log(w2);
+        }
+
+        function loadImg(url) {
+            return new Promise(function (resolve) {
+                var img = new Image();
+                img.src = url;
+                img.onload = function() {
+                    resolve(this.width);
+                }
+            })
+        }
+
+    </script>
+</body>
+</html>

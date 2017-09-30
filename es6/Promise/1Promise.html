@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * Promise
+        * */
+//        var img = document.createElement('img');
+//        var img = new Image();
+//        img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+//
+//        var a = false,b=false;
+//        img.onload = function() {
+//            a = true
+//            if (a && b) {
+//
+//            }
+//            console.log(img.width);
+//        }
+//        var img2 = new Image();
+//        img2.onload = function() {
+//            b = true
+//            if (a && b ) {
+//
+//            }
+//        }
+//        console.log(1);
+//        var img1 = new Image();
+//        var img2 = new Image();
+//        var img3 = new Image();
+        var img = new Image();
+        img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+        var a = false,b = false;
+        img.onload = function () {
+            a = true;
+            if( a&&b ){
+
+            }
+            console.log(img.width);
+        }
+        var img2 = new Image();
+        img2.onload = function () {
+            b = true;
+            if( a&&b ){
+
+            }
+        }
+        console.log(1);
+        var img1 = new Image();
+        var img2 = new Image();
+        var img3 = new Image();
+    </script>
+</body>
+</html>

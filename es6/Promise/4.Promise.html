@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        new Promise( function(resolve, reject) {
+            var img = new Image();
+            img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+            img.onload = function() {
+                resolve(this.width);
+            }
+        } ).then(function(v) {
+            console.log('第一张加载完成' + v);
+            return new Promise(function (resolve, reject) {
+                var img = new Image();
+                img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722497&di=2c4747f4e517dd1b364c90db05061a4a&imgtype=0&src=http%3A%2F%2Fcdn.duitang.com%2Fuploads%2Fitem%2F201403%2F09%2F20140309195828_BTTnA.jpeg';
+                img.onload = function() {
+                    resolve(this.width);
+                }
+            })
+        }).then(function (v) {
+            console.log('第二张加载完成' + v);
+        });
+
+    </script>
+</body>
+</html>

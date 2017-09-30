@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * 函数参数默认值
+        *   在定义函数的形参列表中，直接给一个参数赋值，那么这个值就是该参数的默认值
+        *
+        *   在给参数定义默认值的时候，需要注意的是，如果有多个参数，并且有的有默认值，有的没有，那么有默认值参数放在形参列表中最后面
+        * */
+
+//        function fn(a) {
+//            var a = a || 10;
+//        }
+
+        function fn2(a = 10) {
+            console.log(a);
+        }
+
+        function fn3(a, b, c = 10) {
+
+        }
+
+        fn2();
+        fn2(11);
+
+        fn3(1, 2)
+
+    </script>
+</body>
+</html>

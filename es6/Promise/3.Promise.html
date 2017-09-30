@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+//        var img = new Image();
+
+//        new Promise( function(resolve, reject) {
+//            img.src = '1.jpg';
+//
+//            img.onload = function() {
+//                resolve();
+//            }
+//            img.onerror = function() {
+//                console.log('error');
+//                reject();
+//            }
+//        } ).then(function() {
+//            console.log(img.width);
+//        }).catch(function () {
+//            console.log('错误了');
+//        });
+
+//        new Promise( function(resolve, reject) {
+//            img.src = '1.jpg';
+//            img.onload = function() {
+//                resolve();
+//            }
+//            img.onerror = function() {
+//                console.log('error');
+//                reject();
+//            }
+//        } ).then(function() {
+//            console.log(img.width);
+//        }, function() {
+//            console.log('错误了');
+//        });
+        var img = new Image();
+        new Promise(function (resolve,reject) {
+            img.src = '1.jpg';
+            img.onload = function () {
+                resolve();
+            }
+            img.onerror = function () {
+                console.log('error');
+                reject();
+            }
+        }).then(function () {
+            console.log(img.width);
+        },function () {
+            console.log("错误了");
+        })
+
+    </script>
+</body>
+</html>

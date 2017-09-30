@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        console.log( NaN === NaN );
+        console.log( +0 === -0 );
+
+        console.log( Object.is( NaN, NaN ) );
+        console.log( Object.is( +0, -0 ) );
+
+        function is(a, b) {
+            return isNaN(a) && isNaN(b);
+        }
+        
+        console.log( is(NaN, NaN) );
+
+    </script>
+</body>
+</html>

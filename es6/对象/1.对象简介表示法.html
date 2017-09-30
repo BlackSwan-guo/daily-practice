@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        var a = 10;
+        var b = 20;
+        var c = 30;
+
+        var obj = {
+            a: a,
+            b: b,
+            val: c,
+
+            method: function() {
+
+            },
+
+            method1() {
+
+            }
+        };
+
+        /*
+        * 如果一个对象的key和他的value（变量）名相同的情况下，可以简写
+        * */
+        var obj1 = {a, b, val: c}
+
+        console.log(obj);
+        console.log(obj1);
+
+
+
+        var key = 'miaov';
+
+        var obj2 = {
+            [key]: '妙味',
+            ['a' + 'b']: '课堂'
+        };
+        
+        console.log(obj2.miaov);
+
+    </script>
+</body>
+</html>

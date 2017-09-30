@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            background-color: red;
+        }
+    </style>
+    <script src="animation.js"></script>
+</head>
+
+<body>
+
+    <button>按钮</button>
+    <div></div>
+
+    <script>
+
+        var button = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        button.onclick = function() {
+
+//            animation(div, {
+//                width: 200
+//            }, 500, 'backOut', function() {
+//                animation(div, {
+//                    height: 200
+//                })
+//            });
+
+            startMove(div, {
+                width: 200
+            }).startMove(div, {
+                height: 200
+            }).startMove(div, {
+                left: 200
+            }).startMove(div, {
+                top: 200
+            }).startMove(div, {
+                opacity: 0
+            });
+
+//            startMove(div, {
+//                width: 200
+//            })
+//            startMove(div, {
+//                height: 200
+//            })
+//            startMove(div, {
+//                left: 200
+//            })
+//            startMove(div, {
+//                top: 200
+//            })
+//            startMove(div, {
+//                opacity: 0
+//            });
+        }
+
+//        let p1 = new Promise(startMove1)
+//        p1 = p1.then(new Promise(startMove2))
+//        p1 = p1.then(p1 = new Promise(startMove2))
+
+        let p;
+
+        function startMove(ele, attrs, duration=1000, fx='linear') {
+            console.log(1);
+            //animation(ele, attrs, duration, fx);
+
+            // 为了能够让多次运动有先后，那么多次的animation需要通过同一个Promise来处理
+            // 第一次调用的时候，初始化一个Promise，后续的startMove是在已有的Promise对象的then方法中
+
+            if (!ele.promise) {
+                p = ele.promise = new Promise((resolve, reject) => {
+                    animation(ele, attrs, duration, fx, ()=> {
+                        resolve();
+                    });
+                });
+            } else {
+                // 从第二个startMove开始，都需要在这里调用
+                // 后续的每次startMove调用的时候，都需要用一个新的Promise对象覆盖原来的
+                console.log(p == ele.promise);
+                ele.promise = ele.promise.then(() => {
+                    return new Promise((resolve) => {
+                        animation(ele, attrs, duration, fx, ()=> {
+                            resolve();
+                        });
+                    })
+                })
+            }
+
+
+
+            // 为了保证能够在调用完一次startMove以后还能继续调用startMove，这里返回当前调用startMove的对象
+            return this;
+        }
+
+    </script>
+
+</body>
+</html>

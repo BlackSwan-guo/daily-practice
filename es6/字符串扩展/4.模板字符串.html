@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        * js中新增的一种字符串的表示方法
+        *   ``
+        * 他的功能更加的强大
+        *   1. 能够保留编辑格式
+        *   2. 支持一种模板语法
+        *       ${表达式}
+        * */
+
+        var username = 'tongbin';
+
+        var str = `
+        <ul>
+            <li>${username.toUpperCase()}</li>
+        </ul>
+        `;
+
+        console.log(str);
+    </script>
+</body>
+</html>

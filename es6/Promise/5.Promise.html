@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        * 如果有多个Promise任务同时进行，后续需要多个任务全部完成以后再做下一件事情
+        *
+        * Promise.all([taskQueue])
+        * */
+//
+//        let task1 = new Promise(function (resolve, reject) {
+//                var img = new Image();
+//                img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+//                img.onload = function() {
+//                    resolve(this.width);
+//                }
+//                img.onerror = function() {
+//                    reject('第一张图片加载失败');
+//                }
+//            })
+        let task1 = new Promise(function (resolve,reject) {
+            var img = new Image();
+            img.src ='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+            img.onload = function () {
+                resolve(this.width);
+            }
+            img.onerror = function () {
+                reject('第一张图片加载失败');
+            }
+        })
+
+//        let task2 = new Promise(function (resolve, reject) {
+//                var img = new Image();
+//                img.src = '1.jpg';
+//                img.onload = function() {
+//                    resolve(this.width);
+//                }
+//                img.onerror = function() {
+//                    reject('第二张图片加载失败');
+//                }
+//            })
+        let task2 = new Promise(function (resolve,reject) {
+            var img = new Image();
+            img.src = '1.jpg';
+            img.onload = function () {
+                resolve(this.width);
+            }
+            img.onerror = function () {
+                reject('第二张图片加载失败');
+            }
+        })
+
+
+//        Promise.all([task1, task2]).then(function (result) {
+//            console.log(result);
+//        }).catch(function (err) {
+//            console.log(err);
+//        })
+        Promise.all([task1,task2]).then(function (result) {
+            console.log(result);
+        }).catch(function (err) {
+            console.log(err)
+        })
+
+    </script>
+</body>
+</html>

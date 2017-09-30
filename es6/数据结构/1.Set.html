@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        /*
+        * Set
+        *   集合结构，es6新增
+        *   类似数组，特点：存储唯一值
+        *
+        *   size : 集合中数据的个数，类似数组的length
+        *
+        *   add() : 添加数据
+        *   clear() : 清空数据
+        *   delete() : 删除指定数据
+        *   entries() : 结构key-value
+        *   forEach() : 遍历
+        *   has() : 判断某个数据是否存在
+        *   keys() : 返回所有的key
+        *   values() : 返回所有的value
+        * */
+
+        var s1 = new Set();
+
+        s1.add('motao');
+        // 忽略
+        s1.add('motao');
+        s1.add('xiaohan');
+        s1.add('tongbin');
+
+        console.log(s1);
+
+        s1.delete('xiaohan')
+        console.log(s1);
+        
+        console.log(s1.has('motao'));
+        
+//        console.log(s1.values());
+//
+//        for (var v of s1.values()) {
+//            console.log(v);
+//        }
+
+        s1.forEach(item => {
+            console.log(item);
+        })
+
+//        s1.clear();
+//        console.log(s1);
+
+        var arr = [...s1];
+
+        console.log(arr[0]);
+
+
+        // 去重
+        var arr1 = [1,4,5,2,3,1,4,5,6,7,8,2,1];
+
+        console.log( [...new Set(arr1)] );
+
+
+
+        function fn1() {
+//            var a = [1,2,3];
+            var a = new WeakSet();
+            a.add([1,2,3]);
+            return a;
+        }
+
+        var x = fn1();
+
+        setInterval(function () {
+            console.log(x);
+        }, 1);
+
+    </script>
+</body>
+</html>

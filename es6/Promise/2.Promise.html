@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * Promise
+        * 是一个构造函数，他接收一个函数参数，这个函数一般都会包含一个异步操作
+        * Promise在处理一个任务的时候，通过会维护一个状态属性，该属性有三个值：
+        *   pending：正在进行
+        *   resolved：已完成
+        *   rejectd：失败
+        *
+        * 当状态发生改变的时候，会自动调用Promise对象下的一个叫then的方法
+        * 注意：Promise的状态是由我们编写程序的人去完成改变的
+        *
+        * 在Promise参数的函数中，会接收到两个参数，这两个参数都是一个函数，我们只需要根据实际情况调用这两个参数函数就可以了
+        *   第一个参数调用后，会把当前的Promise对象的状态改成：resolved
+        *   第二个参数调用后，会把当前的Promise对象的状态改成：rejected
+        * */
+
+//        var img = new Image();
+//        let p1 = new Promise( function(resolve, reject) {
+//            img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+//            img.onload = function() {
+//                resolve();
+//            }
+//        } );
+        var img = new Image();
+        let p1 = new Promise(function (resolve,reject) {
+            img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1505903722116&di=1b30b39702d6f12a89704ae112cfc158&imgtype=0&src=http%3A%2F%2Fcimg.taohuaan.net%2Fupload%2F201211%2F09%2F161159Wq7P8.jpg';
+            img.onload = function () {
+                resolve();
+            }
+        });
+
+//        p1.then(function() {
+//            console.log(img.width);
+//        });
+        //        console.log(p1);
+        p1.then(function () {
+            console.log(img.width);
+        })
+        console.log(p1);
+        //console.log(img.width);
+
+
+//        new Promise(function (resolve) {
+//            let img1 = new Image();
+//            img1.onload = function() {
+//                resolve();
+//            }
+//        }).then(function () {
+//            let img2 = new Image();
+//            img2.onload = function() {
+//                resolve();
+//            }
+//        }).then(function () {
+//            let img3 = new Image();
+//            img3.onload = function() {
+//                resolve();
+//            }
+//        }).then(function () {
+//            let img4 = new Image();
+//            img4.onload = function() {
+//                resolve();
+//            }
+//        });
+        new Promise(function (resolve) {
+           let img1 = new Image();
+           img1.onload = function () {
+               resolve();
+           }
+        }).then(function () {
+            let img2 = new Image();
+            img2.onload = function () {
+                resolve();
+            }
+        }).then(function () {
+            let img3 = new Image();
+            img3.onload = function () {
+                resolve();
+            }
+        }).then(function () {
+            let img4 = new Image();
+            immg4.onload = function () {
+                resolve()
+            }
+        });
+    </script>
+</body>
+</html>

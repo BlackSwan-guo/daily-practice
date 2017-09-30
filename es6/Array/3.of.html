@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        *
+        * */
+
+        var arr1 = new Array(1,2,3);
+
+        console.log(arr1);
+
+        var arr2 = [1,2,3];
+
+        console.log(arr2);
+
+        var arr3 = [10];
+
+        console.log(arr3);
+
+        /*
+        * 如果使用new的方式，并且只传入一个数字参数，那么这个参数将作为新数组的长度，而不是值
+        * */
+        var arr4 = new Array(10);
+
+        console.log(arr4);
+
+        /*
+        * of就是为了解决上面这个问题
+        * */
+        var arr5 = Array.of(10);
+
+        console.log(arr5);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * 解构赋值
+        *   解构
+        *   赋值
+        * */
+
+        var arr = ['motao', 'tongbin', 'xiaohan'];
+
+//        var a = arr[0];
+//        var b = arr[1];
+//        var c = arr[2];
+
+        /*
+        * 把数组中的每一个值，赋值给左侧的每一个对应的变量
+        * 注意：左侧变量的位置和右侧数组中值是一一对应的
+        * */
+//        var [a, b, c] = arr;
+//        console.log(a, b, c);
+
+//        var [a, ,c] = arr;
+//        console.log(a, c);
+
+        var obj = {width:100, height: 200}
+
+        /*
+        * 和数组类似，但是需要注意的是，左侧的变量名称需要和右侧对象中需要被解构出来的key的名称是一一对应的
+        * */
+//        var {width, height} = obj;
+//        console.log(width, height);
+
+        /*
+        * 如果提取的名称需要换成另外一个名称：
+        * */
+//        var width = 1000;
+//        var {width: L, height: H} = obj;
+//        console.log(L, H, width);
+
+
+        //console.dir( getComputedStyle(document.body) );
+        
+//        console.log(getComputedStyle(document.body).width);
+//        console.log(getComputedStyle(document.body).height);
+
+        var {width, height} = getComputedStyle(document.body);
+        console.log(width, height);
+
+        /*
+        * window：当前窗口
+        * self：当前窗口
+        * parent：父级窗口
+        * top：顶级窗口
+        * */
+
+//        console.log(window);
+
+    </script>
+
+    <iframe src="" frameborder="0"></iframe>
+</body>
+</html>

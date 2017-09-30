@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * 扩展运算符
+        *   ...
+        *
+        *   把数组（可迭代对象）变成参数列表的形式
+        * */
+
+        var arr = ['a','b','c'];
+
+       // ...arr => 'a','b','c'
+
+        function fn(x, y, z) {
+            console.log(x, y, z);
+        }
+
+//        fn( 'a', 'b', 'c' );
+        fn( ...arr );
+
+        var arr2 = [1,2,3, ...arr];
+
+        console.log(arr2);
+
+        console.log( ['miaov', ...arr, ...arr2] );
+
+
+        /*
+        * 求数组中最大值
+        * */
+        var num = [1,8,234,345,5,653,42,23];
+
+        console.log( Math.max(...num) );
+
+        console.log( Math.max.apply(null, num) );
+
+        console.log(num.sort(function(a, b) {
+            return b - a;
+        })[0]);
+
+//      var maxValue = num[0];
+//      for (var i=1; i<num.length; i++) {
+//          if (num[i] > maxValue) {
+//              maxValue = num[i];
+//          }
+//      }
+//      console.log(maxValue);
+        
+		var maxValue = num[0];
+		for( var i = 0; i < num.length;i++ ){
+			if( num[i] > maxValue ){
+				maxValue = num[i];
+			}
+		}
+		console.log(maxValue);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        var str = '一';
+        var str2 = '🤳';
+
+        console.log( str.charCodeAt(0) );
+        console.log( String.fromCharCode(0x4e00) );
+
+        // 使用charCodeAt或者fromCharCode是不能正常处理4字节内容的
+//        console.log( str2.charCodeAt(0) );
+
+        console.log( str2.codePointAt(0) );
+        console.log( String.fromCodePoint(129331) );
+    </script>
+</body>
+</html>

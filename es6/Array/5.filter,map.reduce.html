@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <ul>
+        <li></li>
+        <li>1e2e21</li>
+        <li></li>
+        <li>sdsds</li>
+        <li>asdasd</li>
+        <li></li>
+    </ul>
+
+    <script>
+
+        var arr = [5,60,3,51,67,23];
+
+        /*
+        * 新数组和原数组的结构（长度）是保持一致的，但是内容可以不一样
+        * */
+        var arr1 = arr.map(function (a) {
+            return a < 10 ? a * 10 : a;
+        });
+
+        console.log(arr1);
+
+        var lis = Array.from(document.querySelectorAll('li'));
+
+        lis.forEach(function (li) {
+            if (li.innerHTML == '') {
+                li.style.background = 'red';
+            }
+        });
+        /*
+                * 新数组和原数组的结构（长度）可以不一致，但是内容必须是原数组中的值，所以回调函数的返回值不是返回一个新的值，而是一个布尔值，通过布尔值表示当前这次循环的值是否在新的数组中予以保留
+                * */
+        var arr2 = arr.filter(function (a) {
+            return a < 10;
+        });
+        console.log(arr2);
+        /*
+        * 循环数组
+        *
+        * 5,60,3,51,67,23
+        * */
+        var value = arr.reduce(function (prevValue, v) {
+//            console.log(prevValue, v);
+            return prevValue + v;
+        });
+        console.log(value);
+
+        var html = lis.map(function (li) {
+            return li.innerHTML;
+        }).reduce(function (prev, v) {
+            return prev + v;
+        })
+        console.log(html);
+    </script>
+</body>
+</html>

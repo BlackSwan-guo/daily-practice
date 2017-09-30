@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body style="height: 1000px;">
+    <script>
+
+        /*
+        * 1. 箭头函数中的this和普通函数不一样，箭头函数的this申明的期绑定，而不是执行期绑定
+        * 2. 箭头函数不要作为事件函数去使用，因为箭头函数的this是在申明期绑定
+        * 3. 箭头函数不能作为构造函数去使用，也就是不能使用new
+        * 4. 箭头函数没有arguments
+        * */
+
+        function fn1() {
+            console.log(this);
+        }
+
+        // 函数被调用的时候绑定this
+//        fn1();
+//        document.onclick = fn1;
+
+
+
+        // 函数在申明的时候已经绑定好this，这里fn2的申明作用域在全局，所以this指向window
+        var fn2 = () => {
+            console.log(this);
+        }
+
+        fn2();
+        document.onclick = fn2;
+
+        /*function fn3() {
+            console.log(this);
+        }
+        document.onclick=fn3;*/
+
+
+        /*var a = 1;
+        var obj = {
+            a: 10,
+            fn1() {
+                // this => obj
+                return () => {
+                    console.log(this.a);
+                }
+            },
+            fn2() {
+                // this => obj
+                return function() {
+                    console.log(this.a);
+                }
+            }
+        }*/
+
+//        obj.fn1()();
+//        obj.fn2();
+
+
+
+        /*document.body.onclick = function() {
+
+            console.log(1);
+
+//            setTimeout(function() {
+//                this.style.background = 'red';
+//            }, 1000)
+
+            var fn = () => {
+                this.style.background = 'red';
+            }
+            setTimeout(fn, 1000)
+        }
+
+//        var a = 1;
+//
+//        function fn(x) {
+//            console.log(x);
+//        }
+//
+//        fn(1);
+
+        /!*
+        * 箭头不要作为事件函数去调用
+        * *!/
+        document.onclick = () => {
+            console.log(this);
+        }
+*/
+    </script>
+</body>
+</html>

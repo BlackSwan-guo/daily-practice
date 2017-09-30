@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 40px;
+            background-color: red;
+        }
+    </style>
+    <script src="animation.js"></script>
+</head>
+
+<body>
+
+    <button>按钮</button>
+    <div></div>
+
+    <script>
+
+        var button = document.querySelector('button');
+        var div = document.querySelector('div');
+
+        button.onclick = function() {
+
+//            animation(div, {
+//                width: 200
+//            }, 500, 'backOut', function() {
+//                animation(div, {
+//                    height: 200
+//                })
+//            });
+
+            startMove(div, {
+                width: 200
+            }).startMove(div, {
+                height: 200
+            }).startMove(div, {
+                left: 100
+            });
+        }
+
+        function startMove(ele, attrs, duration=500, fx='linear') {
+
+            // queue : 存储所有运动
+            if (!ele.queue) {
+                ele.queue = [];
+            }
+            ele.queue.push((callback) => {
+                animation(ele, attrs, duration, fx, function() {
+                    callback && callback();
+                });
+            });
+
+            new Promise((resolve) => {
+                let callback = ele.queue.shift();
+                callback(function() {
+                    resolve();
+                });
+            }).then(function() {
+
+            });
+
+            return this;
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * 编码的作用：人类和计算进行数据交换的规则
+        *
+        * ASCII
+        *   GB2312
+        *   BIG5
+        *       GBK
+        *
+        *   Unicode
+        *       utf-8
+        *       utf-16
+        *       utf-32
+        * */
+        
+//        console.log('𠮷'.length);
+//
+//        console.log( '𠮷'.charCodeAt(0) );
+//        console.log( '𠮷'.charCodeAt(1) );
+//
+//        console.log( '𠮷'.codePointAt(0) );
+
+        // 1F933
+
+        console.log('你好');
+        console.log('\u4f60\u597d');
+
+        // 原来js对这种4字节的编码会解析有误，es6新增了对这种编码的解析处理方法
+        console.log('\u1F933');
+        console.log('\u{1F933}');
+    </script>
+</body>
+</html>

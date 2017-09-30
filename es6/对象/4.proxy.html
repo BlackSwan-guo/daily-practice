@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        let obj = {x: 10, y: 20};
+
+        let p = new Proxy(obj, {
+            get(a, attr) {
+//                console.log(arguments);
+                if (attr == 'x') {
+                    return a.x;
+                } else {
+                    return '...';
+                }
+            }
+        });
+
+//        console.log(p.x);
+
+        Object.prototype.a = 1000;
+
+        var obj3 = {
+            left: 100,
+            top: 200
+        };
+        obj3.width = 300;   //enumerable默认是true
+
+        // enumerable默认是false
+        Object.defineProperty(obj3, 'height', {
+            value: 400,
+            enumerable: true,
+            configurable: true,
+            writable: false
+        });
+
+        for (var attr in obj3) {
+            if (obj3.hasOwnProperty(attr)) {
+                console.log(attr, obj3[attr]);
+            }
+        }
+
+    </script>
+</body>
+</html>

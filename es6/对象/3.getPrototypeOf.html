@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        function Person() {}
+
+        var p1 = new Person();
+
+        // 这个 __proto__ 是非标准属性
+        console.log(p1.__proto__);  //Person.prototype
+
+        console.log( Object.getPrototypeOf(p1) );
+    </script>
+</body>
+</html>

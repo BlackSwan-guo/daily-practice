@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+
+        var obj = {
+            x: 100,
+            y: 200
+        };
+//        console.log( Object.keys(obj) );
+
+        obj[Symbol.iterator] = function() {
+            var keys = Object.keys(obj);
+            var len = keys.length;
+            var n = 0;
+
+            return {
+                next() {
+
+                    if (n < len) {
+                        var key = keys[n];
+                        var val = obj[ key ];
+                        n++;
+                        return {
+                            done: false,
+//                            value: val,
+//                            value: key,
+                            value: {k: key, v: val}
+                        }
+                    } else {
+                        return {
+                            done: true
+                        }
+                    }
+                }
+            }
+        };
+
+        for (var {k, v} of obj) {
+            console.log(k, v);
+        }
+
+    </script>
+</body>
+</html>

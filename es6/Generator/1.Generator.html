@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * 生成器对象是由一个 generator function 返回的,并且它符合可迭代协议和迭代器协议。
+        *
+        * generator function
+        *   生成器函数
+        * */
+
+        function* gen() {
+            console.log(1);
+            yield 1;    //产生一个值，并且暂停程序执行
+            console.log(2);
+            yield 2;
+            console.log(3);
+            yield 3;
+            console.log(4);
+        }
+
+        /*
+        * 我们去调用一个生成器函数，该函数返回一个生成器对象，但是不会执行函数中任何一句代码，我们需要调用生成器对象的next方法来执行函数
+        * */
+        let g = gen();
+
+        var v = g.next();
+        console.log(v);
+        g.next();
+        g.next();
+        g.next();
+
+//        console.dir(g);
+
+    </script>
+</body>
+</html>

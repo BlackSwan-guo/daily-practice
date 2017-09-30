@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * es6之前是通过 var 来申明一个变量
+        *
+        * 在es6中新增了一个申明变量的方式：
+        *   let
+        *
+        * 特点：
+        *   1. 通过let申明的变量必须先申明，后使用
+        *       var 是可以先使用，再申明
+        *   2. 暂存死区：上面第一条高大上的叫法
+        *   3. 不能重复申明
+        *   4. 支持块级作用域
+        * */
+//        let a = 10;
+//        console.log(a);
+        // 变量申明预解析
+//        console.log(b);
+//        var b = 10;
+        // let 申明的变量不会有预解析
+//        console.log(b);
+        let b = 10;
+        let b = 20;
+    </script>
+</body>
+</html>

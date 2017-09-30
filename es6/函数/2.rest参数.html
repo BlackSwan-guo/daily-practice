@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * rest参数
+        *   有些时候，我们的函数可能接收一些不定个数的参数，原来我们是通过函数内部的一个变量 - arguments来处理这种不定参
+        *
+        *   在es6中新增了一个rest参数
+        *
+        *       1. ...rest参数
+        *       2. ...rest参数接收的时候具名形参以外的所有实参数据
+        *       3. ...rest参数必须是尾参数，...rest参数只能是形参列表中的最后一个
+        * */
+
+//        function fn() {
+//            console.log(arguments);
+//        }
+//
+//        fn( 1,2,3 );
+//        fn( 1,2,3,4 );
+//        fn( 1,2,3,4,5,6 );
+
+
+        function arraySplice() {
+            var arr = arguments[0];
+            var start = arguments[1] || 0;
+            var count = arguments[2] || 0;
+            var newArr = [];
+            var addArr = [];
+            var isAdd = false;
+
+            // 把要增加的数据保存到一个数组中
+            for (var i=3; i<arguments.length; i++) {
+                addArr[addArr.length] = arguments[i];
+            }
+
+            for (var i=0; i<arr.length; i++) {
+                if (i < start) {
+                    newArr[ newArr.length ] = arr[i];
+                } else {
+                    if (count <= 0) {
+
+                        // 删除已经完成
+
+                        // 把addArr中的值添加到当前数组中
+                        if (!isAdd) {
+                            for (var j=0; j<addArr.length; j++) {
+                                newArr[ newArr.length ] = addArr[j];
+                            }
+                            isAdd = true;
+                        }
+
+                        newArr[ newArr.length ] = arr[i];
+                    }
+                    count--;
+                }
+            }
+
+            return newArr;
+        }
+
+        function arraySpliceRest(arr=[], start=0, count=0, ...addArr) {
+            var newArr = [];
+            var isAdd = false;
+
+            for (var i=0; i<arr.length; i++) {
+                if (i < start) {
+                    newArr[ newArr.length ] = arr[i];
+                } else {
+                    if (count <= 0) {
+
+                        // 删除已经完成
+
+                        // 把addArr中的值添加到当前数组中
+                        if (!isAdd) {
+                            for (var j=0; j<addArr.length; j++) {
+                                newArr[ newArr.length ] = addArr[j];
+                            }
+                            isAdd = true;
+                        }
+
+                        newArr[ newArr.length ] = arr[i];
+                    }
+                    count--;
+                }
+            }
+
+            return newArr;
+        }
+
+        var newArr = arraySplice([1,2,3,4,5,6,7,8], 2, 3, 'a', 'b', 'c');
+
+        var newArr2 = arraySpliceRest([1,2,3,4,5,6,7,8], 2, 3, 'a', 'b', 'c');
+
+        console.log( newArr );
+        console.log( newArr2 );
+
+    </script>
+</body>
+</html>
