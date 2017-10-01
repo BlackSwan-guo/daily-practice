@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>八方拖拽</title>
+        <style>
+            #box{
+                width:100px;
+                height:100px;
+                background-color:pink;
+                position: absolute;
+                left: 300px;
+                top: 200px;
+                cursor: default;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+            var box = document.getElementById("box");
+            var dir = "";
+            var changeCursor = true;
+            box.onmousemove = function(ev){
+                if( !changeCursor ){
+                    return
+                }
+                var pos = box.getBoundingClientRect();
+                dir = "";
+                if( ev.clientY < pos.top + 10 ){
+                    dir += "n";
+                }
+                if( ev.clientY > pos.bottom -10 ){
+                    dir += "s";
+                }
+                if( ev.clientX < pos.left + 10 ){
+                    dir += "w";
+                }
+                if( ev.clientX > pos.right -10 ){
+                    dir += "e";
+                }
+
+                box.style.cursor = dir + "-resize";
+                if( dir == "" ){
+                    box.style.cursor ="default";
+                }
+            }
+            box.onmousedown = function(ev){
+                var oriW = box.offsetWidth;
+                var oriH = box.offsetHeight;
+                var oriL = box.getBoundingClientRect().left;
+                var oriT = box.getBoundingClientRect().top;
+                var oriX = ev.clientX;
+                var oriY = ev.clientY;
+                changeCursor = false;
+                document.onmousemove = function(ev){
+                    if( dir.indexOf("e") != -1 ){//右
+                        box.style.width = oriW + ev.clientX - oriX + "px";
+                    }
+                    if( dir.indexOf("s") != -1 ){//下
+                        box.style.height = oriH + ev.clientY - oriY + "px";
+                    }
+                    if( dir.indexOf("w") != -1 ){//左
+                        box.style.width = oriW + oriX - ev.clientX + "px";
+                        box.style.left = ev.clientX - ( oriX - oriL ) + "px";
+                    }
+                    if( dir.indexOf("n") != -1 ){//上
+                        box.style.height = oriH + oriY - ev.clientY + "px";
+                        box.style.top = ev.clientY - ( oriY - oriT ) + "px";
+                    }
+                }
+                document.onmouseup = function(){
+                    document.onmousemove = null;
+                    box.style.cursor = "default";
+                    changeCursor = true;
+                }
+            }
+        </script>
+    </body>
+</html>
