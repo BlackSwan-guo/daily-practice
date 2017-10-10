@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <button>获取数据</button>
+
+    <script>
+        var button = document.querySelector('button');
+
+        button.onclick = function () {
+
+            var xhr = new XMLHttpRequest();
+            
+//            xhr.open('get', '/data', true);
+            //xhr.open('get', 'https://www.baidu.com', true);
+
+            xhr.open('get', '/getbaidu', true);
+
+            xhr.onload = function () {
+                console.log(this.responseText);
+            };
+            
+            xhr.send();
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #wd {
+            padding: 5px;
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 24px;
+            border: 1px solid #f90;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            border: 1px solid #f90;
+            width: 310px;
+            list-style: none;
+            display: none;
+        }
+        a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+        }
+        a:hover {
+            background: #f90;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="wd" />
+    <ul></ul>
+    <script>
+        var wd = document.querySelector('#wd');
+        var ul = document.querySelector('ul');
+//        var data = {"result":[["iphone8","5808744"],["iphone7手机壳","4745260"],["iphone7","3548592"],["iphone7plus手机壳","4482864"],["iphone8手机壳","3202966"],["iphone7plus","3271553"],["iphone6手机壳","4137114"],["iphonex","187163"],["iphone8plus手机壳","2831685"],["iphone6","2831533"]],"tmall":"iphone"}
+        function miaov(data) {
+            var result = data.result;
+            if (result.length) {
+                ul.style.display = 'block';
+                var html = '';
+                result.forEach( item => {
+                    html += `<li>
+                                <a href="https://s.taobao.com/search?q=${item[0]}" target="_blank">${item[0]}</a>
+                             </li>`;
+                } );
+                ul.innerHTML = html;
+
+            } else {
+                ul.style.display = 'none';
+            }
+        }
+        wd.oninput = function () {
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://suggest.taobao.com/sug?code=utf-8&q='+ this.value +'&callback=miaov';
+            document.body.appendChild(scriptElement);
+        }
+    </script>
+</body>
+</html>

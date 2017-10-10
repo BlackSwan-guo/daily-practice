@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <button id="button1">获取数据</button>
+    <div id="div1"></div>
+
+    <hr />
+
+    <button id="button2">获取数据</button>
+    <div id="div2"></div>
+
+    <script>
+        var button1 = document.querySelector('#button1');
+        var div1 = document.querySelector('#div1');
+
+        var button2 = document.querySelector('#button2');
+        var div2 = document.querySelector('#div2');
+
+        function fn(a) {
+            div1.innerHTML = a;
+        }
+        function miaov(a) {
+            div2.innerHTML = a;
+        }
+        button1.onclick = function () {
+
+            /*
+            *   当script写在html中，那么script是同步加载的
+            *   但是，如果是通过脚本添加的，那么script加载是异步的
+            * */
+
+            var scriptElement = document.createElement('script');
+
+            scriptElement.src = 'http://localhost:8888/jsonp-data';
+            /*
+            * 因为onload事件不兼容，在低版本的ie中使用的是onreadystatechange事件
+            * */
+            document.body.appendChild(scriptElement);
+        }
+        button2.onclick = function () {
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'http://localhost:8888/jsonp-data?callback=miaov';
+            document.body.appendChild(scriptElement);
+        }
+    </script>
+</body>
+</html>
