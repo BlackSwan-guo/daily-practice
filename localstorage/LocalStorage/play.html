@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h1>播放列表</h1>
+    <hr />
+    <ul></ul>
+
+    <script>
+        var ul = document.querySelector('ul');
+        var data = localStorage.getItem('a') ? JSON.parse(localStorage.getItem('a')) : [];
+        renderList();
+        window.addEventListener('storage', function (e) {
+            data = JSON.parse(localStorage.getItem('a'));
+            renderList();
+        });
+        function renderList() {
+            var html = '';
+            data.forEach(function (item) {
+                html += '<li>'+ item +'</li>'
+            });
+            ul.innerHTML = html;
+        }
+    </script>
+
+</body>
+</html>

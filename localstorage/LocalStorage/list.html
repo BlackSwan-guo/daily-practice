@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <ul>
+        <li>带你去旅行</li>
+        <li>远走高飞</li>
+        <li>在人间</li>
+        <li>消愁</li>
+        <li>追光者</li>
+        <li>时间都去哪了</li>
+    </ul>
+
+    <script>
+        var lis = document.querySelectorAll('li');
+        var data = localStorage.getItem('a') ? JSON.parse(localStorage.getItem('a')) : [];
+        lis.forEach(function (li) {
+            li.onclick = function () {
+                data.push(this.innerHTML);
+                localStorage.setItem('a', JSON.stringify(data));
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * LocalStorage
+        *   本地存储，是客户端浏览器中的一种数据存储方式，浏览器提供了一个localStorage的对象，我们可以通过这个对象存储数据
+        *   和cookie不一样，LocalStorage没有有效期，不会自动删除，除非手动删除
+        *   同源下的页面共享LocalStorage
+        *
+        *   特点：
+        *       当一个源下的storage数据发生了改变，那么和该源相同的页面会接收到一个storage事件，注意：修改该storage页面不会触发
+        * */
+        console.log( localStorage );
+
+        /*
+        * length
+        *   返回localStorage数据的个数
+        * */
+        console.log( localStorage.length );
+
+        /*
+        * setItem(key, value)
+        *   添加数据
+        * */
+        localStorage.setItem('username', 'tongbin');
+        localStorage.setItem('age', 30);
+        console.log( localStorage.length );
+        
+        console.log( localStorage.username );
+
+        localStorage.setItem('length', 10);
+
+        /*
+        * getItem(key)
+        * 获取一个指定key的localStorage
+        * */
+        console.log( localStorage.getItem('username') );
+        console.log( localStorage.length );
+        console.log( localStorage.getItem('length') );
+
+        /*
+        * removeItem(key)
+        * 清除一个指定key的localStorage
+        * */
+
+        /*
+        * clear()
+        * 清空所有localStorage数据
+        * */
+
+        /*
+        * key(index)
+        * 返回指定下标的key
+        * */
+        console.log( localStorage.key(1) );
+
+    </script>
+</body>
+</html>

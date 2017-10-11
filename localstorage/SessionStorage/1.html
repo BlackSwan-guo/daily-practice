@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        /*
+        * SessionStorage
+        *   和LocalStorage类似，区别：
+        *       1. 不共享数据，不会广播事件
+        *       2. 时效性：关闭浏览器自动销毁
+        * */
+        console.log( sessionStorage );
+        sessionStorage.setItem('a', 1);
+    </script>
+</body>
+</html>

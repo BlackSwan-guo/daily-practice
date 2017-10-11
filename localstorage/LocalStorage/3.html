@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <button>按钮</button>
+
+    <script>
+
+        window.addEventListener('storage', function () {
+            console.log(3, '添加了一个新的数据');
+        })
+        var buttons = document.querySelectorAll('button');
+
+        buttons[0].onclick = function () {
+            localStorage.setItem('a', 1);
+        }
+    </script>
+</body>
+</html>
