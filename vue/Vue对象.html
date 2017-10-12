@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div id="app">
+        {{message}}
+        <p>
+            {{arr}}
+        </p>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+
+        /*
+        * new Vue会产生一个对象，该对象下会保存vue实例的一些属性和方法，供我们去调用
+        *   数据单向绑定
+        *       Vue实例会监听data中数据，当数据发生变化，自动渲染视图
+        *       data -> view
+        *
+        *   在vue中有单向绑定和双向绑定，但是不同的语法支持不同绑定方式
+        *   {{}} 只支持单向绑定
+        * */
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                arr: [1,2,3,4,5,6]
+            }
+        });
+        console.dir(app);
+//        setInterval(function () {
+////            app.message = 'Hello Miaov';
+//            app.arr = app.arr.sort(function () {
+//                return Math.random() - .5;
+//            })
+//        }, 30)
+    </script>
+</body>
+</html>

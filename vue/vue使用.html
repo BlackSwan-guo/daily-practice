@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{message}}
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+
+        /*
+        * 实例化
+        *   vue框架提供了一个Vue的构造函数（类），我们通过实例化Vue，产生一个vue对象，来构建应用
+        *
+        *   在实例化Vue的时候，传入一些配置参数
+        *   这些配置参数在Vue官网的api中可以找到 ： 选项
+        *
+        *       el : 提供一个在页面上已存在的 DOM 元素作为 Vue 实例的挂载目标。可以是 CSS 选择器，也可以是一个 HTMLElement 实例。
+        *       data : 提供了vue中需要使用的数据
+        *
+        *   视图： - View
+        *       用户看到的页面
+        *   模板：
+        *       产生页面视图的基础结构 - html
+        *   模板语法：
+        *       插值表达式
+        *           数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值：{{ msg }}
+        *           {{}}中的内容可以被vue作为一种js表达式去解析
+        * */
+        new Vue({
+            el:'#app',
+            data:{
+                message:'Hello Miaov!'
+            }
+        });
+    </script>
+</body>
+</html>

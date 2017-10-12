@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>{{message}}</h1>
+
+        <h1 v-html="message"></h1>
+
+        <input type="text" v-model="message">
+        <p>你输入了 {{message.length}} 个字符</p>
+    </div>
+
+    <script src="js/vue.js"></script>
+    <script>
+
+        /*
+        * 指令
+        *   v-html：单向绑定
+        *
+        *   双向绑定：
+        *       v-model
+        *       注意：不是所有标签都支持v-model
+        * */
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello',
+                arr: [1,2,3,4,5,6]
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

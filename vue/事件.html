@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="newData.username">
+        <select v-model="newData.gender">
+            <option value="男">男</option>
+            <option value="女">女</option>
+        </select>
+        <input type="text" v-model="newData.age">
+        <button v-on:click="add">添加</button>
+        <button v-on:click="sort">排序</button>
+        <ul>
+            <li v-bind:class="{blue: user.gender=='女'}" v-for="user in users">
+                {{user.username}}-{{user.gender}}-{{user.age}}
+            </li>
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                classname:'blue',
+                newData: {
+                    username: '',
+                    gender: '男',
+                    age: ''
+                },
+                users:[
+                    {
+                        username:'a',
+                        gender:"女",
+                        age:24
+                    },
+                    {
+                        username:'b',
+                        gender:"男",
+                        age:25
+                    },
+                    {
+                        username:'c',
+                        gender:"男",
+                        age:28
+                    },
+                    {
+                        username:'d',
+                        gender:"女",
+                        age:18
+                    }
+                ]
+            },
+            methods:{
+                add(){
+                    this.users.push({
+                        username:this.newData.username,
+                        gender:this.newData.gender,
+                        age:this.newData.age
+                    });
+
+                },
+                sort(){
+                    this.users.sort(function (a,b) {
+                        return a.age-b.age;
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

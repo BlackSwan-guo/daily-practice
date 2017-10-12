@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-bind:class="{blue: user.gender=='女'}" v-for="user in users">
+                {{user.username}}-{{user.gender}}-{{user.age}}
+            </li>
+        </ul>
+    </div>
+    <script src="js/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                classname:'blue',
+                users:[
+                    {
+                        username:'a',
+                        gender:'女',
+                        age:24
+                    },
+                    {
+                        username:'b',
+                        gender:'男',
+                        age:25
+                    },
+                    {
+                        username:'c',
+                        gender:'男',
+                        age:23
+                    },
+                    {
+                        username:'d',
+                        gender:'女',
+                        age:18
+                    }
+
+                ]
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .current {
+            background: orange;
+        }
+        .div{
+            width: 100px;
+            height:100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button v-bind:class="{current:n==index}" v-for="title,index in titles" v-on:click="tab(index)">{{title}}</button>
+    <p v-bind:class="{div:n==index}" v-show="n==index" v-for="content,index in contents">{{content}}</p>
+</div>
+<script src="js/vue.js"></script>
+<script>
+    var app = new Vue({
+       el:'#app',
+       data:{
+           n:0,
+           titles:[
+               '标题一',
+               '标题二',
+               '标题三',
+               '标题四'
+           ],
+           contents:[
+               '内容一',
+               '内容二',
+               '内容三',
+               '内容四',
+           ]
+       },
+        methods:{
+           tab(index){
+               this.n = index;
+           }
+        }
+    });
+</script>
+</body>
+</html>
