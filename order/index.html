@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 55.2px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="renderer" content="webkit">
+    <title>包厢预订</title>
+    <link rel="stylesheet" type="text/css" href="css/ydui.css">
+    <link rel="stylesheet" type="text/css" href="css/global_v1.0.0.css">
+    <link rel="stylesheet" type="text/css" href="css/index-new.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <script type="text/javascript" src="js/ydui.flexible.js"></script>
+    <style type="text/css">
+        /* .swiper-slide {
+            Center slide text vertically
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        } */
+        .new_book_con .welcomeDate ul li{
+            padding: 0px;
+            margin: 0px;
+        }
+        .new_book_con .welcomeDate ul li p.week{
+            margin-top: 8px;
+        }
+        .new_book_con .welcomeDate ul li p.date{
+            margin-bottom: 8px;
+        }
+        .new_book_con .welcomeDate ul li p.time{
+            margin: 8px;
+        }
+        .welcomeTime{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- <div class="header">
+    <div class="header_con">
+        卿卿预定
+        <div class="header_left">
+            <a href="javascript:void(0);" onclick="javascript:history.go(-1);" class="header_goBack_icon"><img src="images/go_back@3x.png"></a>
+            <a class="header_goBack">返回</a>
+        </div>
+        <a href="javascript:void(0);" onclick="" class="header_share_icon"><img src="images/share_icon.png"></a>
+    </div>
+</div> -->
+<div class="main new_book_con" id="biz_box">
+    <input type="hidden" id="bid" value="6">
+    <input type="hidden" id="boxId" value="4">
+    <div class="bgfff">
+        <div class="my_swiper_con">
+            <div class="m-slider" id="box_photos">
+                <div class="slider-wrapper">
+                    <div class="slider-item">
+                        <a href="javascript:;">
+                            <img style="border-radius: 5pt;" src="images/1.png">
+                        </a>
+                    </div>
+                    <div class="slider-item">
+                        <a href="javascript:;">
+                            <img style="border-radius: 5pt;" src="images/1.png">
+                        </a>
+                    </div>
+                    <div class="slider-item"> <a href="javascript:;">
+                        <img style="border-radius: 5pt;" src="images/1.png">
+                    </a>
+                    </div>
+                </div>
+                <div class="slider-pagination">
+                    <span class="slider-pagination-item slider-pagination-item-active"></span>
+                </div>
+                <!-- 分页标识 -->
+            </div>
+        </div>
+        <div class="new_book_hdpic">
+            <a>小包</a>
+            <p>容纳人数：<span>1~4</span>人</p>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="new_book_detail">
+        <ul class="detailList">
+            <li class="detailName">贵姓： <input id="trueName" type="text" placeholder="请输入您的姓氏" value="">
+                <div class="detailPeopleNum">
+                    <span>到店人数：</span>
+                    <span class="detailAdd"></span>
+                    <p>
+                        <input type="text" id="peoples" style="width: 20pt;border:1px solid #F0F0F0;text-align: center;" value="1">
+                    </p>
+                    <span class="detailReduce"></span>
+                </div>
+            </li>
+            <li>手机：
+                <input id="phone" pattern="/^1(3|4|5|7|8)\d{9}$/" placeholder="请输入手机号" value="">
+            </li>
+        </ul>
+    </div>
+    <div class="new_book_detail2">
+        <div class="packageCon">
+            <h2>请选择到店时间：
+                <span class="date"></span>
+                <span class="time" >19:00</span>
+                <!--<span class="welcomeDate_info" id="arrivalTime" datetime="">&lt;!&ndash;11月08日 19点00分&ndash;&gt;</span>-->
+            </h2>
+            <div class="swiper-container welcomeDate ">
+                <ul class="swiper-wrapper" id="date_picker" >
+                    <li class="swiper-slide on" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                    <li class="swiper-slide" date="">
+                        <p class="week"></p>
+                        <p class="date"></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="swiper-container welcomeDate welcomeTime ">
+                <ul class="swiper-wrapper" id="date_time" style="transform: translate3d(0px, 0px, 0px);">
+                    <li class="swiper-slide on" time="19:00">
+                        <p class="time ">19:00</p>
+                    </li>
+                    <li class="swiper-slide" time="19:30">
+                        <p class="time">19:30</p>
+                    </li>
+                    <li class="swiper-slide" time="20:00">
+                        <p class="time">20:00</p>
+                    </li>
+                    <li class="swiper-slide" time="20:30">
+                        <p class="time">20:30</p>
+                    </li>
+                    <li class="swiper-slide" time="21:00">
+                        <p class="time">21:00</p>
+                    </li>
+                    <li class="swiper-slide" time="21:30">
+                        <p class="time">21:30</p>
+                    </li>
+                    <li class="swiper-slide" time="22:00">
+                        <p class="time">22:00</p>
+                    </li>
+                    <li class="swiper-slide" time="22:30">
+                        <p class="time">22:30</p>
+                    </li>
+                    <li class="swiper-slide" time="23:00">
+                        <p class="time">23:00</p>
+                    </li>
+                    <li class="swiper-slide" time="23:30">
+                        <p class="time">23:30</p>
+                    </li>
+                    <li class="swiper-slide" time="00:00">
+                        <p class="time">00:00</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="packageCon_list">
+                <ul>
+                    <li>包厢费：<span>1380-1880</span>元</li>
+                    <li>DJ：<span>500/600</span>元</li>
+                    <li>服务费：<span>800/1000/1200/1500</span>元</li>
+                    <li>少爷：<span>200/300</span>元</li>
+                </ul>
+                <div class="packageCon_list_d">
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt">
+            <p>消费须知：
+                <span>加300元赠3箱啤酒。啤酒50元/瓶起；红酒468元/支起；洋酒1280元/支起。（包厢套餐酒水之外，另购价）</span>
+            </p>
+            <div class="wormPrompt">
+                <p class="wormPrompt_imp">包厢费说明：
+                    <span>根据您的预定人数，客服将帮您尽快确认当日优惠价格</span>
+                </p>
+                <p>您有任何问题欢迎直接联系客服<img src="images/new-phone.png">
+                    <a class="wormPrompt_imp" href="tel:13336058886">点击拨号
+                    </a>
+                </p>
+            </div>
+            <button class="predetermine" id="btn_order">立即预订</button>
+        </div>
+    </div>
+</div>
+
+<!--<script type="text/html" id="biz_box_tpl">
+    {{#
+    if(!d.data){
+    return;
+    }
+    var order = Utils.getUrlHistory().params || {};
+    var box = d.data.box;
+    var boxPhotos = eval('(' + box.boxPhotos + ')');
+    var currLoginUser = Utils.getCurrLoginUser() || {};
+    }}
+    <input type="hidden" id="bid" value="{{box.bizid}}">
+    <input type="hidden" id="boxId" value="{{box.bid}}">
+    <div class='bgfff'>
+        <div class="my_swiper_con">
+            &lt;!&ndash; <div class="swiper-container_pic">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="http:www.baidu.com"><img src="images/new-book1.png" width="100%" /></a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href=""><img src="images/new-book1.png" width="100%" /></a>
+                    </div>
+                </div>
+                <div class="pagination pagination_center"></div>
+            </div> &ndash;&gt;
+            <div class="m-slider" id="box_photos">
+                <div class="slider-wrapper">
+                    {{#
+                    if(boxPhotos && boxPhotos.length > 0){
+                    for(var i in boxPhotos){
+                    }}
+                    <div class="slider-item">
+                        <a href="javascript:;">
+                            <img style="border-radius: 5pt;" src="{{Utils.getImgThumb376(boxPhotos[i])}}" url="{{boxPhotos[i]}}">
+                        </a>
+                    </div>
+                    {{#
+                    }
+                    }
+                    }}
+                </div>
+                <div class="slider-pagination"></div>&lt;!&ndash; 分页标识 &ndash;&gt;
+            </div>
+        </div>
+        <div class="new_book_hdpic">
+            <a>{{Utils.getBizBoxTypeDesc(box.did)}}</a>
+            <p>容纳人数：<span>{{box.maxPeoples}}</span>人</p>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="new_book_detail">
+        <ul class="detailList">
+            <li class="detailName">贵姓：
+                <input id="trueName" type="text" placeholder="请输入您的姓氏" value="{{order.trueName || ''}}">
+                <div class="detailPeopleNum">
+                    <span>到店人数：</span>
+                    <span class="detailAdd"></span>
+                    <p><input type="text" id="peoples" style="width: 20pt;border:1px solid #F0F0F0;text-align: center;"
+                              value="{{order.peoples || box.maxPeoples.split('~')[0]}}" /></p>
+                    <span class="detailReduce on"></span>
+                </div>
+            </li>
+            <li>手机：
+                <input id="phone" pattern="/^1(3|4|5|7|8)\d{9}$/" placeholder="请输入手机号" value="{{order.phone || currLoginUser.account || ''}}">
+            </li>
+        </ul>
+    </div>
+    <div class="new_book_detail2">
+        <div class="packageCon">
+            <h2>请选择到店时间：<span class="welcomeDate_info" id="arrivalTime" dateTime="{{order.arrivalTime || Utils.dateNow("MM-dd 19:00")}}">{{Utils.dateFormat(order.arrivalTime || new Date().getTime(), "MM月dd日 19点00分") || ''}}</span></h2>
+            <div class="swiper-container welcomeDate">
+                <ul class="swiper-wrapper" id="date_picker">
+                </ul>
+            </div>
+            <div class="swiper-container welcomeDate welcomeTime">
+                <ul class="swiper-wrapper" id="date_time">
+                    {{#
+                    var times = ["19:00", "19:30", "20:00", "20:30", "21:00", "21:30", "22:00", "22:30", "23:00", "23:30", "00:00"];
+                    for(var i in times){
+                    }}
+                    <li class="swiper-slide {{i==0?"on":""}}" time="{{times[i]}}">
+                    <p class="time">{{times[i]}}</p>
+                    </li>
+                    {{#
+                    }
+                    }}
+                </ul>
+            </div>
+            <div class="packageCon_list">
+                <ul>
+                    <li>包厢费：<span>{{box.boxFee}}</span>元</li>
+                    <li>DJ：<span>{{box.djFee}}</span>元</li>
+                    <li>服务费：<span>{{box.serviceFee}}</span>元</li>
+                    <li>少爷：<span>{{box.syFee}}</span>元</li>
+                </ul>
+
+                <div class="packageCon_list_d">
+                    {{#
+                    if(box.isDrink && box.isDrink == 1){
+                    }}
+                    <div class="fl">
+                        <span>加价畅饮：</span>
+                    </div>
+                    <div class="fl">
+                        <p>{{box.premiumDrink || ''}}</p>
+                    </div>
+                    {{#
+                    }
+                    }}
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="prompt">
+            <p>消费须知：<span>{{box.feeDesc}}</span></p>
+            <div class="wormPrompt">
+                <p class="wormPrompt_imp">包厢费说明：<span>根据您的预定人数，客服将帮您尽快确认当日优惠价格</span></p>
+                <p>您有任何问题欢迎直接联系客服<img src="images/new-phone.png">
+                    <a class="wormPrompt_imp" href="tel:13336058886">点击拨号</a></p>
+            </div>
+            <button class="predetermine" id="btn_order">立即预订</button>
+        </div>
+    </div>
+</script>-->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/laytpl.js"></script>
+<script type="text/javascript" src="js/ydui.citys.js"></script>
+<script type="text/javascript" src="js/ydui.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<!--<script type="text/javascript" src="js/common.js"></script>-->
+<script type="text/javascript" src="js/reserve.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.m-slider', {
+        speed: 300, // 移动速度
+        autoplay: 1000, // 循环时间
+        lazyLoad: false, // 是否延迟加载图片 data-src=""
+        pagination: '.slider-pagination',
+        wrapperClass: 'slider-wrapper',
+        slideClass: 'slider-item',
+        bulletClass: 'slider-pagination-item',
+        bulletActiveClass: 'slider-pagination-item-active'
+    });
+    var mySwiper2 = new Swiper ('.swiper-container', {
+        slidesPerView: 5,
+        spaceBetween: 5
+    });
+    var $dateSpan = $('.packageCon h2 .date');
+    var $timeSpan = $('.packageCon h2 .time');
+    var nowTime = new Date();
+    var nowMonth = nowTime.getMonth()+1;
+    var nowDate = nowTime.getDate();
+    $dateSpan.text(nowMonth+'月'+nowDate+'日');
+    $timeSpan.text('19点00分');
+    $("#date_picker li,#date_time li").click(function(){
+        $(this).addClass("on");
+        $(this).siblings().removeClass("on");
+        if($(this).find('p').length ===2){
+            console.log(1)
+            var text =$(this).find('p').eq(1).text()
+            text= text.split('-')[0]+"月"+text.split('-')[1]+"日"
+            $dateSpan.text(text)
+        }else {
+            var text = $(this).find('p').eq(0).text()
+            text = text.split(':')[0] + "点" + text.split(':')[1] + "分"
+            $timeSpan.text(text)
+        }
+    });
+//    var wrapTime = document.getElementById("wrapTime");
+//    var spans = document.getElementsByTagName("span");
+//    var dates = document.getElementsByClassName("date");
+//    for( var i = 0; i < dates.length;i++ ){
+//        dates[this.index] = i;
+//        dates[i].onclick = function () {
+//            wrapTime.innerHTML ="请选择到店时间："+ dates[this.index].innerHTML;
+//        }
+//    }
+
+
+        /*function getTime(){
+            //获取日期
+            var date = new Date();
+            var showDate = (toDou(date.getMonth()+ 1) ) + '-' + toDou(date.getDate());
+            var sFullDate = date.getFullYear + '-' + (toDou(date.getMonth()+ 1) ) + '-' + toDou(date.getDate());
+            console.log(showDate);
+            for (var i = 1; i <= 7; i++) {//后7天
+                date.setDate(date.getDate() + 1);
+                showDate = (toDou(date.getMonth() + 1)) + '-' + toDou(date.getDate());
+                console.log(showDate);
+            }
+        }*/
+
+    var currDate = new Date();//"2017-02-24";//Utils.dateNow();
+    var days = 7;
+    var dateArr = [];
+    dateArr.push(getTimes(currDate, true));
+    var tempDate = currDate;
+    var arrvalue;//用于存放取出的数组的值
+    var currentIndex =0;
+    for (var i = 0; i < (days - 1); i++) {
+        tempDate = this.addDate(tempDate, 1);
+        dateArr.push(getTimes(tempDate));
+    }
+    $("#date_picker li").eq(0).find(".week").html(arrvalue=dateArr[0].week);
+    $("#date_picker li").eq(0).find(".date").html(arrvalue=dateArr[0].date);
+    $("#date_picker li").eq(1).find(".week").html(arrvalue=dateArr[1].week);
+    $("#date_picker li").eq(1).find(".date").html(arrvalue=dateArr[1].date);
+    $("#date_picker li").eq(2).find(".week").html(arrvalue=dateArr[2].week);
+    $("#date_picker li").eq(2).find(".date").html(arrvalue=dateArr[2].date);
+    $("#date_picker li").eq(3).find(".week").html(arrvalue=dateArr[3].week);
+    $("#date_picker li").eq(3).find(".date").html(arrvalue=dateArr[3].date);
+    $("#date_picker li").eq(4).find(".week").html(arrvalue=dateArr[4].week);
+    $("#date_picker li").eq(4).find(".date").html(arrvalue=dateArr[4].date);
+    $("#date_picker li").eq(5).find(".week").html(arrvalue=dateArr[5].week);
+    $("#date_picker li").eq(5).find(".date").html(arrvalue=dateArr[5].date);
+    $("#date_picker li").eq(6).find(".week").html(arrvalue=dateArr[6].week);
+    $("#date_picker li").eq(6).find(".date").html(arrvalue=dateArr[6].date);
+
+   /* $("#date_picker li").each(function(i){
+        getWeek(i);
+    });
+    function getWeek(obj){
+        currentIndex = $(this).index();
+        $(obj).eq(currentIndex).find(".week").html(arrvalue=dateArr[currentIndex].week);
+        $(obj).eq(currentIndex).find(".date").html(arrvalue=dateArr[currentIndex].date);
+
+    }*/
+    switch (days) {
+        case 0:
+            sWeek = "日";
+            break;
+        case 1:
+            sWeek = "一";
+            break;
+        case 2:
+            sWeek = "二";
+            break;
+        case 3:
+            sWeek = "三";
+            break;
+        case 4:
+            sWeek = "四";
+            break;
+        case 5:
+            sWeek = "五";
+            break;
+        case 6:
+            sWeek = "六";
+            break;
+        default:
+            // statements_def
+            break;
+    }
+
+    function getTimes(_date, bCurrDay){
+        function toDou(num){
+            var num = num+"";
+            return num = num.length > 1 ? num : 0+num;
+        }
+        //获取日期
+        var sDate =(toDou(_date.getMonth()+ 1) ) + '-' + toDou(_date.getDate());
+        var sFullDate = _date.getFullYear() + '-' + (toDou(_date.getMonth()+ 1) ) + '-' + toDou(_date.getDate());
+        //获取星期
+        var nWeekDay = _date.getDay();
+        if(bCurrDay){
+            return {
+                date : sDate,
+                week : "今日",
+                fullDate : sFullDate
+            }
+        }
+        var sWeek;
+        switch (nWeekDay) {
+            case 0:
+                sWeek = "日";
+                break;
+            case 1:
+                sWeek = "一";
+                break;
+            case 2:
+                sWeek = "二";
+                break;
+            case 3:
+                sWeek = "三";
+                break;
+            case 4:
+                sWeek = "四";
+                break;
+            case 5:
+                sWeek = "五";
+                break;
+            case 6:
+                sWeek = "六";
+                break;
+            default:
+                // statements_def
+                break;
+        }
+        sWeek = "周" + sWeek;
+        return {
+            date : sDate,
+            week : sWeek,
+            fullDate : sFullDate
+        }
+    }
+    function addDate(date, days){
+        var d = new Date(date);
+        d.setDate(d.getDate() + days);
+        return d;
+    };
+</script>
+
+</body>
+</html>

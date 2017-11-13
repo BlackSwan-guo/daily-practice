@@ -1,0 +1,384 @@
+@charset "utf-8";
+
+/* -webkit-text-size-adjust fix Chrome 12 px limit */
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+img,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+button,
+input,
+select,
+textarea,
+label {
+    font-size: 1em;
+    line-height: 1.3;
+    font-family: 'Microsoft Yahei';
+    -webkit-text-size-adjust: none;
+}
+
+html,
+body {
+    font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "WenQuanYi Micro Hei", "Heiti SC", STHeiti, SimSun, sans-serif;
+    font-size: 12pt;
+}
+
+button,
+input,
+select,
+label {
+    vertical-align: middle;
+    list-style-type: none;
+    border: none;
+}
+
+label {
+    padding-left: 0.4em;
+}
+
+ul,
+ol,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 13px;
+}
+
+h4 {
+    font-size: 12px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 12px;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+    font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: courier new, courier, monospace;
+}
+
+small {
+    font-size: 12px;
+}
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
+}
+
+img {
+    border: 0 none;
+}
+
+a img,
+span img {
+    vertical-align: middle;
+}
+
+em {
+    font-style: normal;
+    font-weight: 700;
+}
+
+button,
+input,
+select,
+textarea {
+    font-size: 100%;
+    outline: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table th {
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.clear {
+    clear: both;
+}
+
+.textalignC {
+    text-align: center;
+}
+
+.fl {
+    float: left!important;
+}
+
+.fr {
+    float: right!important;
+}
+
+
+/*header start*/
+
+.header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 99;
+    background: #39383d;
+    height: 30pt;
+    line-height: 30pt;
+}
+
+.header_con {
+    text-align: center;
+    color: #fff;
+    font-size: 14pt;
+    font-weight: bold;
+    margin-left: 20pt;
+}
+
+.header a {
+    color: #fff;
+    font-size: 12pt;
+}
+
+.header_left {
+    left: 0;
+    float: left;
+    font-weight: normal;
+    position: absolute;
+    top: 0;
+}
+
+.header_goBack_icon {
+    margin-left: 10px;
+    top: -2px;
+    position: relative;
+}
+
+.header_goBack {
+    margin-right: 20px;
+}
+
+.header_goPersonal_icon {
+    float: right;
+    margin-right: 10px;
+    margin-top: -1px;
+}
+
+.header_share_icon {
+    float: right;
+    margin-right: 10px;
+    margin-top: -1px;
+    width: 6%;
+}
+
+.header_share_icon img {
+    width: 100%;
+}
+
+
+/*header end*/
+
+
+/*main start*/
+
+.main {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    /* top: 30pt; */
+    left: 0;
+    right: 0;
+    /*bottom: 40px;*/
+    overflow: auto;
+}
+
+.main img {
+    width: 100%;
+}
+
+.main.bottom {
+    bottom: 40px;
+}
+
+
+/*picChange start*/
+
+.main .my_swiper_con {
+    overflow: hidden;
+}
+
+.main .swiper-container_pic {
+    position: relative;
+}
+
+.main .s-font {
+    bottom: 0;
+    left: 10px;
+    height: 40px;
+    line-height: 40px;
+    width: 80%;
+    z-index: 2;
+    color: #FFFFFF;
+    position: absolute;
+}
+
+.main .s-bg {
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    background: #000;
+    width: 100%;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+    -webkit-opacity: 0.5;
+    -moz-opacity: 0.5;
+    position: absolute;
+}
+
+.main .pagination {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    z-index: 999;
+}
+
+.main .pagination span {
+    margin-right: 10px;
+}
+
+.main .swiper-pagination-bullet-active {
+    background: #000!important;
+}
+
+.main .swiper-pagination-bullet {
+    background: #fff;
+    width: 11px!important;
+    height: 11px!important;
+}
+
+
+/*picChange 无title显示，点在中间显示*/
+
+.main .pagination_center {
+    position: absolute;
+    bottom: 10px;
+    z-index: 999;
+    width: 100%;
+    text-align: center;
+}
+
+
+/*picChange end*/
+
+
+/*main end*/
+
+
+/*footer start*/
+
+.footer {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    z-index: 10008;
+    border-top: 1px solid #F2F1EF;
+    font-size: 11pt;
+}
+
+.footer a {
+    width: 28%;
+    display: block;
+    float: left;
+    line-height: 32pt;
+    height: 32pt;
+    border-left: 1px solid #F2F1EF;
+}
+
+.footer a.keybard_icon {
+    width: 13%;
+}
+
+.footer a.keybard_icon img {
+    width: 20pt;
+}
+
+.footer .footer_item span {
+    background: url(../images/bar3.png) no-repeat left 82%;
+    background-size: 20%;
+    padding-left: 18px;
+}
+
+
+/*footer end*/
