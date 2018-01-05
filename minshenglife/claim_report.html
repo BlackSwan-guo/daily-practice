@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>身份验证</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/layer.css" />
+    <link rel="stylesheet" type="text/css" href="css/weui.css" />
+    <link rel="stylesheet" type="text/css" href="css/change_confirm.css" />
+</head>
+<body>
+<div id="serachTop">
+    <p class="searchText">身份验证</p>
+</div>
+<div class="change_confirm_box">
+    <div class="change_confirm_title">
+        <span class="info holder on">身份验证</span> <span class="info recognizee">出生日期验证</span>
+    </div>
+    <form>
+        <div class="info_detail show">
+            <div class="city_select clearfix" style="margin-top: 0.2rem">
+                <div class="city_select_left">出险人姓名</div>
+                <input class="select" type="text" placeholder="必填"/>
+            </div>
+            <div class="item-form city_select">
+                <p class="city_select_left">证件类型</p>
+                <div class="item-label">
+                    <label>
+                        <select class="select" name="idtype" id="idtype">
+                            <option value="0">居民身份证</option>
+                            <option value="1">中国护照</option>
+                            <option value="2">军官证</option>
+                            <option value="4">居民户口薄</option>
+                            <option value="7">出生证</option>
+                            <option value="8">其他证件</option>
+                            <option value="9">无证件</option>
+                            <option value="A">士兵证</option>
+                            <option value="B">港澳居民来往内地通行证</option>
+                            <option value="C">临时身份证</option>
+                            <option value="D">警官证</option>
+                            <option value="E">台湾居民来往大陆通行证</option>
+                            <option value="F">军官离退休证</option>
+                            <option value="G">港澳通行证</option>
+                            <option value="H">外国护照</option>
+                            <option value="I">居留证件</option>
+                            <option value="J">港澳台身份证</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">证件号码</div>
+                <input class="select" type="text" placeholder="请填写证件真实号码"/>
+            </div>
+        </div>
+        <div class="info_detail">
+            <div class="city_select clearfix" style="margin-top: 0.2rem">
+                <div class="city_select_left">出险人姓名</div>
+                <input class="select" type="text" placeholder="必填"/>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">性别</div>
+                <select class="select" name="province" id="sex">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </div>
+            <div class="city_select clearfix">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="" class="weui-label city_select_left">出生日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input select" type="date" value="" id="date" style="height: 0.9rem;background: #fafafa"/>
+                    </div>
+                </div>
+            </div>
+            <div class="city_select clearfix" style="margin-top: 0.2rem">
+                <div class="city_select_left">投保人姓名</div>
+                <input class="select" type="text" placeholder="必填" id="name"/>
+            </div>
+            <div class="item-form city_select">
+                <p class="city_select_left">证件类型</p>
+                <div class="item-label">
+                    <label>
+                        <select class="select" name="idtype" id="idtype">
+                            <option value="0">居民身份证</option>
+                            <option value="1">中国护照</option>
+                            <option value="2">军官证</option>
+                            <option value="4">居民户口薄</option>
+                            <option value="7">出生证</option>
+                            <option value="8">其他证件</option>
+                            <option value="9">无证件</option>
+                            <option value="A">士兵证</option>
+                            <option value="B">港澳居民来往内地通行证</option>
+                            <option value="C">临时身份证</option>
+                            <option value="D">警官证</option>
+                            <option value="E">台湾居民来往大陆通行证</option>
+                            <option value="F">军官离退休证</option>
+                            <option value="G">港澳通行证</option>
+                            <option value="H">外国护照</option>
+                            <option value="I">居留证件</option>
+                            <option value="J">港澳台身份证</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">证件号码</div>
+                <input class="select" type="text" placeholder="请填写证件真实号码" id="number"/>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="change_address_body clearfix">
+    <div class="begin_change claim_report_submit" id="submit_msg">提交信息</div>
+</div>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="js/layer.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/weui.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/change_confirm.js"></script>
+<script>
+    var k = $("#name").val();
+    $(".claim_report_submit").click(function () {
+        if (k==''){
+            layer.open({
+                type: 1,
+                skin: 'layui-layer-rim', //加上边框
+                shadeClose: true, //点击遮罩关闭
+                content: '<div class="tipbox">\n' +
+                '    <div class="tip">民生生活号提示您</div>\n' +
+                '    <div class="tip_txt">有多个同名被保险人，请完善校验信息！</div>\n' +
+                '    <div class="tip_confirm">确定</div>\n' +
+                '</div>'
+            });
+        }
+    });
+</script>
+</body>
+

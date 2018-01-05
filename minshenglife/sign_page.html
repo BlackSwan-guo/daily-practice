@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/sign_page.css" />
+</head>
+<body>
+    <div class="sign_page_box">
+        <div class="sign_page_top">
+            <div class="sign_page_back">＜返回</div>
+            <div class="sign_page_title">申请人手写签名</div>
+        </div>
+        <form>
+            <div id="signature" style="width: 100%;height: 300px;border: 1px solid #ccc;margin: 10px 0px;"></div>
+        </form>
+        <div class="claims_apply_reset_bottom clearfix">
+            <button type="button" class="claims_apply_reset_back" onclick="reset()">重写</button>
+            <button type="button" class="claims_apply_reset_confirm"> <!--onclick="jSignatureTest()"-->确定</button>
+        </div>
+    </div>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--<script>-->
+    <!--$(function(){-->
+        <!--$('.claims_apply_reset_back').click(function(){-->
+            <!--$('.sign_page_area').val("");-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/flashcanvas.js"></script>
+    <script src="js/jSignature.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            //初始化插件
+            var dHeight = "6.5rem";
+            var dWidth = "9.5rem";
+            $("#signature").jSignature({height:dHeight,width:dWidth, signatureLine:false});//初始化调整手写屏大小
+        })
+
+//        //输出签名图片
+//        function jSignatureTest(){
+//            var $sigdiv = $("#signature");
+//            var datapair = $sigdiv.jSignature("getData", "svgbase64");
+//            console.log(datapair);
+//            var i = new Image();
+//            i.src = "data:" + datapair[0] + "," + datapair[1]
+//            $(i).appendTo($("#image"))
+//        }
+        function reset(){
+            var $sigdiv = $("#signature");
+            $sigdiv.jSignature("reset");
+            $("#image img").remove();
+        }
+    </script>
+</body>
+</html>

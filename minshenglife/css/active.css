@@ -1,0 +1,130 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.5rem;
+    line-height: normal;
+    color: #47525d;
+    margin: 0;
+    width:9.8rem;
+    overflow: hidden;
+    /*padding:1rem;*/
+}
+.background {
+    position: relative;
+}
+.logo {
+    width: 10rem;
+}
+/*上传图片区域*/
+.photoarea {
+    width: 8.8rem;
+    height: 3rem;
+    padding: 0.3rem;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 5.5rem;
+    left: 0.5rem;
+}
+/*上传图片提示*/
+.photoarea_tips {
+    font-size: 0.5rem;
+    line-height: 0.6rem;
+    text-align: center;
+    color: #ce211b;
+    font-weight: bold;
+    position: absolute;
+    top: 3.7rem;
+    left: 3rem;
+}
+/*照片张数限制*/
+.photoarea_nunlimit {
+    font-size: 0.5rem;
+    line-height: 0.6rem;
+    text-align: center;
+    font-weight: bold;
+    color: #ce211b;
+    position: absolute;
+    top: 4.5rem;
+    left: 2.5rem;
+}
+/*故事*/
+.storiesarea {
+    width: 8.8rem;
+    height: 2.5rem;
+    position: absolute;
+    top: 6.5rem;
+    left:1rem;
+}
+/*故事文字区*/
+.storiesarea_txt {
+    width: 8.1rem;
+    height: 2.5rem;
+    font-size: 0.5rem;
+    line-height: 0.6rem;
+    color: #ce211b;
+    font-weight: bold;
+    margin-left: -0.5rem;
+    word-break: break-all;
+}
+/*请输入故事*/
+.storiesarea_mask {
+    width: 8.8rem;
+    height: 2.5rem;
+    position: absolute;
+    top: -0.2rem;
+    left:-0.8rem;
+    font-size: 0.5rem;
+    line-height: 2.5rem;
+    text-align: center;
+    color: #ce211b;
+    font-weight: bold;
+    z-index: 9;
+}
+/*提交*/
+.active_submit {
+    width:5rem;
+    height: 1rem;
+    background: #ce211b;
+    color: #fff;
+    font-size: 0.5rem;
+    line-height: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    top: 9.5rem;
+    left: 2rem;
+}
+/*上传后页面*/
+.showImg {
+    width: 1.5rem;
+    height: 2.5rem;
+    margin: 0  0.07rem;
+}
+/*文字区域限制大小*/
+.textlimit {
+    width:8.3rem;
+    height: 1.8rem;
+    overflow: auto;
+}
+/*照片区域边框*/
+.active_img_border {
+    position: absolute;
+    top: 5rem;
+    left: 0;
+}
+/*文字边框图片*/
+.img_border_bg {
+    width: 10rem;
+    height: 6.5rem;
+}
+/*故事边框区域*/
+.story_border {
+    position: absolute;
+    top: -0.2rem;
+    left: -1.5rem;
+}
+/*故事边框图片*/
+.story_border_img {
+    width: 10rem;
+    height: 2.6rem;
+}

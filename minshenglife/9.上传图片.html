@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>upload_demo</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <style>
+        .imglist {
+            float: left;
+        }
+        .imglist li {
+            float: left;
+            margin-right: 2px;
+        }
+        .clearfix {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .filebox {
+            float: left;
+        }
+        .file {
+            width: 38px;
+            height: 50px;
+            position: relative;
+            display: inline-block;
+            /*background: #D0EEFF;*/
+            border: 1px solid #99D3F5;
+            border-radius: 4px;
+            padding: 4px 12px;
+            overflow: hidden;
+            color: #1E88C7;
+            text-decoration: none;
+            text-indent: 0;
+            line-height: 20px;
+            background: url(images/up_download.png) no-repeat 0 0;
+        }
+
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+        .file:hover {
+            /*background: #AADFFD;*/
+            border-color: #78C3F3;
+            color: #004974;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="preview clearfix">
+    <ul class="imglist">
+        <li>
+            <a id="imghead1Big" data-rel="lightcase" href="" title="">
+                <img style="float:left ;width: 100px;height: 100px; border: solid 1px red;" id="imghead" />
+            </a>
+        </li>
+    </ul>
+    <div class="filebox">
+        <a  class="file" href="javascript:void(0)">
+            <input type="file" onchange="previewImage(this)"/>
+        </a>
+    </div>
+</div>
+
+<script>
+  function previewImage(file) {
+    var MAXWIDTH = 100;
+    var MAXHEIGHT = 100;
+    var div = document.getElementById('preview');
+    console.log(file.files);
+    if (file.files && file.files[0]) {
+      //div.innerHTML = '<img id=imghead>';
+      var img = document.getElementById('imghead');
+      img.onload = function() {
+        var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+        img.width = rect.width;
+        img.height = rect.height;
+        img.style.marginLeft = rect.left + 'px';
+        img.style.marginTop = rect.top + 'px';
+      }
+      var reader = new FileReader();
+      reader.onload = function(evt) {
+        img.src = evt.target.result;
+      }
+      reader.readAsDataURL(file.files[0]);
+      // uploadPhoto();
+      setTimeout(function() {
+        // console.log(reader.result);
+      },400)
+      console.log(reader);
+
+    } else {
+      var sFilter = 'filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src="';
+      file.select();
+      var src = document.selection.createRange().text;
+      // div.innerHTML = '<img id=imghead>';
+      var img = document.getElementById('imghead');
+      img.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = src;
+      var rect = clacImgZoomParam(MAXWIDTH, MAXHEIGHT, img.offsetWidth, img.offsetHeight);
+      status = ('rect:' + rect.top + ',' + rect.left + ',' + rect.width + ',' + rect.height);
+      // div.innerHTML = "<div id=divhead style='width:"+rect.width+"px;height:"+rect.height+"px;margin-top:"+rect.top+"px;margin-left:"+rect.left+"px;"+sFilter+src+"\"'></div>";
+      // uploadPhoto();
+        console.log(src);
+    }
+
+  }
+  function clacImgZoomParam(maxWidth, maxHeight, width, height) {
+    var param = {
+      top: 0,
+      left: 0,
+      width: width,
+      height: height
+    };
+    if (width > maxWidth || height > maxHeight) {
+      rateWidth = width / maxWidth;
+      rateHeight = height / maxHeight;
+
+      if (rateWidth > rateHeight) {
+        param.width = maxWidth;
+        param.height = Math.round(height / rateWidth);
+      } else {
+        param.width = Math.round(width / rateHeight);
+        param.height = maxHeight;
+      }
+    }
+    param.left = Math.round((maxWidth - param.width) / 2);
+    param.top = Math.round((maxHeight - param.height) / 2);
+    return param;
+  }
+
+</script>
+</body>
+</html>

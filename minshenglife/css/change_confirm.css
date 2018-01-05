@@ -1,0 +1,270 @@
+body {
+    background: #fafafa;
+}
+/*确认更改头部 */
+#serachTop {
+    width: 100%;
+    height: 1rem;
+    background: #d14014;
+}
+#serachTop .searchText {
+    font-family: "微软雅黑";
+    color:#fff;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+}
+/*更改主体部分*/
+.change_confirm_box {
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-top: 0.15rem;
+}
+/*标题*/
+.change_confirm_title {
+    width: 9.6rem;
+    height: 1rem;
+    background: #d14014;
+    border-radius: 3px;
+    position: relative;
+}
+/*身份验证*/
+.holder {
+    display: inline-block;
+    width: 4.75rem;
+    background: #d14014;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    top:0.05rem;
+    left:0.05rem;
+    border-radius: 3px 0 0 3px;
+}
+/*出生日期验证*/
+.recognizee {
+    display: inline-block;
+    width: 4.76rem;
+    background: #d14014;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    top:0.05rem;
+    left:4.78rem;
+    border-radius: 0 3px 3px 0;
+}
+/*身份验证和出生日期验证颜色改变*/
+.change_confirm_title .on {
+    background: #fff;
+    color:#d14014;
+}
+/*身份和出生日期详细信息*/
+.info_detail {
+    display: none;
+}
+.show {
+    display: block;
+}
+.reco_name {
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: #808080;
+    background: #fafafa;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/*城市选择*/
+.city_select {
+    width: 9.6rem;
+    height: 1rem;
+    border: 0.02rem solid #d14014;
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 0.2rem;
+}
+.city_select_left {
+    width: 3rem;
+    float: left;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    color: #808080;
+    position: absolute;
+    left: 0.2rem;
+    top:0.05rem;
+}
+.select {
+    width: 6rem;
+    height: 1rem;
+    position: absolute;
+    left: 3.3rem;
+    top:0.05rem;
+    font-size: 0.4rem;
+    color: #808080;
+    line-height: 0.9rem;
+}
+.change_address_body {
+    width: 9.7rem;
+    color: #000;
+}
+/*开始变更*/
+.begin_change {
+    width: 9.6rem;
+    height: 1.5rem;
+    background: #d14014;
+    font-size: 0.5rem;
+    color: #fff;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+}
+/*理赔查询结果显示区域*/
+.claim_result {
+    width: 100%;
+    height: 6rem;
+    background: #fafafa;
+    background: url("../images/no_claim_bg.png") no-repeat 50% 50%;
+}
+/*无理赔信息*/
+.noclaim_txt {
+    padding-left: 0.5rem;
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: #c2c5d8;
+}
+/* 提示弹框 */
+.tipbox {
+    width: 8rem;
+    background: #fff;
+    border-radius: 3px;
+}
+.tip {
+   height: 1rem;
+    background: #d14014;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #fff;
+    text-align: center;
+}
+.tip_txt {
+    height: 1.9rem;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    margin-left: 0.5rem;
+    margin-top: 0.6rem;
+    color: #000;
+}
+.tip_confirm {
+    height: 1rem;
+    border-top: 0.02rem solid#ccc;
+    font-size: 0.4rem;
+    color: #d14014;
+    line-height: 1rem;
+    text-align: center;
+}
+/* 事故描述 */
+.describe {
+    width: 9.6rem;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    color: #808080;
+    border: 0.02rem solid #d14014;
+    border-radius: 3px;
+}
+.describe_txt {
+    margin-left: 0.2rem;
+    line-height: 0.8rem;
+}
+.describe_list {
+    width: 9.58rem;
+    font-size: 0.4rem;
+    color: #808080;
+}
+.rea_txt {
+    display: inline-block;
+    width: 1rem;
+}
+.reason {
+    display:inline-block;
+    width: 8rem;
+    height:1rem;
+    border: 0.02rem solid #d14014;
+    margin-bottom: 0.2rem;
+    text-indent: 0.3rem;
+    border-radius: 3px;
+}
+.reason input {
+    width: 8rem;
+    font-size: 0.4rem;
+    line-height: 1rem;
+}
+/* 验证遮罩层 */
+.apply_mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top:0;
+    background: #000;
+    opacity: 0.4;
+    z-index: 888;
+    display: none;
+}
+/* 理赔须知*/
+.claim_instructions {
+    width: 90%;
+    height: 3.5rem;
+    background: #fff;
+    opacity: 1;
+    border-radius: 5px;
+    position: absolute;
+    left: 0.5rem;
+    top: 3rem;
+    z-index: 999;
+    display: none;
+}
+.p_instructions_txt {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color: #000;
+    margin-left: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+/*我要阅读 */
+.instructions_nav {
+    font-size: 0.4rem;
+    border-top: 0.02rem solid#d9d9d9;
+}
+.instructions_nav a {
+    display: inline-block;
+    color: #2686f5;
+}
+/*我要阅读 */
+.instructions_read {
+    width: 2.5rem;
+    line-height: 1rem;
+    text-align: center;
+    border-right: 0.02rem solid #d9d9d9;
+}
+/*已了解*/
+.already_know {
+    width: 6.2rem;
+    line-height: 1rem;
+    text-align: center;
+}
+/* 完善快递信息提醒*/
+.complete_express_tip {
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #000;
+}
+

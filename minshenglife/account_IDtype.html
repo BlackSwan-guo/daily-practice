@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>选择证件类型</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/weui.css" />
+    <link rel="stylesheet" type="text/css" href="css/add_evidence.css" />
+</head>
+<body>
+<form>
+    <div class="add_evidence_box">
+        <div class="add_evidence_box_title account_idtype">
+            <p class="down item_name">请选择证件类型</p>
+            <div class="item-label">
+                <label>
+                    <select class="select" name="idtype" id="idtype" style="width: 8rem;font-size: 0.4rem">
+                        <option value="0">居民身份证</option>
+                        <option value="1">中国护照</option>
+                        <option value="2">军官证</option>
+                        <option value="4">居民户口薄</option>
+                        <option value="7">出生证</option>
+                        <option value="8">其他证件</option>
+                        <option value="9">无证件</option>
+                        <option value="A">士兵证</option>
+                        <option value="B">港澳居民来往内地通行证</option>
+                        <option value="C">临时身份证</option>
+                        <option value="D">警官证</option>
+                        <option value="E">台湾居民来往大陆通行证</option>
+                        <option value="F">军官离退休证</option>
+                        <option value="G">港澳通行证</option>
+                        <option value="H">外国护照</option>
+                        <option value="I">居留证件</option>
+                        <option value="J">港澳台身份证</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="add_list">
+            <div class="imgPreview"></div>
+            <span class="upload-img"><input class="fileUpload" accept="image/*" type="file" multiple="multiple"></span>
+            <p class="add_text">添加</p>
+        </div>
+        <div class="add_example">
+            <p class="add_example_title">注：身份证明需上传正反面及持证照三张照片</p>
+            <ul class="add_example_list">
+                <li class="add_example_item clearfix">
+                    <div class="add_example_item_left">
+                        <p class="add_example_item_left_top">居民身份证正面示例</p>
+                        <p  class="add_example_item_left_bottom">(点击看大图)</p>
+                    </div>
+                    <div class="add_example_item_right">
+                        <img class="add_example_img" src="images/img_front.png"/>
+                    </div>
+                </li>
+                <li class="add_example_item clearfix">
+                    <div class="add_example_item_left">
+                        <p class="add_example_item_left_top">居民身份证反面示例</p>
+                        <p  class="add_example_item_left_bottom">(点击看大图)</p>
+                    </div>
+                    <div class="add_example_item_right">
+                        <img class="add_example_img" src="images/img_reserve.png"/>
+                    </div>
+                </li>
+                <li class="add_example_item clearfix">
+                    <div class="add_example_item_left">
+                        <p class="add_example_item_left_top">居民身份证持证照示例</p>
+                        <p  class="add_example_item_left_bottom">(点击看大图)</p>
+                    </div>
+                    <div class="add_example_item_right">
+                        <img class="add_example_img" src="images/img_passport.png"/>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</form>
+<div class="account_change_body clearfix">
+    <div class="account_change_next" onclick="location.href=''">提交</div>
+</div>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/add_evidence.js"></script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+.panel_content{
+    padding: 20px 17px 0 15px;
+}
+
+.item-form{
+    height: 46px;
+    border: 1px solid #d14014;
+    border-radius: 5px;
+    line-height: 45px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.item-form span{
+    position: absolute;
+    left: 15px;
+}
+
+.item-label{
+    padding-left: 100px;
+    padding-right: 15px;
+}
+
+.item-form input{
+    height: 46px;
+}
+
+.item-form .item-label label{
+    display: inline-block;
+    overflow: hidden;
+    /*background: url(../img/1.png) no-repeat;*/
+    background-size: 30px 22px;
+    background-position: 100% 13px;
+    -moz-background-position: 100% 13px;
+    -webkit-background-position: 100% 13px;
+}
+
+.item-form .item-label label select{
+    width: 117%;
+    height: 46px;
+    margin-left: -2px;
+    /*background: url(../img/1.png) no-repeat center right 20%;*/
+    background-size:36px 25px;
+    color: #5c5c5c;
+}
+
+
+.item-form input.date{
+    /*background: url(../img/date.png) no-repeat;*/
+    background-size: 21px 25px;
+    background-position: 100% 10px;
+    -moz-background-position: 100% 10px;
+    -webkit-background-position: 100% 10px;
+    margin-left: -5px;
+}
+
+.item-form.item-textarea{
+    height: 177px;
+}
+
+.item-form.item-textarea span{
+    position: absolute;
+}
+
+.item-form.item-textarea div{
+    padding: 10px 18px;
+}
+
+.checkbox{
+    width: 100%;
+    border: 1px solid #d14014;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top: -12px;
+    border-top: 0;
+    padding-top: 15px;
+    margin-bottom: 10px;
+}
+
+.checkbox span{
+    width: 30px;
+    height: 22px;
+    display: block;
+    /*background: url(../img/1.png) no-repeat;*/
+    background-size: 30px 22px;
+    position: absolute;
+    top: -35px;
+    left: initial;
+    right: 15px;
+}
+
+.checkbox p{
+    height: 40px;
+    margin-left: 15px;
+}
+
+.item-form input[type="checkbox"]{
+    width: auto;
+}
+
+.item-form input[type="checkbox"] + i{
+    margin-top: -64px;
+    display: block;
+    margin-left: 21px;
+
+}
+
+.bg{
+    /*background: url(../img/bg.jpg) no-repeat;*/
+    background-size: 100%;
+    background-position: 0 40px;
+    -moz-background-position: left top 40px;
+    -webkit-background-position: 0 40px;
+}
+
+.network_query_bg{
+    /*background: url(../img/network_query.png) no-repeat;*/
+    background-size: 100%;
+    background-position: 0 40px;
+    -moz-background-position: left top 40px;
+    -webkit-background-position: 0 40px;
+}
+
+/* tab */
+.tab_header {
+    height: 29px;
+    line-height: 27px;
+    position: relative;
+    top: -13px;
+    white-space: nowrap;
+}
+
+.tab_header > ul > li {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.tab_header > ul > li:last-child{
+    left: -5px;
+}
+
+.tab_header li a.on {
+    color: #fff;
+    background: #d14014;
+}
+
+.tab_header > ul > li > a {
+    display: block;
+    color: #d14014;
+    border: 2px solid #d14014;
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.tab_header > ul > li:last-child a{
+    border-right: 2px solid #d14014;
+    border-left: 0;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: -10px;
+}
+
+.tab_content_container .tab_content {
+    display: none;
+}
+
+.tab_content_container .current {
+    display: block;
+}
+
+.eisable{
+    display: block;
+    position: absolute;
+    width: 50%;
+    height: 29px;
+    background: #000;
+    opacity: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.item-form:last-child{
+    margin-bottom: -10px;
+}
+
+
+.item-form.item-textarea{
+    height: 177px;
+}
+
+.item-form.item-textarea span{
+    position: absolute;
+}
+
+.item-form.item-textarea div{
+    padding: 10px 18px;
+}
+
+.item-form.item-textarea textarea{
+    height: 157px;
+    text-indent: 110px;
+    line-height: 23px;
+    font-size: 15px;
+    resize : none;
+    color: #A9A9A9;
+}
+
+.applicant{
+    margin-bottom: 10px;
+    margin-top: -6px;
+}
+
+.query{
+    margin-top: 67%;
+}
+
+.query .item-form{
+    background: #fff;
+}
+
+.query .item-label{
+    padding-left: 10px;
+}
+
+.box4{
+    width: 61%;
+    height: 46px;
+    line-height: 45px;
+    border-radius: 5px;
+    border: #d14014 1px solid;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.box3 input.box5{
+    float: right;
+    border-radius: 5px;
+    background: #d14014;
+    width: 35%;
+    height: 46px;
+    line-height: 46px;
+    color: #FFF;
+    text-align: center;
+}
+
+.item-label1{
+    height: 46px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+}
+
+.box4 span{
+    padding-left: 18px;
+}
+
+/*邮箱*/
+.auto-tip li{
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    background: #fff;
+}
+
+.auto-tip li.hoverBg{
+    background: #ddd;
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.auto-tip > li > span{
+    position: inherit;
+}
+
+.item-form,
+.item-form.item-textarea textarea,
+.item-form .item-label label,
+.item-form input,
+.box4 .item-label1 input,
+.auto-tip li{
+    width: 100%;
+    background: none;
+}
+
+.item-form,
+.item-form input,
+.item-form .item-label label select,
+.applicant,
+.box4 .item-label1 input,
+.box5{
+    font-size: 15px;
+}
+
+.range{
+    padding-left: 125px;
+}
+
+
+.item-form.item-textarea{
+    height: 212px;
+}
+
+.item-textarea div.describe{
+    color: #808080;
+    padding: 0 2%;
+}
+
+.item-textarea div.describe:nth-child(2){
+    margin-top: 40px;
+}
+
+.item-textarea .describe em{
+    display: block;
+    float: left;
+    width: 20px;
+    margin-top: 4px;
+    width:4%;
+}
+
+.item-textarea .describe textarea{
+    height: auto;
+    border: 1px solid #d14014;
+    border-radius: 5px;
+    width: 93%;
+    float: right;
+    margin-bottom: 10px;
+    text-indent: 12px;
+    line-height: 14px;
+    padding-top: 14px;
+}
+
+.fixed-tel input[type="tel"]{
+    width: 60%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 35px;
+    text-align: center;
+    display: inline-block;
+}
+
+.fixed-tel input[type="tel"]:first-child{
+    width: 20%;
+}

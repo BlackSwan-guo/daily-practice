@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>电子签名确认</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/change_address.css" />
+</head>
+<body>
+<!--电子签名主体-->
+<div class="account_esign_box">
+    <!-- 电子签名确认头部 -->
+    <div id="serachTop">
+        <p class="searchText">电子签名确认</p>
+    </div>
+    <!--电子签名提示-->
+    <div class="account_tips">
+        <div class="account_tips_txt">
+            <ul class="account_tips_list">
+                <li class="account_tips_item">
+                    <p class="account_customer">尊敬的客户您好：</p>
+                    <p class="account_change_details">您在生活号上操作了交费方式及交费账号变更，具体的变更内容如下：</p>
+                </li>
+                <li class="account_tips_item">
+                    <p class="account_change_after">变更后的信息：</p>
+                    <p class="account_change_after">交费方式：<span class="account_change_type">投保人自缴</span></p>
+                </li>
+                <li>
+                    <p class="account_change_after">请您仔细核对变更信息是否正确无误，并在下方做电子签名确认</p>
+                </li>
+            </ul>
+        </div>
+        <!--电子签名区域-->
+        <div class="change_address_body clearfix">
+            <div class="account_sign_txt" onclick="location.href='sign_page.html'">点击签名</div>
+        </div>
+        <div class="change_address_body clearfix">
+            <div class="account_submit" onclick="location.href=''">提交</div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<!--<script type="text/javascript" src="js/change_address.js"></script>-->
+</body>
+</html>

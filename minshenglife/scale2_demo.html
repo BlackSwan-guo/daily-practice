@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <img class="dialog" src="images/jfzhbg.jpg">
+    <div id="dialog_large_image"></div>
+</div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".dialog").click(function() {
+            var large_image = '<img src= ' + $(this).attr("src") + '></img>';
+            $('#dialog_large_image').html($(large_image).animate({ height: '50%', width: '50%' }, 100));
+        });
+    });
+</script>
+</body>
+</html>

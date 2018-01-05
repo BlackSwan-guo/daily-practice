@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>图片放大</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <style>
+        li {
+            height: 1rem;
+            margin-left: 2rem;
+            margin-top: 2rem;
+        }
+        ul li .img {
+            width: 1rem;
+            height: 1rem;
+            transition: 0.6s;
+        }
+        ul li .img1 {
+            width: 2rem;
+            height: 1rem;
+            transition: 0.6s;
+        }
+        ul li img:hover{
+            transform: scale(2.5);
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li><img class="img" src="images/banner1.jpg"/>
+        <img class="img" src="images/banner1.jpg"/>
+        <img class="img" src="images/banner1.jpg"/>
+        <img class="img" src="images/banner1.jpg"/>
+    </li>
+    <li>
+        <img class="img" src="images/banner2.jpg"/>
+        <img class="img" src="images/banner2.jpg"/>
+        <img class="img" src="images/banner2.jpg"/>
+        <img class="img" src="images/banner2.jpg"/>
+    </li>
+    <li>
+        <img class="img1" src="images/banner4.jpg"/>
+        <img class="img1" src="images/banner4.jpg"/>
+        <img class="img1" src="images/banner4.jpg"/>
+    </li>
+</ul>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+
+</script>
+</body>
+</html>

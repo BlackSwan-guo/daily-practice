@@ -1,0 +1,30 @@
+body {
+    background: #f2f3f5;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 4rem;
+}
+.medical_form_submit_box {
+    width: 7.5rem;
+    height: 4rem;
+    background: #f2f3f5;
+    border: 0.02rem solid#bdbdbd;
+    border-radius: 3px;
+}
+.medical_form_submit_list {
+    width: 7.5rem;
+}
+.medical_form_submit_item {
+    width: 7.5rem;
+    font-size: 0.4rem;
+    line-height: 0.78rem;
+    border-bottom: 0.02rem solid #bdbdbd;
+    text-align: center;
+}
+.red {
+    background: #da3a20;
+    color: #fff;
+}
+.medical_submit {
+    border-bottom: none;
+}

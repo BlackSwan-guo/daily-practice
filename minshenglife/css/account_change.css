@@ -1,0 +1,177 @@
+body {
+    background: #fafafa;
+}
+#serachTop {
+    width: 100%;
+    height: 1rem;
+    background: #d14014;
+}
+#serachTop .searchText {
+    font-family: "微软雅黑";
+    color:#fff;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+}
+/* 联系地址变更块区*/
+.account_change_box {
+    width:9.85rem;
+    padding-top: 0.4rem;
+    padding-left: 0.15rem;
+    background: #fff;
+}
+/* 联系地址变更主体 */
+.account_change_body {
+    width: 9.7rem;
+    color: #fff;
+}
+/* 选择 */
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    background: #fafafa;
+    border:0.02rem solid #b0b0b0;
+    border-radius: 50%;
+}
+input[type="checkbox"]:checked {
+    background: #f2d4cc;
+}
+.checkedinp {
+    float: left;
+    margin-top: 0.3rem;
+    background: #fafafa;
+}
+/* 选择变更的保险名称 */
+.account_change_item {
+    width: 8.8rem;
+    background: #fff;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    border-bottom: 0.02rem solid#e7e7e7;
+    color:#5e5e5e;
+    text-indent: 0.3rem;
+    margin-bottom: 0.2rem;
+    float: right;
+}
+/* 下拉列表图标 */
+.account_change_item .item_name {
+    background: url("../images/less.png") no-repeat 8.2rem 0.4rem;
+}
+.account_change_item .down {
+    background: url("../images/more_unfold.png") no-repeat 8.2rem 0.4rem;
+}
+/*变更详细信息部分*/
+.change_details{
+    color: #808080;
+    background: #e0e0e0;
+    display: none;
+}
+/* 全选*/
+.checkall {
+    font-size: 0.5rem;
+    line-height: 1rem;
+    color:#808080;
+    text-indent: 0.5rem;
+}
+/*点击下拉显示保险名对应的详细信息*/
+.show {
+    display: block;
+}
+/* 详细信息左部分*/
+.change_details_left {
+    float: left;
+}
+/* 详细信息右部分*/
+.change_details_right {
+    float: left;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/* 下一步 */
+.account_change_next {
+    width: 9.6rem;
+    height: 1rem;
+    background: #d14014;
+    font-size: 0.5rem;
+    color: #fff;
+    line-height: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+}
+/*银行转账*/
+.bank_transfer {
+    display: none;
+}
+.bank_transfer_item {
+    height: 1.5rem;
+    font-size: 0.4rem;
+    line-height: 1.5rem;
+    color:#808080;
+}
+.bank_transfer_item_left {
+    float: left;
+    height: 1.5rem;
+}
+.bank_transfer_item_right {
+    height: 1.5rem;
+    float: left;
+}
+/*银行转账蒙版*/
+.account_mask {
+    width: 8rem;
+    padding: 1rem 0.5rem;
+    background: #fff;
+    border-radius: 3px;
+}
+/*银行转账蒙版头部*/
+.account_mask_top {
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #5e5e5e;
+}
+/*银行转账蒙版标题*/
+.account_mask_title {
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #5e5e5e;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+/*银行转账蒙版提示信息列表*/
+.account_mask_list {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color:#5e5e5e;
+}
+/*银行转账蒙版提示信息项*/
+.account_mask_item {
+
+}
+/*银行转账蒙版底部*/
+.account_mask_bottom {
+    font-size:0.4rem;
+    line-height: 1rem;
+    text-align: center;
+}
+/*银行转账蒙版底部取消*/
+.account_mask_cancel {
+    width: 3rem;
+    color: #4b4b4b;
+    float: left;
+    margin-right: 1rem;
+}
+/*银行转账蒙版底部已知*/
+.account_mask_known {
+    float: left;
+    width: 3rem;
+    color: #2686f5;
+}
+

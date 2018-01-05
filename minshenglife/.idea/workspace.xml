@@ -1,0 +1,777 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3ddafcc7-d49f-4e0a-bb91-92a5ee5b905d" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="claim_report_page.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/claim_report_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="6" column="67" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="67" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enlarge_image_demo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/enlarge_image_demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="active.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/active.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.fileuploader-theme-thumbnails.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/jquery.fileuploader-theme-thumbnails.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1892">
+              <caret line="86" column="17" lean-forward="true" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mobile_regist_demo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mobile_regist_demo.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="claim_apply_login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/claim_apply_login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="60" column="88" lean-forward="true" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="88" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="change_confirm.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/change_confirm.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="218" column="18" lean-forward="true" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/custom.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+              <folding>
+                <marker date="1515140736162" expanded="true" signature="382:613" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="442:587" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="665:1147" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="715:1121" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="845:1012" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="1200:1604" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="1250:1578" ph="..." />
+                <marker date="1515140736162" expanded="true" signature="1380:1547" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.fileuploader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/jquery.fileuploader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2623">
+              <caret line="1723" column="39" lean-forward="true" selection-start-line="1723" selection-start-column="39" selection-end-line="1723" selection-end-column="39" />
+              <folding>
+                <marker date="1514517696424" expanded="true" signature="19993:20001" ph="..." />
+                <marker date="1514517696424" expanded="true" signature="75717:75743" ph="..." />
+                <marker date="1514517696424" expanded="true" signature="75779:75805" ph="..." />
+                <marker date="1514517696424" expanded="true" signature="75844:75870" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="change_confirm.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/change_confirm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="5469" column="16" lean-forward="true" selection-start-line="5469" selection-start-column="16" selection-end-line="5469" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>item-label</find>
+      <find>input</find>
+      <find>确定变更</find>
+      <find>img/1.png</find>
+      <find>minshenglife/img/1.png</find>
+      <find>5e5e5e</find>
+      <find>.fileuploader</find>
+      <find>Are you sure you want to remove this file?</find>
+      <find>extensions</find>
+      <find>limit</find>
+      <find>result</find>
+      <find>photoarea</find>
+      <find>fileuploader</find>
+      <find>previewImage</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/esign.html" />
+        <option value="$PROJECT_DIR$/domo2.html" />
+        <option value="$PROJECT_DIR$/scale2_demo.html" />
+        <option value="$PROJECT_DIR$/js/change_address.js" />
+        <option value="$PROJECT_DIR$/change_address.html" />
+        <option value="$PROJECT_DIR$/account_IDtype.html" />
+        <option value="$PROJECT_DIR$/css/add_evidence.css" />
+        <option value="$PROJECT_DIR$/account_esign.html" />
+        <option value="$PROJECT_DIR$/css/change_address.css" />
+        <option value="$PROJECT_DIR$/sign_page.html" />
+        <option value="$PROJECT_DIR$/account_change.html" />
+        <option value="$PROJECT_DIR$/css/account_change.css" />
+        <option value="$PROJECT_DIR$/js/account_change.js" />
+        <option value="$PROJECT_DIR$/account_pay_ways.html" />
+        <option value="$PROJECT_DIR$/js/security_progress.js" />
+        <option value="$PROJECT_DIR$/css/security_progress.css" />
+        <option value="$PROJECT_DIR$/security_progress.html" />
+        <option value="$PROJECT_DIR$/upload_demo2.html" />
+        <option value="$PROJECT_DIR$/js/jquery.fileuploader.min.js" />
+        <option value="$PROJECT_DIR$/activity.html" />
+        <option value="$PROJECT_DIR$/mingsheng_active.html" />
+        <option value="$PROJECT_DIR$/js/index1.js" />
+        <option value="$PROJECT_DIR$/js/upload_main_js.js" />
+        <option value="$PROJECT_DIR$/js/jquery.fileuploader1.js" />
+        <option value="$PROJECT_DIR$/js/jquery.ui.widget.js" />
+        <option value="$PROJECT_DIR$/img_upload_demo.html" />
+        <option value="$PROJECT_DIR$/css/index1.css" />
+        <option value="$PROJECT_DIR$/demodemodemo.html" />
+        <option value="$PROJECT_DIR$/css/jquery.fileuploader.css" />
+        <option value="$PROJECT_DIR$/css/jquery.fileuploader-theme-thumbnails.css" />
+        <option value="$PROJECT_DIR$/js/jquery.fileuploader.js" />
+        <option value="$PROJECT_DIR$/applicant_information.html" />
+        <option value="$PROJECT_DIR$/js/data.js" />
+        <option value="$PROJECT_DIR$/loading.html" />
+        <option value="$PROJECT_DIR$/loading_demo.html" />
+        <option value="$PROJECT_DIR$/active_load.html" />
+        <option value="$PROJECT_DIR$/css/active.css" />
+        <option value="$PROJECT_DIR$/active.html" />
+        <option value="$PROJECT_DIR$/claim_report_page.html" />
+        <option value="$PROJECT_DIR$/upload_img_demo.html" />
+        <option value="$PROJECT_DIR$/upload_demo3.html" />
+        <option value="$PROJECT_DIR$/js/add_evidence.js" />
+        <option value="$PROJECT_DIR$/upload_demo.html" />
+        <option value="$PROJECT_DIR$/9.上传图片.html" />
+        <option value="$PROJECT_DIR$/add_evidence.html" />
+        <option value="$PROJECT_DIR$/mobile_regist_demo.html" />
+        <option value="$PROJECT_DIR$/enlarge_image_demo.html" />
+        <option value="$PROJECT_DIR$/css/change_confirm.css" />
+        <option value="$PROJECT_DIR$/claim_apply_login.html" />
+        <option value="$PROJECT_DIR$/js/change_confirm.js" />
+        <option value="$PROJECT_DIR$/js/custom.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1331" />
+    <option name="height" value="728" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="minshenglife" type="b2602c69:ProjectViewProjectNode" />
+              <item name="minshenglife" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="F:/upload" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="nodejs_interpreter_path" value="D:/node/node" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\关于工作\minshenglife\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\关于工作\minshenglife" />
+      <recent name="F:\关于工作\minshenglife\js" />
+      <recent name="F:\关于工作\minshenglife\css" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ddafcc7-d49f-4e0a-bb91-92a5ee5b905d" name="Default" comment="" />
+      <created>1511748432455</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1511748432455</updated>
+      <workItem from="1511748434051" duration="216000" />
+      <workItem from="1511781235642" duration="917000" />
+      <workItem from="1511833559334" duration="11956000" />
+      <workItem from="1511851121004" duration="12407000" />
+      <workItem from="1511863845156" duration="335000" />
+      <workItem from="1511864208924" duration="3035000" />
+      <workItem from="1511874384985" duration="4719000" />
+      <workItem from="1511920867071" duration="16203000" />
+      <workItem from="1512006547611" duration="3122000" />
+      <workItem from="1512012148395" duration="4478000" />
+      <workItem from="1512113863549" duration="1120000" />
+      <workItem from="1512120110697" duration="10000" />
+      <workItem from="1512385857769" duration="16000" />
+      <workItem from="1512469432577" duration="65000" />
+      <workItem from="1512471120991" duration="152000" />
+      <workItem from="1512546486655" duration="776000" />
+      <workItem from="1512547288962" duration="11096000" />
+      <workItem from="1512611524307" duration="1300000" />
+      <workItem from="1512630422650" duration="12488000" />
+      <workItem from="1512697389571" duration="20952000" />
+      <workItem from="1512957271471" duration="18222000" />
+      <workItem from="1512981620469" duration="7133000" />
+      <workItem from="1513043363107" duration="22370000" />
+      <workItem from="1513071678303" duration="7302000" />
+      <workItem from="1513129904917" duration="5091000" />
+      <workItem from="1513135615475" duration="17899000" />
+      <workItem from="1513216089153" duration="25210000" />
+      <workItem from="1513302721281" duration="13388000" />
+      <workItem from="1513329505581" duration="617000" />
+      <workItem from="1513562078541" duration="21466000" />
+      <workItem from="1513649907850" duration="18922000" />
+      <workItem from="1513735222132" duration="1870000" />
+      <workItem from="1513751972310" duration="16026000" />
+      <workItem from="1513821018433" duration="16972000" />
+      <workItem from="1513907314151" duration="6313000" />
+      <workItem from="1513921767051" duration="12723000" />
+      <workItem from="1514166643359" duration="27576000" />
+      <workItem from="1514252889093" duration="7433000" />
+      <workItem from="1514274578905" duration="1761000" />
+      <workItem from="1514277472357" duration="288000" />
+      <workItem from="1514277802277" duration="12000" />
+      <workItem from="1514277824813" duration="8388000" />
+      <workItem from="1514290838826" duration="146000" />
+      <workItem from="1514291765256" duration="1463000" />
+      <workItem from="1514293389129" duration="2152000" />
+      <workItem from="1514339381889" duration="24781000" />
+      <workItem from="1514426328363" duration="13551000" />
+      <workItem from="1514449881286" duration="104000" />
+      <workItem from="1514451601338" duration="13110000" />
+      <workItem from="1514512754678" duration="11950000" />
+      <workItem from="1514529945339" duration="520000" />
+      <workItem from="1514530605778" duration="4223000" />
+      <workItem from="1514534935143" duration="672000" />
+      <workItem from="1514535653217" duration="276000" />
+      <workItem from="1514535973384" duration="936000" />
+      <workItem from="1514537169405" duration="443000" />
+      <workItem from="1514537637668" duration="15000" />
+      <workItem from="1514537746041" duration="226000" />
+      <workItem from="1514538178547" duration="260000" />
+      <workItem from="1514538483898" duration="29000" />
+      <workItem from="1514538532331" duration="2818000" />
+      <workItem from="1514541413712" duration="529000" />
+      <workItem from="1514541995639" duration="8666000" />
+      <workItem from="1514551214283" duration="120000" />
+      <workItem from="1514551355803" duration="250000" />
+      <workItem from="1514551690724" duration="5507000" />
+      <workItem from="1514599307342" duration="8682000" />
+      <workItem from="1514628924516" duration="11461000" />
+      <workItem from="1514858313050" duration="12504000" />
+      <workItem from="1514944162625" duration="17390000" />
+      <workItem from="1515031131379" duration="6494000" />
+      <workItem from="1515047209986" duration="14922000" />
+      <workItem from="1515117205879" duration="13273000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="564145000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22098215" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5029762" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980666" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49702382" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/policysearch.html</url>
+          <line>168</line>
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/custom.js</url>
+          <line>118</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/custom.js</url>
+          <line>95</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="8" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/policysearch.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="n#li#3;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#li#5;n#ul#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#ul#1;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cliam_progress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/claims_instructions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="29" lean-forward="true" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/claims_apply_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/change_confirm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/security_progress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/security_progress.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="43" column="31" lean-forward="true" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/security_progress.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="130" column="9" lean-forward="true" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_demo2.html" />
+    <entry file="file://$PROJECT_DIR$/css/jquery.signature.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mingsheng_active.html" />
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="2" lean-forward="false" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index1.js" />
+    <entry file="file://$PROJECT_DIR$/js/upload_main_js.js" />
+    <entry file="file://$PROJECT_DIR$/js/jquery.fileuploader1.js" />
+    <entry file="file://$PROJECT_DIR$/js/jquery.ui.widget.js" />
+    <entry file="file://$PROJECT_DIR$/css/index1.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img_upload_demo.html" />
+    <entry file="file://$PROJECT_DIR$/demo1.html" />
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="47" column="9" lean-forward="true" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/demo1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18656">
+          <caret line="848" column="23" lean-forward="false" selection-start-line="848" selection-start-column="23" selection-end-line="848" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demodemodemo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" column="14" lean-forward="false" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account_change.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/change_address.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/applicant_information.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.html" />
+    <entry file="file://$PROJECT_DIR$/js/esign.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jquery.fileuploader.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="456" column="1" lean-forward="false" selection-start-line="456" selection-start-column="1" selection-end-line="456" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loading_demo.html" />
+    <entry file="file://$PROJECT_DIR$/css/active.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="21" lean-forward="false" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_img_demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_demo3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="17" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/active_load.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="1" column="131" lean-forward="false" selection-start-line="1" selection-start-column="131" selection-end-line="1" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.fileuploader.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="539">
+          <caret line="7" column="27881" lean-forward="true" selection-start-line="7" selection-start-column="27881" selection-end-line="7" selection-end-column="27881" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/add_evidence.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="31" lean-forward="false" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/9.上传图片.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="24" lean-forward="false" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/add_evidence.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="126" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload_demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="89" column="19" lean-forward="false" selection-start-line="89" selection-start-column="19" selection-end-line="89" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/enlarge_image_demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/claim_report_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="67" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="67" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#1;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#2;n#div#0;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/change_confirm.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="218" column="18" lean-forward="true" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile_regist_demo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="22" column="30" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/claim_apply_login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="60" column="88" lean-forward="true" selection-start-line="60" selection-start-column="75" selection-end-line="60" selection-end-column="88" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/change_confirm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="5469" column="16" lean-forward="true" selection-start-line="5469" selection-start-column="16" selection-end-line="5469" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/jquery.fileuploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2623">
+          <caret line="1723" column="39" lean-forward="true" selection-start-line="1723" selection-start-column="39" selection-end-line="1723" selection-end-column="39" />
+          <folding>
+            <marker date="1514517696424" expanded="true" signature="19993:20001" ph="..." />
+            <marker date="1514517696424" expanded="true" signature="75717:75743" ph="..." />
+            <marker date="1514517696424" expanded="true" signature="75779:75805" ph="..." />
+            <marker date="1514517696424" expanded="true" signature="75844:75870" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/active.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="35" column="10" lean-forward="false" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/jquery.fileuploader-theme-thumbnails.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1892">
+          <caret line="86" column="17" lean-forward="true" selection-start-line="86" selection-start-column="17" selection-end-line="86" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="99" column="20" lean-forward="true" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
+          <folding>
+            <marker date="1515140736162" expanded="true" signature="382:613" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="442:587" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="665:1147" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="715:1121" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="845:1012" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="1200:1604" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="1250:1578" ph="..." />
+            <marker date="1515140736162" expanded="true" signature="1380:1547" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

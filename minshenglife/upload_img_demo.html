@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<>
+<tr>
+    <td style="width:110px;text-align: right;padding-top: 13px;">实景照片<span style="color: red;">(最多上传5张)</span>:</td>
+    <td id="realPicTd">
+        <input type="hidden" name="REAL_PICTURE" id="REAL_PICTURE"  maxlength="255" style="width:58%;"/>  后台对应的多图片的一个字段
+    </td>
+</tr>
+<script src="js/jquery.js"></script>
+<script>
+    var chk_value ="";
+    var i = 0;
+    $("#Form").find('input[name="img"]').each(function(){
+        if(i == 0){
+            chk_value = chk_value +$(this).val();
+        }else{
+            chk_value = chk_value + "," + $(this).val();
+        }
+        i++;
+    });
+    $("#REAL_PICTURE").val(chk_value);
+    js:
+    $("#uploadify2").uploadify({
+    'buttonImg' : "/images/uploadp.png",
+    'uploader' : "/images/uploadp.png",
+    'script' : "/images/uploadp.png",
+    'cancelImg' : "/images/uploadp.png",
+    'folder' :"/images/uploadp.png",//上传文件存放的路径,请保持与uploadFile.jsp中PATH的值相同
+    'queueId' : "fileQueue",
+    'queueSizeLimit' : 5,//限制上传文件的数量
+//'fileExt' : "*.rar,*.zip",
+//'fileDesc' : "RAR *.rar",//限制文件类型
+    'fileExt' : '*.jpg;*.gif;*.png',
+    'fileDesc' : 'Please choose(.JPG, .GIF, .PNG)',
+    'auto' : false,
+    'multi' : true,//是否允许多文件上传
+    'simUploadLimit': 1,//同时运行上传的进程数量
+    'buttonText': "files",
+    'scriptData': {'uploadPath':'/uploadFiles/twoDimensionCode/'},//这个参数用于传递用户自己的参数，此时'method' 必须设置为GET, 后台可以用request.getParameter('name')获取名字的值
+    'method' : "GET",
+    'onComplete':function(event,queueId,fileObj,response,data){
+        str = response.trim();//单个上传完毕执行
+        var pathTemp = $("#path").val();
+        var pathTemp1 = pathTemp.substring(0,pathTemp.lastIndexOf("/"));
+        var path = pathTemp1 +'/'+ str;//图片路径
+
+        var num = parseInt(document.getElementById("num").value);
+        if(num>=5){
+//不做操作
+        }else{
+            var numtemp = num + 1;
+            var inputname = "img" + numtemp;
+            var realPicTd = document.getElementById("realPicTd");
+            var div = document.createElement("div");
+            div.setAttribute("id", inputname);
+            div.style.width = "100px";
+            div.style.height = "96px";
+            div.style.textAlign = "center";
+            div.style.float = "left";
+            div.style.marginLeft = "10px";
+
+            var img = document.createElement("img");
+            img.style.width = "100px";
+            img.style.height = "70px";
+            img.src = path;
+            var input = document.createElement("input");
+            input.setAttribute("name", "img");
+            input.setAttribute("type", "hidden");
+            input.setAttribute("value", str );
+            var a = document.createElement("a");
+            a.innerHTML = "删除";
+            a.style.color = "red";
+            var deleteName = "deleteImg('"+inputname+"')";
+            a.setAttribute("onclick",deleteName);
+            a.style.cursor = "pointer";
+
+            div.appendChild(img);
+            div.appendChild(input);
+            div.appendChild(a);
+
+            realPicTd.appendChild(div);
+            $("#num").val(numtemp);
+        }
+
+    },
+    'onAllComplete' : function(event,data) {
+//alert(str); //全部上传完毕执行
+    },
+    'onSelect' : function(event, queueId, fileObj){
+        $("#hasTp1").val("ok");
+    }
+});
+</script>
+</body>
+</html>

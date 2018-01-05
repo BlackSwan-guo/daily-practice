@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>身份验证</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/procedures.css" />
+    <link rel="stylesheet" type="text/css" href="css/weui.css" />
+    <link rel="stylesheet" type="text/css" href="css/change_confirm.css" />
+</head>
+<body>
+<div id="serachTop">
+    <p class="searchText">身份验证</p>
+</div>
+<div class="change_confirm_box">
+    <div class="change_confirm_title">
+        <span class="info holder on">身份验证</span> <span class="info recognizee">出生日期验证</span>
+    </div>
+    <div class="info_detail show">
+            <div class="city_select clearfix" style="margin-top: 0.2rem">
+                <div class="city_select_left">被保人</div>
+                <input class="select" type="text" placeholder="必填"/>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">性别</div>
+                <select class="select" name="province" id="sex">
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </div>
+            <div class="city_select clearfix">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"><label for="" class="weui-label city_select_left">出生日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input select" type="date" value=""/>
+                    </div>
+                </div>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">理赔申请时间</div>
+                <select class="select" name="province" id="time">
+                    <option>请选择</option>
+                    <option>1个月</option>
+                    <option>60天</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="info_detail">
+        <div class="item-form" style="margin-top: 0.2rem">
+            <p class="city_select_left">证件类型</p>
+            <div class="item-label">
+                <label>
+                    <select class="select" name="idtype" id="idtype">
+                        <option value="0">居民身份证</option>
+                        <option value="1">中国护照</option>
+                        <option value="2">军官证</option>
+                        <option value="4">居民户口薄</option>
+                        <option value="7">出生证</option>
+                        <option value="8">其他证件</option>
+                        <option value="9">无证件</option>
+                        <option value="A">士兵证</option>
+                        <option value="B">港澳居民来往内地通行证</option>
+                        <option value="C">临时身份证</option>
+                        <option value="D">警官证</option>
+                        <option value="E">台湾居民来往大陆通行证</option>
+                        <option value="F">军官离退休证</option>
+                        <option value="G">港澳通行证</option>
+                        <option value="H">外国护照</option>
+                        <option value="I">居留证件</option>
+                        <option value="J">港澳台身份证</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+    </div>
+        <div class="city_select clearfix">
+            <div class="city_select_left">证件号码</div>
+            <input class="select" type="text" placeholder="请填写真实证件号码"/>
+        </div>
+        <div class="city_select clearfix">
+            <div class="city_select_left">理赔申请时间</div>
+            <select class="select" name="province" id="">
+                <option>请选择</option>
+                <option>1个月</option>
+                <option>60天</option>
+            </select>
+        </div>
+    </div>
+    <div class="change_address_body clearfix">
+        <div class="begin_change">提交信息</div>
+    </div>
+</div>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="js/weui.min.js"></script>
+<script type="text/javascript" src="js/zepto.min.js"></script>
+<script type="text/javascript" src="js/change_confirm.js"></script>
+</body>
+</html>

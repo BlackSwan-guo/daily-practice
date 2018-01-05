@@ -1,0 +1,149 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>理赔管家</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/claimKnow.css" />
+    <style type="text/css">
+        .swiper-slide img{
+            width: 100%;
+        }
+    </style>
+    <style type="text/css">
+        /*解锁弹框*/
+        .unlock{
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(72,72,72,0.79);
+            z-index: 999;
+        }
+        .un_bg{
+            width: 88.8%;
+            background: #FFFFFF;
+            border: 11px solid #06C4F3;
+            border-radius: 0.2rem;
+            margin:1.58rem auto 0.56rem;
+            position: relative;
+        }
+        .un_bg{
+            height: 7.7rem;
+        }
+        .ac_bg{
+            height: auto;
+        }
+        .un_bg h2{
+            width: 52%;
+            height: 1rem;
+            line-height: 0.88rem;
+            /*background: url(http://mswxgj.minshenglife.com/mslife_wx/static/img/medal/popti.png) no-repeat;*/
+            background-size: 100% 1rem;
+            position: absolute;
+            top: -0.52rem;
+            left: 23%;
+            text-align: center;
+            font-size: .5rem;
+            color: #FFFFFF;
+        }
+        .un_bg p{
+            font-size: 0.5rem;
+            text-align: center;
+        }
+        .un_bg p span{
+            color: #ff943d;
+            font-size: 0.5rem;
+        }
+        .un_medal{
+            width: 3.87rem;
+            height: 3.47rem;
+            display: block;
+            margin: 1rem auto;
+        }
+        .my_medal,.con_lock{
+            background: #1CB8FF;
+            border-radius: 1rem;
+            font-size: 0.5rem;
+            color: #FFFFFF;
+            width: 68%;
+            height: 1.1rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .my_medal{
+            margin-bottom: 0.3rem;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+</head>
+
+<body>
+<form action="" method="post" id="checkMobileForm">
+    <input type="hidden" id="mobile" name="mobile" value=""/>
+    <input type="hidden" id="peopleNo" name="peopleNo" value=""/>
+</form>
+<form action="" method="post" id="policyForm">
+    <input type="hidden" name="openId" id="openId" value=""/>
+</form>
+<div class="swiper-container" >
+    <div class="swiper-wrapper" style="height: 4rem;width: 100%;">
+        <div class="swiper-slide">
+            <img src="images/lpgj_banner.jpg" />
+        </div>
+    </div>
+</div>
+<div class="applist">
+    <div class="claimInfor">
+        <h3>我要理赔</h3>
+        <ul>
+            <li onclick="location.href='login.html'">
+                <div>
+                    <img src="images/lpsq.jpg" />
+                </div>
+                <p>理赔申请</p>
+            </li>
+        </ul>
+    </div>
+    <div class="claimInfor">
+        <h3>其他服务</h3>
+        <ul>
+            <li>
+                <div>
+                    <img src="images/lpba.jpg" />
+                </div>
+                <p>理赔报案</p>
+            </li>
+            <li>
+                <div>
+                    <img src="images/jfzhbg.jpg" />
+                </div>
+                <p onclick="location.href='claims_progress.html'">理赔进度查询</p>
+            </li>
+            <li onclick="">
+                <div>
+                    <img src="images/lpdhcx.jpg" />
+                </div>
+                <p>理赔电话查询</p>
+            </li>
+            <li>
+                <div>
+                    <img src="images/lpxz.jpg" />
+                </div>
+                <p>理赔须知</p>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="js/public.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/index.js" charset="utf-8"></script>
+</html>

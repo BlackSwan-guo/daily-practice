@@ -1,0 +1,335 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no"/>
+    <title>身份验证</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/procedures.css" />
+    <style type="text/css">
+        .promptBoxs{
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 2;
+        }
+        .promptBoxs  input{
+            font-size: 14px;
+            border-top: 1px solid #ccc;
+            width: 100%;
+            height: 37px;
+            color: #d14014;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        #msgTexts{
+            padding: 0 10px;
+            font-size:16px;
+            margin-top:25px;
+            text-align: center;
+        }
+    </style>
+    <style>
+        .mobile_warm .popup{
+            width: 84%;
+            height: 32%;
+            text-align: center;
+            top: 38%!important;
+            color: #5F5D58;
+        }
+        .mobile_warm .popup p {
+            padding: 3% 2%;
+            text-align: left;
+            margin-top: 0;
+            line-height: 1.4;
+        }
+        .mobile_warm .popup p a {
+            color: #d14014;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="iscroll.js"></script>
+    <script type="text/javascript" src="js/jquery.lt_tab.js"></script>
+    <script type="text/javascript"><!--
+    /*-------------------------------------------*/
+    var InterValObj; //timer变量，控制时间
+    var count = 60; //间隔函数，1秒执行
+    var curCount;//当前剩余秒数
+
+
+    function sendMessage() {
+        var isMobile=/^(?:13\d|14\d|15\d|17\d|18\d)\d{5}(\d{3}|\*{3})$/;
+        var mobile = $.trim($("#mobile").val());
+        if(!isMobile.test(mobile)){
+            $('#msgText').html('请输入正确的手机号码!');
+            $('.promptBox').show();
+            return false;
+        }
+        curCount = count;
+        var dealType; //验证方式
+        var uid=$("#uid").val();//用户uid
+        if ($("#phone").attr("checked") == true) {
+            dealType = "phone";
+        }
+        else {
+            dealType = "email";
+        }
+
+        //设置button效果，开始计时
+        $("#btnSendCode").attr("disabled", "true");
+        $("#btnSendCode").val( + curCount + "s后重新发送");
+        $("#btnSendCode").css("background", "#d9d9d9");
+        $("#btnSendCode").css("color", "#8c8c8c");
+        InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+        //向后台发送处理数据
+        $('#phoneNos').val(mobile);
+        $.ajax({
+            type: "post", //用POST方式传输
+            dataType: "text", //数据格式:JSON
+//            url: 'http://mswxgj.minshenglife.com/mslife_wx/policy/verificationCode.json', //目标地址
+            data: $('#codeForm').serialize(),
+            error: function (XMLHttpRequest, textStatus, errorThrown) { },
+            success: function (msg){ }
+        });
+    }
+    //timer处理函数
+    function SetRemainTime() {
+        if (curCount == 0) {
+            window.clearInterval(InterValObj);//停止计时器
+            $("#btnSendCode").removeAttr("disabled");//启用按钮
+            $("#btnSendCode").val("发送验证码");
+            $("#btnSendCode").css("background", "#d14014");
+            $("#btnSendCode").css("color", "#fff");
+        }
+        else {
+            curCount--;
+            $("#btnSendCode").val( + curCount + "s后重新发送");
+        }
+    }
+    //身份验证form
+    function subForm(){
+        var name = $.trim($("#name").val());
+        if(name == ''){
+            $('#msgText').html('请输入姓名!');
+            $('.promptBox').show();
+            return false;
+        }
+        //选择身份证判断身份证号码
+        var idno = $.trim($("#idno").val());
+        var idtype = $("#idtype").val();
+        if(idtype == '0'){
+            var reg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+            if(reg.test(idno) === false){
+                $('#msgText').html('请填写正确的身份证号码!');
+                $('.promptBox').show();
+                return false;
+            }
+        }else{
+            if(idno == ''){
+                $('#msgText').html('请输入证件号码!');
+                $('.promptBox').show();
+                return false;
+            }
+        }
+        //手机号验证
+        var phoneObjVal = $.trim($("#mobile").val());
+        if(phoneObjVal == ''){
+            $('#msgText').html('请输入手机号码!');
+            $('.promptBox').show();
+            return false;
+        }else{
+            var phoneObjHead = phoneObjVal.substring(0,2);
+            if ( phoneObjVal.length < 11 || phoneObjVal.length > 11 ) {
+                $('#msgText').html('手机号码应为11位数字，请核实后重新录入!');
+                $('.promptBox').show();
+                return false;
+            }else{
+                if(phoneObjHead == 13 || phoneObjHead == 14 || phoneObjHead == 15 || phoneObjHead == 17 || phoneObjHead == 18)
+                {
+                    console.log('正确');
+                }else{
+                    $('#msgText').html('投保人手机号必须为13、14、15、17或18开头，请核实后重新录入!');
+                    $('.promptBox').show();
+                    return false;
+                }
+            }
+        }
+        var code = $.trim($("#code").val());
+        if(code == ''){
+//            $('#msgText').html('请输入验证码!');
+            $('.promptBox').show();
+            return false;
+        }else{
+            $('#codes').val($('#code').val());
+            $.ajax({
+                cache: true,
+                type: "POST",
+//                url:'http://mswxgj.minshenglife.com/mslife_wx/policy/verificationFindCode.json',
+                data:$('#findcodeForm').serialize(),
+                async: false,
+                success: function(data) {
+                    var data = eval(data);
+                    if(data.status.code == '1'){
+                        $('#msgText').html(data.status.msg);
+                        $('.promptBox').show();
+                        return false;
+                    }else if(data.status.code == '0'){
+                        $.ajax({
+                            cache: true,
+                            type: "POST",
+//                            url:'http://mswxgj.minshenglife.com/mslife_wx/policy/verifications.json',
+                            data:$('#verificationForm').serialize(),
+                            async: false,
+                            success: function(data) {
+                                var data = eval(data);
+                                if(data.data.sucflag == '0'){
+                                    //$('#msgText').html('您尚未在我公司投保，请重新确认客户信息!');
+                                    var redirect_uri= encodeURIComponent('http://mswxgj.minshenglife.com/mslife_wx_web/html/insurance_bind/bind_index.html');
+                                    var mobileChangeUri  = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx710ae90139c4e43e&redirect_uri='+redirect_uri+'&response_type=code&scope=snsapi_base&state=#wechat_redirect';
+                                    $('#msgText').html('您录入的姓名、证件类型、证件号码或手机号码与您留存在我公司的信息不一致，请您核对后重新录入。若手机号码有变更的，您可通过生活号<a href="'+mobileChangeUri+'">手机号码变更</a>菜单进行变更。若您姓名、证件类型、证件号码有变更的，请联系您的业务人员或至我公司营业网点申请变更。');
+                                    $('.promptBox').show();
+                                    var popupH=$(".popup").height();
+                                    $(".popup").css({"top":"50%","margin-top":-popupH/2});
+                                    return false;
+                                }else if(data.data.sucflag == '1'){
+                                    var peopleNo="";
+                                    for(var i=0;i<data.data.detailResponseList.length;i++){
+                                        peopleNo += data.data.detailResponseList[i].customerno+","
+                                    }
+                                    $('#peopleNo').val(peopleNo);
+                                    $('#msgTexts').html('您已成功绑定!');
+                                    var popupH=$(".popup").height();
+                                    $(".popup").css({"top":"50%","margin-top":-popupH/2});
+                                    $('.promptBoxs').show();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
+        }
+    }
+    </script>
+</head>
+<body>
+<div class="panel_header">
+    <h1>身份验证</h1>
+</div>
+<div class="panel_content">
+    <input type="hidden" id="peopleNo"/>
+    <input type="hidden" id="flag" name="flag" value=""/>
+    <form action="http://mswxgj.minshenglife.com/mslife_wx/policy/verificationCode.json" method="post" id="codeForm">
+        <input type="hidden" id="openId" name="openId" value="oAq08t6rXv5LV-Keb849Z6p2j3Kc"/>
+        <input type="hidden" id="phoneNos" name="phoneNo"/>
+    </form>
+    <form action="http://mswxgj.minshenglife.com/mslife_wx/policy/verificationFindCode.json" method="post" id="findcodeForm">
+        <input type="hidden" id="openId" name="openId" value="oAq08t6rXv5LV-Keb849Z6p2j3Kc"/>
+        <input type="hidden" id="codes" name="code"/>
+    </form>
+    <form action="" method="post" id="verificationForm">
+        <input type="hidden" id="openId" name="openId" value="oAq08t6rXv5LV-Keb849Z6p2j3Kc"/>
+        <input type="hidden" name="servicecode" value="80"/>
+        <div class="item-form">
+            <span>姓&nbsp;&nbsp;&nbsp;&nbsp;名</span>
+            <div class="item-label">
+                <input type="text" placeholder="必填" name="name" id="name"/>
+            </div>
+        </div>
+        <div class="item-form">
+            <span>证件类型</span>
+            <div class="item-label">
+                <label>
+                    <select name="idtype" id="idtype">
+                        <option value="0">居民身份证</option>
+                        <option value="1">中国护照</option>
+                        <option value="2">军官证</option>
+                        <option value="4">居民户口薄</option>
+                        <option value="7">出生证</option>
+                        <option value="8">其他证件</option>
+                        <option value="9">无证件</option>
+                        <option value="A">士兵证</option>
+                        <option value="B">港澳居民来往内地通行证</option>
+                        <option value="C">临时身份证</option>
+                        <option value="D">警官证</option>
+                        <option value="E">台湾居民来往大陆通行证</option>
+                        <option value="F">军官离退休证</option>
+                        <option value="G">港澳通行证</option>
+                        <option value="H">外国护照</option>
+                        <option value="I">居留证件</option>
+                        <option value="J">港澳台身份证</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="item-form">
+            <span>证件号码</span>
+            <div class="item-label">
+                <input type="text" placeholder="请填写证件真实号码" name="idno" id="idno"/>
+            </div>
+        </div>
+        <div class="item-form">
+            <span>手机号码</span>
+            <div class="item-label" id="calender_icon">
+                <input type="number"  placeholder="请输入" name="mobile" id="mobile"/>
+            </div>
+        </div>
+        <!--<div class="box3">-->
+            <!--&lt;!&ndash;<div class="box4">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span>验证码</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="item-label1">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input type="number" placeholder="请输入" id="code" style="line-height:45px;"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<input type="button" class="box5" value="发送验证码"  onclick="sendMessage()" id="btnSendCode" />&ndash;&gt;-->
+        <!--</div>-->
+        <div class="btn">
+            <input type="button" value="提交信息" class="btn1" onclick="subForm()">
+        </div>
+    </form>
+</div>
+<!--<div class="promptBox">-->
+    <!--<div class="popup" style="height:auto;">-->
+        <!--<h3>民生微管家提示您</h3>-->
+        <!--<p id="msgText" style="margin-bottom:25px;"></p>-->
+        <!--<input type="button" name="confirm" value="确定" style="position:static;"/>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="promptBoxs" style="display: none;">-->
+    <!--<div class="popup" style="height:auto;">-->
+        <!--<h3>民生微管家提示您</h3>-->
+        <!--<p id="msgTexts" style="margin-bottom:25px;"></p>-->
+        <!--<input type="button" name="confirms" value="确定"  style="position:static;"/>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+<script>
+    $(function(){
+        $('.promptBox').css('height',document.body.scrollHeight+'px');
+        $('.promptBox input').click(function(){
+            $('.promptBox').hide();
+        });
+        $('.promptBoxs').css('height',document.body.scrollHeight+'px');
+        $('.promptBoxs input').click(function(){
+            $('.promptBoxs').hide();
+            if($("#flag").val()=="userDataChange"){
+                window.location.href = 'http://mspos.minshenglife.com:7017/user/user_edit_profile?customerNo='+$('#peopleNo').val()+'&openId='+$('#openId').val();
+            }else if($("#flag").val()=="xd"){
+                window.location.href = 'http://mswxgj.minshenglife.com/mslife_wx/policy/policyPageNew.json?key=MS_BTN_MENU_XDGJ';
+            }else if($("#flag").val()=="electronicNotice"){
+                window.location.href = 'http://bonus.minshenglife.com/bonus/notice/list?openId='+$('#openId').val()+'&customerId='+$('#peopleNo').val();
+            }else{
+                window.location.href = 'http://mswxgj.minshenglife.com/mslife_wx/policy/policyPageNew.json?key=MS_BTN_MENU_BDGJ';
+            }
+        });
+    });
+</script>

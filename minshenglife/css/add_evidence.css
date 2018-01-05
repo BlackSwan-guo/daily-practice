@@ -1,0 +1,125 @@
+body {
+    background:#f2f3f5;
+}
+/* 添加证明资料块 */
+.add_evidence_box {
+    margin-top: 0.2rem;
+    background: #fff;
+    padding: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+/* 头部 */
+.add_evidence_box_title {
+    height: 1rem;
+    font-size: 0.4rem;
+    line-height: 0.98rem;
+    border-bottom: 0.02rem solid#e0e0e0;
+}
+/* 证件类型选择 */
+.account_idtype {
+    height: 2rem;
+}
+/* 添加项 */
+.add_list {
+    height: 2rem;
+    margin-top: 0.2rem;
+}
+/* 图片上传后放置区 */
+.imgPreview {
+    float: left;
+    border: none;
+}
+/*添加的图片*/
+.imgPreview img {
+    margin-right: 0.2rem;
+    width: 2rem;
+    height: 2rem;
+}
+.upload-img {
+    display: block;
+    float: left;
+    width: 2rem;
+    height: 2rem;
+    overflow: hidden;
+    position: relative;
+    background: url("../images/up_download.png") no-repeat 0;
+    background-size: contain;
+}
+.upload-img input {
+    height: 2rem;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.add_text {
+    font-size: 0.4rem;
+    color: #5e5e5e;
+    line-height: 2rem;
+}
+/* 添加图片示例 */
+.add_example {
+
+}
+/* 示例标题*/
+.add_example_title {
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #f00;
+}
+/* 示例列表*/
+.add_example_list {
+    padding-left: 0.2rem;
+}
+.add_example_item {
+    height: 2rem;
+    margin-bottom: 0.2rem;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: inline-block;
+}
+.add_example_item_left {
+    width: 4rem;
+    float: left;
+    height: 2rem;
+}
+.add_example_item_left_top {
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: #000;
+    text-align: center;
+}
+.add_example_item_left_bottom {
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: #000;
+    text-align: center;
+}
+.add_example_item_right {
+    float: left;
+}
+.add_example_img {
+    width: 3rem;
+    height: 2rem;
+}
+/*选择证件类型下一步*/
+.account_change_body {
+    width: 9.7rem;
+    color: #fff;
+}
+/* 下一步 */
+.account_change_next {
+    width: 9.6rem;
+    height: 1rem;
+    background: #d14014;
+    font-size: 0.5rem;
+    color: #fff;
+    line-height: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+}

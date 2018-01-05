@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <div class="form-group">
+        <label>姓名：</label>
+        <input id="name" type="text">
+    </div>
+    <div class="form-group">
+        <label>手机号：</label>
+        <input id="phone" type="text">
+    </div>
+    <div class="form-group">
+        <label>身份证：</label>
+        <input id="identity" type="text">
+    </div>
+    <div class="form-group">
+        <label class="label-textarea">邮寄地址：</label>
+        <textarea id="address"></textarea>
+    </div>
+    <p class="tip">请填写实名认证信息，以便领奖资料一经提交无法修改，请慎重填写！</p>
+    <div class="btn-group">
+        <button class="btn btn-md btn-purple" type="reset">取消</button>
+        <button class="btn btn-md btn-purple ml-20" id="submit" type="button">提交</button>
+    </div>
+</form>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    // 验证中文名称
+    function isChinaName(name) {
+        var pattern = /^[\u4E00-\u9FA5]{1,6}$/;
+        return pattern.test(name);
+    }
+
+    // 验证手机号
+    function isPhoneNo(phone) {
+        var pattern = /^1[34578]\d{9}$/;
+        return pattern.test(phone);
+    }
+
+    // 验证身份证
+    function isCardNo(card) {
+        var pattern = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+        return pattern.test(card);
+    }
+
+    // 验证函数
+    function formValidate() {
+        var str = '';
+        // 判断名称
+        if($.trim($('#name').val()).length == 0) {
+            str += '名称没有输入\n';
+            $('#name').focus();
+        } else {
+            if(isChinaName($.trim($('#name').val())) == false) {
+                str += '名称不合法\n';
+                $('#name').focus();
+            }
+        }
+
+        // 判断手机号码
+        if ($.trim($('#phone').val()).length == 0) {
+            str += '手机号没有输入\n';
+            $('#phone').focus();
+        } else {
+            if(isPhoneNo($.trim($('#phone').val()) == false)) {
+                str += '手机号码不正确\n';
+                $('#phone').focus();
+            }
+        }
+
+        // 验证身份证
+        if($.trim($('#identity').val()).length == 0) {
+            str += '身份证号码没有输入\n';
+            $('#identity').focus();
+        } else {
+            if(isCardNo($.trim($('#identity').val())) == false) {
+                str += '身份证号不正确；\n';
+                $('#identity').focus();
+            }
+        }
+        // 验证地址
+        if($.trim($('#address').val()).length == 0) {
+            str += '地址没有输入\n';
+            $('#address').focus();
+        }
+        // 如果没有错误则提交
+        if(str != '') {
+            alert(str);
+            return false;
+        } else {
+            $('.auth-form').submit();
+        }
+    }
+    $('#submit').on('click', function() {
+        formValidate();
+    });
+</script>
+</body>
+</html>

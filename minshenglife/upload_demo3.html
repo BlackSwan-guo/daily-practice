@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #look{
+            width: 250px;
+            height: 250px;
+            border: 2px solid #ccc;
+            margin-top: 30px;
+            background: url(images/up_download.png) no-repeat 0 0;
+        }
+        #file {
+
+        }
+    </style>
+</head>
+<body>
+<div class="col-sm-8">
+    <input type="file" name="file" class="form-control"  id="zx_img" style="padding: 0px;" placeholder="&nbsp;上传文件">
+    <div class="col-sm-8 col-md-4">
+        <a href="" class="thumbnail">
+            <img id="img_preview" data-src="holder.js/100%x200" alt="图片预览" src="http://image.photophoto.cn/nm-6/018/030/0180300244.jpg" data-holder-rendered="true" style="width: 200px; display: block;">
+        </a>
+    </div>
+</div>
+<script>
+    //上传图片选择文件改变后刷新预览图
+    $("#zx_img").change(function(e){
+        //获取目标文件
+        var file = e.target.files||e.dataTransfer.files;
+        //如果目标文件存在
+        if(file){
+            //定义一个文件阅读器
+            var reader = new FileReader();
+            //文件装载后将其显示在图片预览里
+            reader.onload=function(){
+                $("#img_preview").attr("src", this.result);
+            }
+            //装载文件
+            reader.readAsDataURL(file[0]);
+        }
+    });
+</script>
+</body>
+</html>

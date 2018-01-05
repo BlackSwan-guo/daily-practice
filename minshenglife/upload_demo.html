@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #imgPreview {
+            float: left;
+            border: none;
+        }
+        #imgPreview img {
+            margin-right: 10px;
+            width: 50px;
+            height: 50px;
+        }
+        .upload-img {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+            position: relative;
+            background: url("images/up_download.png") no-repeat 0;
+            background-size: contain;
+        }
+          .upload-img input {
+              height: 50px;
+              opacity: 0;
+              filter: alpha(opacity=0);
+              position: absolute;
+              top: 0;
+              right: 0;
+          }
+    </style>
+</head>
+<body>
+<form>
+    <p>上传图片：</p>
+    <div id="imgPreview"></div>
+    <span class="upload-img"><input id="fileUpload" accept="image/*" type="file" multiple="multiple"></span>
+    </div>
+</form>
+
+<script type="javascript" src="js/jquery.js"></script>
+
+<script type="javascript">
+
+    $(function (){
+
+        $("#fileupload").change(function () {
+
+            if (typeof (FileReader) != "undefined") {
+
+                var dvPreview = $("#imgPreview");
+
+                dvPreview.html("");
+
+                var regex = /(.jpg|.jpeg|.gif|.png|.bmp)$/;
+
+                $($(this)[0].files).each(function () {
+
+                    var file = $(this);
+
+                    if (regex.test(file[0].name.toLowerCase())) {
+
+                        var reader = new FileReader();
+
+                        reader.onload = function (e) {
+
+                            var img = $("");
+
+                            img.attr("src", e.target.result);
+
+                            dvPreview.append(img);
+
+                        }
+
+                        reader.readAsDataURL(file[0]);
+
+                    } else {
+
+                        alert(file[0].name + " 不是图片类型的文件.");
+
+                        dvPreview.html("");
+
+                        return false;
+
+                    }
+
+                });
+
+            } else {
+
+                alert("This browser does not support HTML5 FileReader.");
+
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+body {
+    background: #fafafa;
+}
+#serachTop {
+    width: 100%;
+    height: 1rem;
+    background: #d14014;
+}
+#serachTop .searchText {
+    font-family: "微软雅黑";
+    color:#fff;
+    text-align: center;
+    line-height: 1rem;
+    font-size: 0.5rem;
+    font-weight: bold;
+}
+/* 联系地址变更块区*/
+.change_address_box {
+    width:9.85rem;
+    padding-top: 0.4rem;
+    padding-left: 0.15rem;
+    background: #fafafa;
+}
+/* 联系地址变更主体 */
+.change_address_body {
+    width: 9.7rem;
+    color: #000;
+}
+/* 选择 */
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    background: #fafafa;
+    border:0.02rem solid #d14014;
+    border-radius: 50%;
+}
+input[type="checkbox"]:checked {
+    background: #f2d4cc;
+}
+.checkedinp {
+    float: left;
+    margin-top: 0.3rem;
+    background: #fafafa;
+}
+/* 选择变更的保险名称 */
+.change_address_item {
+    width: 8.8rem;
+    background: #f2d4cc;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color:#d13f14;
+    text-indent: 0.3rem;
+    margin-bottom: 0.2rem;
+    border: 0.03rem solid #d14014;
+    border-radius: 2px;
+    float: right;
+}
+/* 下拉列表图标 */
+.change_address_item .item_name {
+    background: url("../images/change_address_up.png") no-repeat 8.2rem 0.4rem;
+}
+.change_address_item .down {
+    background: url("../images/change_address_down.png") no-repeat 8.2rem 0.4rem;
+}
+/*变更详细信息部分*/
+.change_details{
+    color: #808080;
+    border-top: 0.02rem solid #d14014;
+    display: none;
+}
+/* 全选*/
+.checkall {
+    font-size: 0.5rem;
+    line-height: 1rem;
+    color:#808080;
+    text-indent: 0.5rem;
+}
+/*点击下拉显示保险名对应的详细信息*/
+.show {
+    display: block;
+}
+/* 详细信息左部分*/
+.change_details_left {
+    width: 2.8rem;
+    float: left;
+}
+/* 详细信息右部分*/
+.change_details_right {
+    width: 5.3rem;
+    float: right;
+    text-align: right;
+    margin-right: 0.1rem;
+}
+/*清除浮动*/
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+/* 开始变更 */
+.begin_change {
+    width: 9.6rem;
+    height: 1.5rem;
+    background: #d14014;
+    font-size: 0.5rem;
+    color: #fff;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+}
+
+
+/*账号变更电子签名*/
+/*账号变更电子签名主体*/
+.account_esign_box {
+    background: #fff;
+}
+/*账号变更电子签名提示*/
+.account_tips {
+    width: 9.4rem;
+    padding: 0.3rem;
+    background: #fff;
+}
+.account_tips_item {
+    margin-bottom: 0.5rem;
+}
+/*账号变更提示文字区*/
+.account_tips_txt {
+    width: 9rem;
+    height: 6rem;
+    border-radius: 3px;
+    background: #ededf0;
+    padding: 0.2rem;
+}
+/*账号变更问候语*/
+.account_customer {
+    font-size: 0.5rem;
+    line-height: 0.6rem;
+    color: #000;
+}
+/*账号变更内容提示*/
+.account_change_details {
+    margin-left: 1rem;
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color: #000;
+}
+/*账号变更后信息*/
+.account_change_after {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color: #000;
+}
+/*账号变更交费方式 */
+.account_change_type {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color: #444;
+}
+/*账号变更电子签名区域*/
+.account_sign_txt {
+    width: 4rem;
+    height: 1rem;
+    background: #da3a20;
+    border-radius: 3px;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    margin-top: 0.3rem;
+    margin-left: 30%;
+}
+/*账号变更提交*/
+.account_submit {
+    width: 9.4rem;
+    height: 1.2rem;
+    background: #da3a20;
+    border-radius: 3px;
+    font-size: 0.4rem;
+    line-height: 1.2rem;
+    color: #fff;
+    text-align: center;
+}

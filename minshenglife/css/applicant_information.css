@@ -1,0 +1,90 @@
+body {
+    background: #fff;
+}
+.applicant_information_title {
+    width: 100%;
+    height: 0.8rem;
+    background: #f2e2dc;
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color: #707070;
+    text-indent: 0.5rem;
+}
+.applicant_information_box {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+.applicant_information_list {
+
+}
+.applicant_information_item {
+    height: 1.2rem;
+    border-bottom: 0.02rem solid#e0e0e0;
+}
+.applicant_information_item_left {
+    float: left;
+    font-size: 0.4rem;
+    line-height: 1.2rem;
+}
+.applicant_information_item_right {
+    float: left;
+    font-size: 0.4rem;
+    line-height: 1.2rem;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+.gray {
+    color: #a9a9a9;
+}
+.apply_sign {
+    height: 1rem;
+    margin-top: 0.2rem;
+}
+.apply_sign_text {
+    float: left;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #000;
+}
+.apply_sign_click {
+    float: left;
+    width: 4rem;
+    height: 1rem;
+    background: #da3a20;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    text-align: center;
+}
+.claims_apply_reset_bottom {
+    margin-top: 0.2rem;
+    margin-bottom: 0.3rem;
+}
+.claims_apply_reset_back {
+    width: 4.3rem;
+    height: 1rem;
+    background: #da3a20;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+.claims_apply_reset_confirm {
+    float: left;
+    width: 4.3rem;
+    height: 1rem;
+    background: #da3a20;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+}

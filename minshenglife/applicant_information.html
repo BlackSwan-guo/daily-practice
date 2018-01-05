@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>申请人信息</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/weui.css" />
+    <link rel="stylesheet" type="text/css" href="css/change_confirm.css" />
+    <link rel="stylesheet" type="text/css" href="css/applicant_information.css" />
+</head>
+<body>
+    <h2 class="applicant_information_title">申请人信息</h2>
+    <div class="applicant_information_box">
+        <form>
+            <ul class="applicant_information_list">
+               <li class="applicant_information_item">
+                   <div class="applicant_information_item_left"><span style="color:#d14014">*</span>出险人姓名
+                   :</div>
+                   <input class="applicant_information_item_right" type="text" placeholder="必填"/>
+               </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>证件类型
+                        :</div>
+                    <div class="item-label">
+                        <label>
+                            <select class="applicant_information_item_right" name="idtype" id="idtype">
+                                <option value="0">居民身份证</option>
+                                <option value="1">中国护照</option>
+                                <option value="2">军官证</option>
+                                <option value="4">居民户口薄</option>
+                                <option value="7">出生证</option>
+                                <option value="8">其他证件</option>
+                                <option value="9">无证件</option>
+                                <option value="A">士兵证</option>
+                                <option value="B">港澳居民来往内地通行证</option>
+                                <option value="C">临时身份证</option>
+                                <option value="D">警官证</option>
+                                <option value="E">台湾居民来往大陆通行证</option>
+                                <option value="F">军官离退休证</option>
+                                <option value="G">港澳通行证</option>
+                                <option value="H">外国护照</option>
+                                <option value="I">居留证件</option>
+                                <option value="J">港澳台身份证</option>
+                            </select>
+                        </label>
+                    </div>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>证件号码
+                        :</div>
+                    <input class="applicant_information_item_right" type="text" placeholder="必填"/>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="weui-cell">
+                        <div class="weui-cell__hd"><label for="" class="weui-label applicant_information_item_left"><span style="color:#d14014;margin-left: -0.3rem">*</span>证件有效期至</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input applicant_information_item_right" type="date" value="" id="date" style="height: 0.9rem;"/>
+                        </div>
+                    </div>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>性别
+                        :</div>
+                    <select class="applicant_information_item_right" name="province"style="width: 5rem">
+                        <option>男</option>
+                        <option>女</option>
+                    </select>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>年龄
+                        :</div>
+                    <input class="applicant_information_item_right" type="text" placeholder="必填"/>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>国籍
+                        :</div>
+                    <input class="applicant_information_item_right" type="text" placeholder="必填"/>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>职业
+                        :</div>
+                    <input class="applicant_information_item_right" type="text" placeholder="请填写"/>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>移动电话
+                        :</div>
+                    <input class="applicant_information_item_right" type="text" placeholder="请填写"/>
+                </li>
+                <li class="">
+                    <div onload="setup();preselect('北京市');promptinfo();" style="width: 9.5rem">
+                        <div class="city_select clearfix" style="width: 9rem;margin-top: 0.1rem" >
+                            <div class="city_select_left applicant_information_item_left"><span style="color:#d14014">*</span>详细地址</div>
+                            <form name="shareip" action="" method="post">
+                                <select class="select applicant_information_item_right" name="province" id="s1">
+                                    <!--<option>北京</option>-->
+                                    <!--<option>天津</option>-->
+                                    <!--<option>上海</option>-->
+                                    <!--<option>河北</option>-->
+                                </select>
+                            </form>
+                        </div>
+                        <div class="city_select clearfix" style="width: 9rem">
+                            <div class="city_select_left applicant_information_item_left"></div>
+                            <form name="shareip" action="" method="post">
+                                <select class="select applicant_information_item_right"  name="city"  id="s2">
+                                    <!--<option>北京</option>-->
+                                    <!--<option>天津</option>-->
+                                    <!--<option>上海</option>-->
+                                    <!--<option>石家庄</option>-->
+                                </select>
+                            </form>
+                        </div>
+                        <div class="city_select clearfix" style="width: 9rem">
+                            <div class="city_select_left applicant_information_item_left"></div>
+                            <form name="shareip" action="" method="post">
+                                <select class="select applicant_information_item_right" name="town" id="s3">
+                                    <!--<option>北京市区</option>-->
+                                    <!--<option>天津市区</option>-->
+                                    <!--<option>上海市区</option>-->
+                                    <!--<option>石家庄市区</option>-->
+                                </select>
+                            </form>
+                        </div>
+                        <div class="city_select clearfix" style="margin-top: 0.2rem;width: 9rem">
+                            <!--<div class="city_select_left"><span style="color:#d14014">*</span>详细地址</div>-->
+                            <input class="select" type="text" placeholder="必填"/>
+                        </div>
+                        <div class="describe" style="margin-top: 0.2rem;width: 9rem">
+                            <div class="describe_txt"><span style="color:#d14014">*</span>出险概况
+                                <div class="describe_list">
+                                    <span class="rea_txt">因</span><p class="reason" style="width: 7.5rem"><input type="text" placeholder="(请填写详细事故经过)"/></p>
+                                </div>
+                                <div class="describe_list">
+                                    <span class="rea_txt">在</span><p class="reason" style="width: 7.5rem"><input type="text" placeholder="(请填写医院名称或事故地点)"/></p>
+                                </div>
+                                <div class="describe_list">
+                                    <span class="rea_txt"></span><p class="reason" style="width: 7.5rem"><input type="text" placeholder="(治疗/身故)"/></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="applicant_information_item">
+                    <div class="applicant_information_item_left"><span style="color:#d14014">*</span>邮编
+                        :</div>
+                    <input class="applicant_information_item_right" style="width: 6rem" type="text" placeholder="请填写"/>
+                </li>
+            </ul>
+            <div class="apply_sign clearfix">
+                <P class="apply_sign_text">申请人签名：</P>
+                <div class="apply_sign_click" onclick="location='sign_page.html'">点击签名</div>
+            </div>
+            <div class="apply_sign clearfix">
+                <P class="apply_sign_text">签收日期：</P>
+                <div class="apply_sign_text">2017年12月19日</div>
+            </div>
+        </form>
+        <div class="claims_apply_reset_bottom clearfix">
+            <div class="claims_apply_reset_back">返回修改</div>
+            <div class="claims_apply_reset_confirm">确定</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/change_confirm.js"></script>
+</body>
+</html>

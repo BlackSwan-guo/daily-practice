@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>理赔申请</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/claims_apply_page.css" />
+    <link rel="stylesheet" type="text/css" href="css/weui.css" />
+</head>
+<body>
+    <form>
+        <ul class="claims_apply_list">
+            <li class="claims_apply_item">
+                <div class="claims_apply_item_left"><span style="color:#d14014">*</span>申请人与出险人关系:</div>
+                <select class="claims_apply_item_right" name="" style="width: 5rem">
+                    <option>请选择</option>
+                    <option>本人</option>
+                    <option>投保人</option>
+                    <option>其他受益人/监护人</option>
+                </select>
+            </li>
+            <li class="claims_apply_item">
+                <div class="weui-cell">
+                    <div class="weui-cell__hd"; style="margin-left: -0.3rem"><label for="" class="weui-label claims_apply_item_left"><span style="color:#d14014">*</span>事故日期:</label></div>
+                    <div class="weui-cell__bd claims_apply_item_right">
+                        <input class="weui-input" type="date" value=""/>
+                    </div>
+                </div>
+            </li>
+            <li class="claims_apply_item">
+                <div class="claims_apply_item_left"><span style="color:#d14014">*</span>出险原因:</div>
+                <select class="claims_apply_item_right" name="" style="width: 7rem">
+                    <option>请选择出险原因</option>
+                    <option>意外</option>
+                    <option>疾病</option>
+                    <option>自杀或自伤</option>
+                </select>
+            </li>
+            <li class="claims_apply_item">
+                <div class="claims_apply_item_left"><span style="color:#d14014">*</span>理赔类型:</div>
+                <select class="claims_apply_item_right" name="" style="width: 7rem">
+                    <option>请选择理赔类型</option>
+                    <option>医疗</option>
+                    <option>身故</option>
+                    <option>重大疾病</option>
+                    <option>残疾</option>
+                </select>
+            </li>
+            <li class="claims_apply_item">
+                <div class="claims_apply_item_left"><span style="color:#d14014">*</span>是否进行了社保/新农合/第三方报销：</div>
+                <select class="claims_apply_item_right" name="" style="width: 2rem">
+                    <option>是</option>
+                    <option>否</option>
+                </select>
+            </li>
+            <li class="claims_apply_item claims_apply_way">
+                <div class="claims_apply_item_left"><span style="color:#d14014">*</span>填写理赔申请书方式：</div>
+                <select class="claims_apply_item_right" name="" style="width: 4rem">
+                    <option>电子签名</option>
+                    <option>纸质理赔申请书</option>
+                </select>
+            </li>
+        </ul>
+    </form>
+    <div id="claims_apply_next" onclick="location='claims_apply_reset.html'">下一步</div>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+</body>
+</html>

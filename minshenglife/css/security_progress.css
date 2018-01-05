@@ -1,0 +1,120 @@
+body {
+    background: #fff;
+    font-family: "微软雅黑";
+}
+/* 保全进度页面 */
+.progressbody {
+    padding: 0.3rem;
+    background: #fff;
+}
+/*保单状态*/
+.change_confirm_title {
+    width: 9.6rem;
+    height: 1rem;
+    background: #d14014;
+    border-radius: 3px;
+    position: relative;
+}
+/*正在办理*/
+.holder {
+    display: inline-block;
+    width: 4.75rem;
+    background: #d14014;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    top:0.05rem;
+    left:0.05rem;
+    border-radius: 3px 0 0 3px;
+}
+/*办理完成*/
+.recognizee {
+    display: inline-block;
+    width: 4.76rem;
+    background: #d14014;
+    font-size: 0.4rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color:#fff;
+    position: absolute;
+    top:0.05rem;
+    left:4.78rem;
+    border-radius: 0 3px 3px 0;
+}
+/*身份验证和出生日期验证颜色改变*/
+.change_confirm_title .on {
+    background: #fff;
+    color:#d14014;
+}
+.apply-list {
+    display: none;
+}
+.apply-list p {
+    height:1.5rem;
+    border-bottom: 0.01rem solid#ccc;
+    font-size: 0.4rem;
+    line-height: 1.5rem;
+}
+.apply-list .finished{
+    height:1.5rem;
+    border-bottom: 0.01rem solid#ccc;
+    font-size: 0.4rem;
+    line-height: 1.5rem;
+    background: url("../images/more_unfold.png") no-repeat 9rem 0.6rem;
+}
+.change {
+    background: url("../images/less.png") no-repeat 9rem 0.6rem;
+}
+.show {
+    display: block;
+}
+.name {
+    background: #eee;
+}
+.name_txt {
+    color: #000;
+}
+.item {
+    background: #fff;
+    border: 0.02rem solid #ccc;
+    padding:0.1rem;
+    position: relative;
+    margin-bottom: 0.2rem;
+}
+.order {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: #d14014;
+    position: absolute;
+    top:0;
+    left:0;
+    font-size: 0.3rem;
+    line-height: 0.4rem;
+    text-align: center;
+    color:#fff;
+}
+.gray_man {
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    color:#999;
+    margin-left: 0.3rem;
+}
+.gray {
+    font-size: 0.4rem;
+    line-height: 0.6rem;
+    color:#999;
+    margin-left: 0.3rem;
+}
+.re-check {
+    color:#d14014;
+}
+.effect {
+    color:yellowgreen;
+}
+.clearfix:after {
+    content: "";
+    clear: both;
+    display: block;
+}

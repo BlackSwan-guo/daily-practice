@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>确认更改</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/change_confirm.css" />
+    <!--<script type="text/javascript" src="js/geo.js"></script>-->
+</head>
+<body>
+    <div id="serachTop">
+        <p class="searchText">联系地址变更</p>
+    </div>
+    <div class="change_confirm_box">
+        <div class="change_confirm_title">
+            <span class="info holder on">投保人信息</span> <span class="info recognizee">被保险人信息</span>
+        </div>
+        <div class="info_detail show">
+            <div class="reco_name">
+                <span>被保人</span>
+                <span>周全</span>
+            </div>
+            <div onload="setup();preselect('北京市');promptinfo();">
+                <div class="city_select clearfix" >
+                    <div class="city_select_left">省/市/自治区</div>
+                    <form name="shareip" action="" method="post">
+                        <select class="select" name="province" id="s1">
+                            <!--<option>北京</option>-->
+                            <!--<option>天津</option>-->
+                            <!--<option>上海</option>-->
+                            <!--<option>河北</option>-->
+                        </select>
+                    </form>
+                </div>
+                <div class="city_select clearfix">
+                    <div class="city_select_left">市/区</div>
+                    <form name="shareip" action="" method="post">
+                        <select class="select"  name="city"  id="s2">
+                            <!--<option>北京</option>-->
+                            <!--<option>天津</option>-->
+                            <!--<option>上海</option>-->
+                            <!--<option>石家庄</option>-->
+                        </select>
+                    </form>
+                </div>
+                <div class="city_select clearfix">
+                    <div class="city_select_left">区/县</div>
+                    <form name="shareip" action="" method="post">
+                        <select class="select" name="town" id="s3">
+                            <!--<option>北京市区</option>-->
+                            <!--<option>天津市区</option>-->
+                            <!--<option>上海市区</option>-->
+                            <!--<option>石家庄市区</option>-->
+                        </select>
+                    </form>
+                </div>
+                <div class="city_select clearfix">
+                    <div class="city_select_left">通讯地址</div>
+                    <input class="select" type="text" placeholder="请输入详细地址"/>
+                </div>
+                <div class="city_select clearfix">
+                    <div class="city_select_left">邮政编码</div>
+                    <input class="select" type="text"/>
+                </div>
+                <div class="city_select clearfix">
+                        <div class="city_select_left">电子邮箱</div>
+                        <input class="select" type="text" placeholder="建议填写"/>
+                    </div>
+            </div>
+
+        </div>
+        <div class="info_detail">
+            <div class="reco_name">
+                <span>投保人</span>
+                <span>傅国勇</span>
+            </div>
+            <div class="city_select clearfix" onload="setup();preselect('北京市');promptinfo();" >
+                <div class="city_select_left">省/市/自治区</div>
+                <select class="select" name="province" id="s4">
+                    <!--<option>北京</option>-->
+                    <!--<option>天津</option>-->
+                    <!--<option>上海</option>-->
+                    <!--<option>河北</option>-->
+                </select>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">市/区</div>
+                <select class="select" name="city" id="s5">
+                    <!--<option>北京</option>-->
+                    <!--<option>天津</option>-->
+                    <!--<option>上海</option>-->
+                    <!--<option>石家庄</option>-->
+                </select>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">区/县</div>
+                <select class="select" name="town" id="s6">
+                    <!--<option>北京市区</option>-->
+                    <!--<option>天津市区</option>-->
+                    <!--<option>上海市区</option>-->
+                    <!--<option>石家庄市区</option>-->
+                </select>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">通讯地址</div>
+                <input class="select" type="text" placeholder="请输入详细地址"/>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">邮政编码</div>
+                <input class="select" type="text"/>
+            </div>
+            <div class="city_select clearfix">
+                <div class="city_select_left">电子邮箱</div>
+                <input class="select" type="text" placeholder="建议填写"/>
+            </div>
+        </div>
+        <div class="change_address_body clearfix">
+            <input id="address" name="address" type="hidden" value="" />
+            <div class="begin_change" onclick="alert(promptinfo())">确定变更</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/public.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/change_confirm.js"></script>
+</body>
+</html>

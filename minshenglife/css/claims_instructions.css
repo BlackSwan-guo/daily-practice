@@ -1,0 +1,35 @@
+body {
+    background: #fff;
+}
+.claims_instructions_box {
+    background: #fff;
+    padding-top: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+.claims_instructions_title {
+    height: 1.5rem;
+    font-size: 0.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: #000;
+}
+.claims_instructions_list {
+    width:6rem;
+    margin-bottom: 0.2rem;
+}
+.claims_instructions_list li {
+    font-size: 0.4rem;
+    line-height: 0.8rem;
+    border-bottom: 0.02rem solid #d8d8d8;
+}
+.claims_instructions_know {
+    width: 6rem;
+    height: 1rem;
+    background: #da3a20;
+    border-radius: 3px;
+    font-size: 0.4rem;
+    line-height: 1rem;
+    color: #fff;
+    text-align: center;
+}
